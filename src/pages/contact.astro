@@ -1,0 +1,79 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Contact - Școala Teofil',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Contact" title="Hai să vorbim!" />
+
+  <ContactUs
+    id="form"
+    title="Trimite-ne un mesaj!"
+    subtitle="Pentru răspunsuri rapide, consultă secțiunea noastră de Întrebări Frecvente. Este posibil să găsești acolo răspunsul pe care îl cauți! Dacă nu, echipa noastră este bucuroasă să te ajute."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Nume',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Email',
+      },
+    ]}
+    textarea={{
+      label: 'Mesaj',
+    }}
+    disclaimer={{
+      label:
+        'Prin trimiterea acestui formular de contact, confirmi că ești de acord cu colectarea informațiilor tale personale.',
+    }}
+    description="Echipa noastră răspunde de obicei în termen de 24 de ore lucrătoare."
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Suntem aici să te ajutăm!"
+    items={[
+      {
+        title: 'Informații generale',
+        description: 'Contactează-ne pentru întrebări legate de înscrieri, programul școlii, activitățile educaționale sau orice alte informații despre Școala Teofil.',
+      },
+      {
+        title: 'Relații cu părinții',
+        description:
+          'Vorbește cu noi despre implicarea părinților, întâlniri tematice, evenimente școlare sau orice aspect legat de parteneriatul școală-familie.',
+      },
+      {
+        title: 'Admitere',
+        description:
+          'Contactează-ne pentru detalii despre procesul de înscriere, locuri disponibile, documente necesare sau pentru a programa o vizită la școală.',
+      },
+      {
+        title: 'Telefon',
+        description: '0723 537 819',
+        icon: 'tabler:headset',
+      },
+      {
+        title: 'Email',
+        description: 'scoalateofil@gmail.com',
+        icon: 'tabler:mail',
+      },
+      {
+        title: 'Locație',
+        description: 'Grădinița Teofil: str. Mărgăului nr. 2, Cluj-Napoca, cod poștal 400633 | Școala Teofil: Aleea Moldoveanu 3, Cluj-Napoca',
+        icon: 'tabler:map-pin',
+      },
+    ]}
+  />
+</Layout>

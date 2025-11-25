@@ -1,0 +1,219 @@
+---
+import type { ImageMetadata } from 'astro';
+import Image from '~/components/common/Image.astro';
+
+export interface Props {
+  title: string;
+  tagline: string;
+  image: ImageMetadata;
+  id: string;
+}
+
+const { title, tagline, image, id } = Astro.props;
+---
+
+<!-- Team Member Card -->
+<div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+  <div class="relative aspect-[3/4] overflow-hidden">
+    <Image
+      src={image}
+      alt={title}
+      class="w-full h-full object-cover"
+      widths={[400, 768]}
+      sizes="(max-width: 768px) 100vw, 400px"
+      loading="lazy"
+    />
+  </div>
+  
+  <div class="p-6">
+    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
+    <p class="text-sm text-primary-600 dark:text-primary-400 mb-4">{tagline}</p>
+    
+    <button
+      class="view-more-btn w-full px-4 py-2 text-white rounded-md transition-colors duration-200"
+      style="display: flex !important; align-items: center; justify-content: center; gap: 0.5rem; background-color: #1e40af; cursor: pointer;"
+      data-target={id}
+      aria-expanded="false"
+      type="button"
+      onmouseover="this.style.backgroundColor='#1e3a8a'"
+      onmouseout="this.style.backgroundColor='#1e40af'"
+    >
+      <span class="btn-text">Detalii</span>
+      <svg class="btn-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: inline-block;">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Expanded Profile Content -->
+<div
+  id={id}
+  class="profile-content hidden bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 col-span-1 md:col-span-2 lg:col-span-3"
+  role="region"
+  aria-labelledby={`${id}-title`}
+  style="display: none;"
+>
+  <div class="flex justify-between items-start mb-4">
+    <div>
+      <h3 id={`${id}-title`} class="text-2xl font-bold text-gray-900 dark:text-white mb-1">{title}</h3>
+      <p class="text-primary-600 dark:text-primary-400">{tagline}</p>
+    </div>
+    <button
+      class="close-profile-btn p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-full transition-colors"
+      data-target={id}
+      aria-label="Închide profilul"
+      type="button"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="prose prose-lg dark:prose-invert max-w-none">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .view-more-btn {
+    position: relative !important;
+    z-index: 10 !important;
+    cursor: pointer !important;
+    min-height: 44px !important;
+  }
+  
+  .profile-content:not(.hidden) {
+    display: block !important;
+    animation: slideDown 0.3s ease-out;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script is:inline>
+  // Wait for DOM to be ready
+  if (typeof window !== 'undefined') {
+    function initTeamMembers() {
+      console.log('Initializing team members...');
+      const buttons = document.querySelectorAll('.view-more-btn');
+      console.log('Found buttons:', buttons.length);
+      
+      buttons.forEach((button) => {
+        // Remove any existing listeners
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        newButton.addEventListener('click', function() {
+          console.log('Button clicked!', this.dataset.target);
+          const targetId = this.dataset.target;
+          if (!targetId) return;
+          
+          const profile = document.getElementById(targetId);
+          if (!profile) {
+            console.log('Profile not found:', targetId);
+            return;
+          }
+          
+          console.log('Profile found, toggling...');
+          
+          // Close all other profiles
+          document.querySelectorAll('.profile-content').forEach((p) => {
+            if (p.id !== targetId) {
+              p.classList.add('hidden');
+              p.style.display = 'none';
+            }
+          });
+          
+          // Reset all other buttons
+          document.querySelectorAll('.view-more-btn').forEach((btn) => {
+            if (btn !== newButton) {
+              const icon = btn.querySelector('.btn-icon');
+              const text = btn.querySelector('.btn-text');
+              if (icon) icon.style.transform = 'rotate(0deg)';
+              if (text) text.textContent = 'Detalii';
+              btn.setAttribute('aria-expanded', 'false');
+            }
+          });
+          
+          // Toggle current profile
+          const isHidden = profile.classList.contains('hidden');
+          
+          if (isHidden) {
+            profile.classList.remove('hidden');
+            profile.style.display = 'block';
+          } else {
+            profile.classList.add('hidden');
+            profile.style.display = 'none';
+          }
+          
+          // Update button state
+          const icon = newButton.querySelector('.btn-icon');
+          const text = newButton.querySelector('.btn-text');
+          if (icon) {
+            icon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
+          if (text) {
+            text.textContent = isHidden ? 'Ascunde' : 'Detalii';
+          }
+          newButton.setAttribute('aria-expanded', String(isHidden));
+          
+          // Scroll to profile if opening
+          if (isHidden) {
+            setTimeout(() => {
+              profile.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+          }
+        });
+      });
+      
+      // Handle close buttons
+      document.querySelectorAll('.close-profile-btn').forEach((button) => {
+        const newButton = button.cloneNode(true);
+        button.parentNode.replaceChild(newButton, button);
+        
+        newButton.addEventListener('click', function() {
+          const targetId = this.dataset.target;
+          if (!targetId) return;
+          
+          const profile = document.getElementById(targetId);
+          if (!profile) return;
+          
+          profile.classList.add('hidden');
+          profile.style.display = 'none';
+          
+          // Reset corresponding "View More" button
+          const viewMoreBtn = document.querySelector(`[data-target="${targetId}"].view-more-btn`);
+          if (viewMoreBtn) {
+            const icon = viewMoreBtn.querySelector('.btn-icon');
+            const text = viewMoreBtn.querySelector('.btn-text');
+            if (icon) icon.style.transform = 'rotate(0deg)';
+            if (text) text.textContent = 'Detalii';
+            viewMoreBtn.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initTeamMembers);
+    } else {
+      // DOM already loaded
+      initTeamMembers();
+    }
+    
+    // Re-initialize on Astro page transitions
+    document.addEventListener('astro:page-load', initTeamMembers);
+  }
+</script>

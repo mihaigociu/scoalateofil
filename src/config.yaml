@@ -1,0 +1,72 @@
+site:
+  name: Școala Teofil
+  site: 'https://scoalateofil.ro'
+  base: '/'
+  trailingSlash: false
+
+  googleSiteVerificationId: # Add your Google verification ID here
+
+# Default SEO metadata
+metadata:
+  title:
+    default: Școala Teofil
+    template: '%s — Școala Teofil'
+  description: "Școala Teofil - O instituție de învățământ dedicată educației de calitate pentru copiii dumneavoastră. Oferim grădiniță, școală primară și gimnazială cu o abordare pedagogică modernă."
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: Școala Teofil
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1200
+        height: 628
+    type: website
+  twitter:
+    handle: '@scoalateofil'
+    site: '@scoalateofil'
+    cardType: summary_large_image
+
+i18n:
+  language: ro
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: true
+    postsPerPage: 6
+
+    post:
+      isEnabled: true
+      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
+      robots:
+        index: true
+
+    list:
+      isEnabled: true
+      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
+      robots:
+        index: true
+
+    category:
+      isEnabled: true
+      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
+      robots:
+        index: true
+
+    tag:
+      isEnabled: true
+      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: true
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null # or "G-XXXXXXXXXX"
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
