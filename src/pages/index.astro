@@ -2,15 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
-import Stats from '~/components/widgets/Stats.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
 
 import { getCollection } from 'astro:content';
@@ -21,8 +12,6 @@ const heroData = heroContent.find((page) => page.id === 'hero-acasa.md');
 console.log('Hero Data:', heroData);
 console.log('Hero ID:', heroData?.id);
 console.log('Hero Body:', heroData?.body);
-
-const { Content: HeroContent } = heroData ? await heroData.render() : { Content: null };
 
 const metadata = {
   title: 'Școala Teofil',
@@ -37,9 +26,7 @@ const metadata = {
     image={{ src: '~/assets/images/Scoala-Teofil-logo-final-RGB.jpg', alt: 'Logo Școala Teofil' }}
     subtitle='Școala „Teofil" este o instituție de învățământ privată din Cluj-Napoca, în cadrul căreia funcționează Grădinița „Teofil" (grădiniță cu metodă de predare Montessori), Școala Primară „Teofil", cu clasele  0 – IV, și Școala Gimnazială „Teofil", cu clasa a V-a. Școala „Teofil" este școală privată acreditată de statul român. Ne mândrim cu o echipă de oameni atent selecționați și cu o formare profesională greu de egalat. Oferim copiilor atât o formare academică de calitate, cât și un mediu călduros sufletește pentru o dezvoltare armonioasă.'
   >
-    <Fragment slot="title">
-      Despre noi
-    </Fragment>
+    <Fragment slot="title"> Despre noi </Fragment>
   </Hero>
 
   <!-- Expandable Cards Widget **************** -->
@@ -52,7 +39,8 @@ const metadata = {
           src: '~/assets/images/viziunea_noastra.jpg',
           alt: 'Viziunea noastră',
         },
-        summary: 'Credem într-o lume armonioasă și echilibrată, unde fiecare copil își dezvoltă pe deplin personalitatea.',
+        summary:
+          'Credem într-o lume armonioasă și echilibrată, unde fiecare copil își dezvoltă pe deplin personalitatea.',
         content: '',
       },
       {
@@ -61,7 +49,8 @@ const metadata = {
           src: '~/assets/images/misiunea_noastra.jpg',
           alt: 'Misiunea noastră',
         },
-        summary: 'Organizăm activități prin care susținem copiii în dezvoltarea personalității într-un mediu atent pregătit și activități prin care ajutăm părinții în creșterea propriilor copii prin întâlniri tematice.',
+        summary:
+          'Organizăm activități prin care susținem copiii în dezvoltarea personalității într-un mediu atent pregătit și activități prin care ajutăm părinții în creșterea propriilor copii prin întâlniri tematice.',
         content: '',
       },
       {
@@ -70,7 +59,8 @@ const metadata = {
           src: '~/assets/images/ce-este-edicatia-1.jpg',
           alt: 'Ce este educația',
         },
-        summary: 'Educația este un proces de dezvoltare a persoanei care are ca scop formarea persoanei în vederea trăirii unei vieți echilibrate, armonioase, pozitive și împlinite.',
+        summary:
+          'Educația este un proces de dezvoltare a persoanei care are ca scop formarea persoanei în vederea trăirii unei vieți echilibrate, armonioase, pozitive și împlinite.',
         content: `
           <p class="mb-4">Educația presupune două elemente de bază:</p>
           <ol class="list-decimal list-inside mb-6 space-y-2">
@@ -169,7 +159,8 @@ const metadata = {
           src: '~/assets/images/implicare-parinti.jpg',
           alt: 'Implicarea părinților',
         },
-        summary: 'Părinții au dreptul și obligația de a-și educa propriii copii așa cum consideră că este mai potrivit.',
+        summary:
+          'Părinții au dreptul și obligația de a-și educa propriii copii așa cum consideră că este mai potrivit.',
         content: `
           <p class="mb-4">
             Deoarece o parte dintre părinți nu au timpul și pregătirea necesară pentru a oferi această educație copiilor, apelează la persoane pregătite în acest sens. Astfel, educatorii și învățătorii devin parteneri ai părinților în educarea copiilor.
@@ -205,14 +196,4 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </ExpandableCards>
-
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
 </Layout>

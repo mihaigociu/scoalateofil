@@ -1,8 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
-import Image from '~/components/common/Image.astro';
 
 interface Link {
   text?: string;
@@ -24,7 +22,7 @@ export interface Props {
   theme?: string;
 }
 
-const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
+const { socialLinks = [], links = [], footNote = '', theme = 'light' } = Astro.props;
 ---
 
 <footer class:list={[{ dark: theme === 'dark' }, 'relative border-t border-gray-200 dark:border-slate-800 not-prose']}>
@@ -46,14 +44,12 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
             />
           </a>
         </div>
-        
+
         <!-- Contact Information -->
         <div class="space-y-3 mb-4">
           <div class="flex items-center gap-2 text-sm">
             <Icon name="tabler:phone" class="w-5 h-5 text-primary" />
-            <a href="tel:0723537819" class="hover:text-primary transition-colors">
-              0723 537 819
-            </a>
+            <a href="tel:0723537819" class="hover:text-primary transition-colors"> 0723 537 819 </a>
           </div>
           <div class="flex items-center gap-2 text-sm">
             <Icon name="tabler:mail" class="w-5 h-5 text-primary" />
@@ -77,21 +73,23 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         </div>
 
         <!-- Social Links -->
-        {socialLinks?.length && (
-          <div class="flex gap-2">
-            {socialLinks.map(({ ariaLabel, href, icon }) => (
-              <a
-                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center transition-colors"
-                aria-label={ariaLabel}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {icon && <Icon name={icon} class="w-5 h-5" />}
-              </a>
-            ))}
-          </div>
-        )}
+        {
+          socialLinks?.length && (
+            <div class="flex gap-2">
+              {socialLinks.map(({ ariaLabel, href, icon }) => (
+                <a
+                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center transition-colors"
+                  aria-label={ariaLabel}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {icon && <Icon name={icon} class="w-5 h-5" />}
+                </a>
+              ))}
+            </div>
+          )
+        }
 
         <!-- Contact Form Toggle Button -->
         <div class="mt-4">
@@ -169,9 +167,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
 
             <!-- Nume -->
             <div>
-              <label for="nume" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Nume *
-              </label>
+              <label for="nume" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"> Nume * </label>
               <input
                 type="text"
                 id="nume"
@@ -225,9 +221,7 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
 
             <!-- Mesaj -->
             <div>
-              <label for="mesaj" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Mesaj
-              </label>
+              <label for="mesaj" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"> Mesaj </label>
               <textarea
                 id="mesaj"
                 name="mesaj"

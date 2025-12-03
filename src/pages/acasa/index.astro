@@ -2,7 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'Acasă - Școala Teofil',
@@ -12,7 +11,7 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
-  <HeroText 
+  <HeroText
     title="Bine ați venit la Școala Teofil!"
     subtitle="Explorează tot ce avem de oferit - de la istoria noastră, la realizările elevilor, echipa dedicată și activitățile noastre."
   />
@@ -43,7 +42,8 @@ const metadata = {
       },
       {
         title: 'Echipa noastră',
-        description: 'Cunoașteți echipa dedicată de profesori și pedagogi care lucrează cu pasiune pentru educația copiilor.',
+        description:
+          'Cunoașteți echipa dedicată de profesori și pedagogi care lucrează cu pasiune pentru educația copiilor.',
         icon: 'tabler:users',
         callToAction: {
           text: 'Cunoaște echipa',
@@ -88,7 +88,8 @@ const metadata = {
       },
       {
         title: 'Clubul de cercetași',
-        description: 'Activitățile clubului de cercetași - aventuri în natură, învățare prin joc și dezvoltare personală.',
+        description:
+          'Activitățile clubului de cercetași - aventuri în natură, învățare prin joc și dezvoltare personală.',
         icon: 'tabler:tent',
         callToAction: {
           text: 'Descoperă clubul',

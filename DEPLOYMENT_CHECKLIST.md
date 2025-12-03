@@ -3,6 +3,7 @@
 ## 🎯 Pre-Deployment Tasks
 
 ### Content
+
 - [ ] All page content is filled in (replace placeholder text)
 - [ ] School history (`acasa/scurt-istoric.md`) is complete
 - [ ] Team information for all sections is added
@@ -12,6 +13,7 @@
 - [ ] Contact information is correct
 
 ### Images
+
 - [ ] School logo added and replaced favicon
 - [ ] Hero images for all main pages
 - [ ] Team photos uploaded
@@ -20,6 +22,7 @@
 - [ ] Image alt text is descriptive
 
 ### Configuration
+
 - [ ] Site name updated in `src/config.yaml` ✅ (Done)
 - [ ] Site URL updated (when you have domain)
 - [ ] Language set to Romanian ✅ (Done)
@@ -29,6 +32,7 @@
 - [ ] Social media links added
 
 ### Technical
+
 - [ ] Test site locally (`npm run dev`)
 - [ ] No console errors
 - [ ] All links work
@@ -49,6 +53,7 @@ git init
 ### Step 2: Create .gitignore (should already exist)
 
 Verify `.gitignore` contains:
+
 ```
 node_modules/
 dist/
@@ -100,6 +105,7 @@ git push -u origin main
 ### Step 3: Configure Build Settings
 
 **Should auto-detect, but verify:**
+
 - **Branch to deploy:** `main`
 - **Build command:** `npm run build`
 - **Publish directory:** `dist`
@@ -138,10 +144,12 @@ Click "Deploy site"
 Add these DNS records (values from Netlify):
 
 **Option A: Using Netlify DNS (Recommended)**
+
 1. Change nameservers to Netlify's nameservers
 2. Netlify manages everything
 
 **Option B: Using Existing DNS**
+
 1. Add A record: `@ → 75.2.60.5` (Netlify's IP)
 2. Add CNAME: `www → scoalateofil.netlify.app`
 
@@ -160,6 +168,7 @@ Add these DNS records (values from Netlify):
 ### Enable Security Headers
 
 In `netlify.toml` (already configured):
+
 ```toml
 [[headers]]
   for = "/*"
@@ -172,6 +181,7 @@ In `netlify.toml` (already configured):
 ### Enable Asset Optimization
 
 In Netlify Dashboard:
+
 1. Go to "Site settings" → "Build & deploy" → "Post processing"
 2. Enable:
    - ✅ Bundle CSS
@@ -273,11 +283,13 @@ git push
 ### Build Fails
 
 **Check deploy log for errors:**
+
 1. Go to Netlify dashboard → "Deploys"
 2. Click failed deploy
 3. Read error message
 
 **Common issues:**
+
 - Missing dependencies: Run `npm install`
 - TypeScript errors: Run `npm run check`
 - Build command wrong: Verify in build settings
@@ -285,6 +297,7 @@ git push
 ### Site Not Updating
 
 **Solutions:**
+
 1. Check git push was successful
 2. Check Netlify deploy status
 3. Clear browser cache (Cmd+Shift+R)
@@ -293,6 +306,7 @@ git push
 ### Domain Not Working
 
 **Solutions:**
+
 1. Verify DNS records are correct
 2. Wait for DNS propagation (up to 48 hours)
 3. Use DNS checker: https://dnschecker.org
@@ -310,6 +324,7 @@ git push
 Congratulations! Your website is now live and accessible to the world.
 
 **Don't forget to:**
+
 - Announce the new website to parents
 - Update school materials with new URL
 - Monitor for feedback

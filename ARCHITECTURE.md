@@ -26,7 +26,7 @@
         │
         ├── Scurt istoric
         └── Echipa noastră
-        
+
 ┌──────────────────────────────────────────────────────────────┐
 │                    MAIN SECTIONS (3)                         │
 └──────────────────────────────────────────────────────────────┘
@@ -171,28 +171,28 @@ new_site/
 
 ## 🎯 Content Management Matrix
 
-| Section | Subsection | File Location | Image Location | Status |
-|---------|-----------|---------------|----------------|--------|
-| **ACASĂ** | Scurt istoric | `acasa/scurt-istoric.md` | `images/acasa/` | ✅ Template |
-| | Echipa noastră | `acasa/echipa-noastra.md` | `images/acasa/` | ✅ Template |
-| **GRĂDINIȚĂ** | Metoda pedagogică | `gradinita/metoda-pedagogica.md` | `images/gradinita/` | ✅ Template |
-| | Echipa noastră | `gradinita/echipa-noastra.md` | `images/gradinita/` | ✅ Template |
-| | Noutăți | `gradinita/noutati.md` + posts | `images/gradinita/` | ✅ Template |
-| | Galerie foto | `gradinita/galerie-foto.md` | `images/gradinita/gallery/` | ✅ Template |
-| | Înscrieri | `gradinita/inscrieri.md` | `images/gradinita/` | ✅ Template |
-| | Info utile | `gradinita/informatii-utile.md` | `images/gradinita/` | ✅ Template |
-| **ȘCOALĂ PRIMARĂ** | Metoda pedagogică | `scoala-primara/metoda-pedagogica.md` | `images/scoala-primara/` | ✅ Template |
-| | Echipa noastră | `scoala-primara/echipa-noastra.md` | `images/scoala-primara/` | ✅ Template |
-| | Noutăți | `scoala-primara/noutati.md` + posts | `images/scoala-primara/` | ✅ Template |
-| | Galerie foto | `scoala-primara/galerie-foto.md` | `images/scoala-primara/gallery/` | ✅ Template |
-| | Înscrieri | `scoala-primara/inscrieri.md` | `images/scoala-primara/` | ✅ Template |
-| | Info utile | `scoala-primara/informatii-utile.md` | `images/scoala-primara/` | ✅ Template |
-| **ȘCOALĂ GIMNAZIALĂ** | Metoda pedagogică | `scoala-gimnaziala/metoda-pedagogica.md` | `images/scoala-gimnaziala/` | ✅ Template |
-| | Echipa noastră | `scoala-gimnaziala/echipa-noastra.md` | `images/scoala-gimnaziala/` | ✅ Template |
-| | Noutăți | `scoala-gimnaziala/noutati.md` + posts | `images/scoala-gimnaziala/` | ✅ Template |
-| | Galerie foto | `scoala-gimnaziala/galerie-foto.md` | `images/scoala-gimnaziala/gallery/` | ✅ Template |
-| | Înscrieri | `scoala-gimnaziala/inscrieri.md` | `images/scoala-gimnaziala/` | ✅ Template |
-| | Info utile | `scoala-gimnaziala/informatii-utile.md` | `images/scoala-gimnaziala/` | ✅ Template |
+| Section               | Subsection        | File Location                            | Image Location                      | Status      |
+| --------------------- | ----------------- | ---------------------------------------- | ----------------------------------- | ----------- |
+| **ACASĂ**             | Scurt istoric     | `acasa/scurt-istoric.md`                 | `images/acasa/`                     | ✅ Template |
+|                       | Echipa noastră    | `acasa/echipa-noastra.md`                | `images/acasa/`                     | ✅ Template |
+| **GRĂDINIȚĂ**         | Metoda pedagogică | `gradinita/metoda-pedagogica.md`         | `images/gradinita/`                 | ✅ Template |
+|                       | Echipa noastră    | `gradinita/echipa-noastra.md`            | `images/gradinita/`                 | ✅ Template |
+|                       | Noutăți           | `gradinita/noutati.md` + posts           | `images/gradinita/`                 | ✅ Template |
+|                       | Galerie foto      | `gradinita/galerie-foto.md`              | `images/gradinita/gallery/`         | ✅ Template |
+|                       | Înscrieri         | `gradinita/inscrieri.md`                 | `images/gradinita/`                 | ✅ Template |
+|                       | Info utile        | `gradinita/informatii-utile.md`          | `images/gradinita/`                 | ✅ Template |
+| **ȘCOALĂ PRIMARĂ**    | Metoda pedagogică | `scoala-primara/metoda-pedagogica.md`    | `images/scoala-primara/`            | ✅ Template |
+|                       | Echipa noastră    | `scoala-primara/echipa-noastra.md`       | `images/scoala-primara/`            | ✅ Template |
+|                       | Noutăți           | `scoala-primara/noutati.md` + posts      | `images/scoala-primara/`            | ✅ Template |
+|                       | Galerie foto      | `scoala-primara/galerie-foto.md`         | `images/scoala-primara/gallery/`    | ✅ Template |
+|                       | Înscrieri         | `scoala-primara/inscrieri.md`            | `images/scoala-primara/`            | ✅ Template |
+|                       | Info utile        | `scoala-primara/informatii-utile.md`     | `images/scoala-primara/`            | ✅ Template |
+| **ȘCOALĂ GIMNAZIALĂ** | Metoda pedagogică | `scoala-gimnaziala/metoda-pedagogica.md` | `images/scoala-gimnaziala/`         | ✅ Template |
+|                       | Echipa noastră    | `scoala-gimnaziala/echipa-noastra.md`    | `images/scoala-gimnaziala/`         | ✅ Template |
+|                       | Noutăți           | `scoala-gimnaziala/noutati.md` + posts   | `images/scoala-gimnaziala/`         | ✅ Template |
+|                       | Galerie foto      | `scoala-gimnaziala/galerie-foto.md`      | `images/scoala-gimnaziala/gallery/` | ✅ Template |
+|                       | Înscrieri         | `scoala-gimnaziala/inscrieri.md`         | `images/scoala-gimnaziala/`         | ✅ Template |
+|                       | Info utile        | `scoala-gimnaziala/informatii-utile.md`  | `images/scoala-gimnaziala/`         | ✅ Template |
 
 ## 🎨 User Experience Flow
 
@@ -308,24 +308,28 @@ new_site/
 ## 📈 Project Timeline
 
 ### ✅ Phase 1: Setup (COMPLETED)
+
 - Project initialization
 - Structure creation
 - Content templates
 - Documentation
 
 ### 🔄 Phase 2: Content (IN PROGRESS - Your Turn!)
+
 - Fill in markdown files
 - Add images
 - Customize pages
 - Test locally
 
 ### ⏳ Phase 3: Customization (Next)
+
 - Homepage design
 - Contact page
 - Branding
 - Colors
 
 ### ⏳ Phase 4: Launch (Final)
+
 - GitHub setup
 - Netlify deployment
 - Domain configuration

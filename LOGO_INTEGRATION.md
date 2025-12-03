@@ -5,13 +5,14 @@
 Successfully integrated the Școala Teofil logo into the new website!
 
 ### Files Added
+
 1. **Logo file**: `public/scoala-teofil-logo.png` (155x52px)
    - Source: Old WordPress site
    - Original name: `cropped-Scoala-Teofil-logo-final-negativ-RGB-155x52.png`
-   
 2. **Favicon**: `public/favicon.png` (copy of logo)
 
 ### Files Modified
+
 1. **`src/components/Logo.astro`**
    - Replaced: 🚀 emoji + "Școala Teofil" text
    - Now shows: Actual school logo image
@@ -29,6 +30,7 @@ Successfully integrated the Școala Teofil logo into the new website!
 Visit your site at http://localhost:4321 to see the logo!
 
 The logo will appear:
+
 - ✅ In the header navigation
 - ✅ On all pages
 - ✅ Properly sized and aligned
@@ -39,20 +41,25 @@ The logo will appear:
 If you want to further customize the logo:
 
 ### Adjust Logo Size
+
 Edit `src/components/Logo.astro`:
+
 ```astro
-class="h-10 md:h-12 w-auto"  
+class="h-10 md:h-12 w-auto"
 <!-- Change h-10 (mobile) and h-12 (desktop) values -->
 ```
 
 ### Add Logo Margins/Padding
+
 ```astro
 class="h-10 md:h-12 w-auto ml-2 mr-4"
 <!-- Add margin-left (ml) or margin-right (mr) -->
 ```
 
 ### Replace Favicon with Proper Icon
+
 For better favicon support, consider:
+
 1. Creating a square version of your logo
 2. Using a service like https://realfavicongenerator.net/
 3. Replacing the current `favicon.png` with generated icons

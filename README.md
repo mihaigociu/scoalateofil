@@ -1,7 +1,5 @@
 # 🎓 Școala Teofil - Official Website# 🚀 AstroWind
 
-
-
 Modern, fast, and user-friendly website for Școala Teofil built with Astro and the AstroWind theme.<img src="https://raw.githubusercontent.com/arthelokyo/.github/main/resources/astrowind/lighthouse-score.png" align="right"
 
      alt="AstroWind Lighthouse Score" width="100" height="358">
@@ -10,7 +8,7 @@ Modern, fast, and user-friendly website for Școala Teofil built with Astro and 
 
 🌟 _Most *starred* & *forked* Astro theme in 2022, 2023 & 2024_. 🌟
 
-```bash
+````bash
 
 # Start development server**AstroWind** is a free and open-source template to make your website using **[Astro 5.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
 
@@ -260,11 +258,11 @@ npm create astro@latest -- --template arthelokyo/astrowind
 
 ## 🚀 Deployment└── ...
 
-```
+````
 
 ### To GitHub
 
-```bashAstro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+```bashAstro looks for `.astro`or`.md`files in the`src/pages/` directory. Each page is exposed as a route based on its file name.
 
 git init
 
@@ -276,7 +274,7 @@ git remote add origin YOUR-REPO-URLAny static assets, like images, can be placed
 
 git push -u origin main
 
-```[![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/arthelokyo/astrowind/tree/main) [![Open in Gitpod](https://svgshare.com/i/xdi.svg)](https://gitpod.io/?on=gitpod#https://github.com/arthelokyo/astrowind) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/arthelokyo/astrowind)
+````[![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/arthelokyo/astrowind/tree/main) [![Open in Gitpod](https://svgshare.com/i/xdi.svg)](https://gitpod.io/?on=gitpod#https://github.com/arthelokyo/astrowind) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/arthelokyo/astrowind)
 
 
 
@@ -314,15 +312,13 @@ site:| `npm run check`     | Check your project for errors                      
 
   site: 'https://scoalateofil.ro'| `npm run astro ...` | Run CLI commands like `astro add`, `astro preview` |
 
-```
+````
 
 <br>
 
 ### Change Navigation
 
 Edit `src/navigation.ts`### Configuration
-
-
 
 ### Customize ColorsBasic configuration file: `./src/config.yaml`
 

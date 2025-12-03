@@ -9,7 +9,7 @@
 │   ├── Scurt istoric
 │   │   File: src/data/pages/acasa/scurt-istoric.md
 │   │   Images: public/images/acasa/
-│   │   
+│   │
 │   └── Echipa noastră
 │       File: src/data/pages/acasa/echipa-noastra.md
 │       Images: public/images/acasa/
@@ -18,23 +18,23 @@
 │   ├── Metoda pedagogică
 │   │   File: src/data/pages/gradinita/metoda-pedagogica.md
 │   │   Images: public/images/gradinita/
-│   │   
+│   │
 │   ├── Echipa noastră
 │   │   File: src/data/pages/gradinita/echipa-noastra.md
 │   │   Images: public/images/gradinita/
-│   │   
+│   │
 │   ├── Noutăți
 │   │   File: src/data/pages/gradinita/noutati.md
 │   │   Blog posts: src/data/post/ (category: 'gradinita')
-│   │   
+│   │
 │   ├── Galerie foto
 │   │   File: src/data/pages/gradinita/galerie-foto.md
 │   │   Images: public/images/gradinita/gallery/
-│   │   
+│   │
 │   ├── Înscrieri
 │   │   File: src/data/pages/gradinita/inscrieri.md
 │   │   Images: public/images/gradinita/
-│   │   
+│   │
 │   └── Informații utile (Q&A)
 │       File: src/data/pages/gradinita/informatii-utile.md
 │       Images: public/images/gradinita/
@@ -43,23 +43,23 @@
 │   ├── Metoda pedagogică
 │   │   File: src/data/pages/scoala-primara/metoda-pedagogica.md
 │   │   Images: public/images/scoala-primara/
-│   │   
+│   │
 │   ├── Echipa noastră
 │   │   File: src/data/pages/scoala-primara/echipa-noastra.md
 │   │   Images: public/images/scoala-primara/
-│   │   
+│   │
 │   ├── Noutăți
 │   │   File: src/data/pages/scoala-primara/noutati.md
 │   │   Blog posts: src/data/post/ (category: 'scoala-primara')
-│   │   
+│   │
 │   ├── Galerie foto
 │   │   File: src/data/pages/scoala-primara/galerie-foto.md
 │   │   Images: public/images/scoala-primara/gallery/
-│   │   
+│   │
 │   ├── Înscrieri
 │   │   File: src/data/pages/scoala-primara/inscrieri.md
 │   │   Images: public/images/scoala-primara/
-│   │   
+│   │
 │   └── Informații utile (Q&A)
 │       File: src/data/pages/scoala-primara/informatii-utile.md
 │       Images: public/images/scoala-primara/
@@ -68,23 +68,23 @@
     ├── Metoda pedagogică
     │   File: src/data/pages/scoala-gimnaziala/metoda-pedagogica.md
     │   Images: public/images/scoala-gimnaziala/
-    │   
+    │
     ├── Echipa noastră
     │   File: src/data/pages/scoala-gimnaziala/echipa-noastra.md
     │   Images: public/images/scoala-gimnaziala/
-    │   
+    │
     ├── Noutăți
     │   File: src/data/pages/scoala-gimnaziala/noutati.md
     │   Blog posts: src/data/post/ (category: 'scoala-gimnaziala')
-    │   
+    │
     ├── Galerie foto
     │   File: src/data/pages/scoala-gimnaziala/galerie-foto.md
     │   Images: public/images/scoala-gimnaziala/gallery/
-    │   
+    │
     ├── Înscrieri
     │   File: src/data/pages/scoala-gimnaziala/inscrieri.md
     │   Images: public/images/scoala-gimnaziala/
-    │   
+    │
     └── Informații utile (Q&A)
         File: src/data/pages/scoala-gimnaziala/informatii-utile.md
         Images: public/images/scoala-gimnaziala/
@@ -173,13 +173,16 @@ new_site/
 ## 📝 Content Files Status
 
 ### ✅ Created (20 files)
+
 All markdown template files have been created with placeholder content:
 
 **ACASĂ (2 files)**
+
 - scurt-istoric.md
 - echipa-noastra.md
 
 **GRĂDINIȚĂ (6 files)**
+
 - metoda-pedagogica.md
 - echipa-noastra.md
 - noutati.md
@@ -188,6 +191,7 @@ All markdown template files have been created with placeholder content:
 - informatii-utile.md
 
 **ȘCOALĂ PRIMARĂ (6 files)**
+
 - metoda-pedagogica.md
 - echipa-noastra.md
 - noutati.md
@@ -196,6 +200,7 @@ All markdown template files have been created with placeholder content:
 - informatii-utile.md
 
 **ȘCOALĂ GIMNAZIALĂ (6 files)**
+
 - metoda-pedagogica.md
 - echipa-noastra.md
 - noutati.md
@@ -207,10 +212,12 @@ All markdown template files have been created with placeholder content:
 
 **Astro Page Components**
 You'll need to create dynamic pages to display the markdown content:
+
 - `src/pages/[section]/[subsection].astro` - Dynamic page template
 - Or individual pages for each section
 
 **Sample News Articles**
+
 - Example articles in `src/data/post/` for each category
 
 ## 🎨 Image Organization
@@ -218,11 +225,13 @@ You'll need to create dynamic pages to display the markdown content:
 ### Required Images Per Section
 
 #### ACASĂ
+
 - `istoric-hero.jpg` - For history page
 - `echipa-hero.jpg` - For team page
 - Team member photos (individual photos)
 
 #### GRĂDINIȚĂ
+
 - `metoda-hero.jpg` - For pedagogical method page
 - `echipa-hero.jpg` - For team page
 - `noutati-hero.jpg` - For news page
@@ -232,11 +241,13 @@ You'll need to create dynamic pages to display the markdown content:
 - `gallery/foto-*.jpg` - Multiple gallery photos
 
 #### ȘCOALĂ PRIMARĂ (same structure as Grădiniță)
+
 - Hero images for each subsection
 - Gallery photos
 - Team photos
 
 #### ȘCOALĂ GIMNAZIALĂ (same structure as Grădiniță)
+
 - Hero images for each subsection
 - Gallery photos
 - Team photos
@@ -244,6 +255,7 @@ You'll need to create dynamic pages to display the markdown content:
 ### Image Naming Convention
 
 **Recommended format:**
+
 ```
 {section}-{purpose}-{description}.jpg
 
@@ -258,11 +270,13 @@ Examples:
 ### For Regular Updates (News, Events)
 
 1. **Create new post:**
+
    ```
    src/data/post/YYYY-MM-DD-title-slug.md
    ```
 
 2. **Add frontmatter:**
+
    ```yaml
    category: 'gradinita' # or appropriate section
    ```
@@ -292,6 +306,7 @@ Examples:
 ## 📊 Content Priority
 
 ### Phase 1: Essential Content (Do First)
+
 1. ✅ Site structure (DONE)
 2. Homepage content and hero section
 3. About/History page
@@ -299,18 +314,21 @@ Examples:
 5. Basic team information for each section
 
 ### Phase 2: Section Content
+
 1. Pedagogical methods for each level
 2. Enrollment information
 3. Q&A pages
 4. Team details with photos
 
 ### Phase 3: Rich Content
+
 1. News articles
 2. Photo galleries
 3. Detailed activity descriptions
 4. Student testimonials (if applicable)
 
 ### Phase 4: Enhancement
+
 1. Video content
 2. Virtual tours
 3. Forms integration
@@ -329,11 +347,13 @@ Examples:
 ## 📞 Getting Help
 
 **Documentation:**
+
 - PROJECT_GUIDE.md - Complete project overview
 - CONTENT_EDITING_GUIDE.md - How to edit content
 - DEPLOYMENT_CHECKLIST.md - Deployment steps
 
 **Online Resources:**
+
 - Astro Docs: https://docs.astro.build
 - Markdown Guide: https://www.markdownguide.org
 - Netlify Docs: https://docs.netlify.com

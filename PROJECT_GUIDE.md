@@ -15,6 +15,7 @@ Welcome to the new Școala Teofil website built with Astro and the AstroWind the
 ## 🎯 Project Overview
 
 This is a modern static website for Școala Teofil, built using:
+
 - **Astro** - Modern web framework for building fast, content-focused websites
 - **AstroWind** - A beautiful, responsive theme with Tailwind CSS
 - **Markdown** - Simple format for managing content
@@ -133,6 +134,7 @@ Write your content in Markdown format...
 2. Reference them in your markdown: `/images/section-name/image-name.jpg`
 
 **Example folder structure for images:**
+
 ```
 public/images/
 ├── acasa/
@@ -154,7 +156,7 @@ Create new files in `src/data/post/` with the category matching the section:
 ---
 title: 'Your news title'
 publishDate: 2025-11-03
-category: 'gradinita'  # or 'scoala-primara', 'scoala-gimnaziala'
+category: 'gradinita' # or 'scoala-primara', 'scoala-gimnaziala'
 image: '/images/gradinita/news-image.jpg'
 tags: ['activitati', 'evenimente']
 ---
@@ -195,6 +197,7 @@ npm run fix
 ### Setting up GitHub
 
 1. **Initialize git repository** (if not already done):
+
    ```bash
    cd /Users/2346263/projects/scoalateofil/new_site
    git init
@@ -238,11 +241,13 @@ npm run fix
 ### Continuous Deployment
 
 Once set up, every time you push to GitHub, Netlify will automatically:
+
 1. Build your site
 2. Deploy the new version
 3. Make it live!
 
 **Workflow:**
+
 ```bash
 # Make changes to your content
 # Save files
@@ -315,12 +320,14 @@ theme: {
 ### Adding Romanian Language Support
 
 The language is already set to Romanian (`ro`) in `config.yaml`, but you may want to:
+
 - Update any hardcoded English text in components
 - Ensure date formatting uses Romanian locale
 
 ## 💰 Staying in Netlify Free Tier
 
 The free tier includes:
+
 - ✅ 100GB bandwidth/month
 - ✅ 300 build minutes/month
 - ✅ Custom domain support
@@ -332,6 +339,7 @@ Your small presentation site should easily fit within these limits!
 ## 📞 Support
 
 If you need help:
+
 1. Check Astro documentation: https://docs.astro.build
 2. AstroWind GitHub issues: https://github.com/onwidget/astrowind/issues
 3. Netlify support: https://answers.netlify.com/

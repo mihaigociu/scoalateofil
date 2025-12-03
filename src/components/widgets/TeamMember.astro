@@ -13,7 +13,9 @@ const { title, tagline, image, id } = Astro.props;
 ---
 
 <!-- Team Member Card -->
-<div class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
+<div
+  class="bg-white dark:bg-slate-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+>
   <div class="relative aspect-[3/4] overflow-hidden">
     <Image
       src={image}
@@ -24,11 +26,11 @@ const { title, tagline, image, id } = Astro.props;
       loading="lazy"
     />
   </div>
-  
+
   <div class="p-6">
     <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{title}</h3>
     <p class="text-sm text-primary-600 dark:text-primary-400 mb-4">{tagline}</p>
-    
+
     <button
       class="view-more-btn w-full px-4 py-2 text-white rounded-md transition-colors duration-200"
       style="display: flex !important; align-items: center; justify-content: center; gap: 0.5rem; background-color: #1e40af; cursor: pointer;"
@@ -39,7 +41,13 @@ const { title, tagline, image, id } = Astro.props;
       onmouseout="this.style.backgroundColor='#1e40af'"
     >
       <span class="btn-text">Detalii</span>
-      <svg class="btn-icon w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: inline-block;">
+      <svg
+        class="btn-icon w-5 h-5 transition-transform duration-300"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        style="display: inline-block;"
+      >
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
       </svg>
     </button>
@@ -70,7 +78,7 @@ const { title, tagline, image, id } = Astro.props;
       </svg>
     </button>
   </div>
-  
+
   <div class="prose prose-lg dark:prose-invert max-w-none">
     <slot />
   </div>
@@ -83,12 +91,12 @@ const { title, tagline, image, id } = Astro.props;
     cursor: pointer !important;
     min-height: 44px !important;
   }
-  
+
   .profile-content:not(.hidden) {
     display: block !important;
     animation: slideDown 0.3s ease-out;
   }
-  
+
   @keyframes slideDown {
     from {
       opacity: 0;
@@ -108,25 +116,25 @@ const { title, tagline, image, id } = Astro.props;
       console.log('Initializing team members...');
       const buttons = document.querySelectorAll('.view-more-btn');
       console.log('Found buttons:', buttons.length);
-      
+
       buttons.forEach((button) => {
         // Remove any existing listeners
         const newButton = button.cloneNode(true);
         button.parentNode.replaceChild(newButton, button);
-        
-        newButton.addEventListener('click', function() {
+
+        newButton.addEventListener('click', function () {
           console.log('Button clicked!', this.dataset.target);
           const targetId = this.dataset.target;
           if (!targetId) return;
-          
+
           const profile = document.getElementById(targetId);
           if (!profile) {
             console.log('Profile not found:', targetId);
             return;
           }
-          
+
           console.log('Profile found, toggling...');
-          
+
           // Close all other profiles
           document.querySelectorAll('.profile-content').forEach((p) => {
             if (p.id !== targetId) {
@@ -134,7 +142,7 @@ const { title, tagline, image, id } = Astro.props;
               p.style.display = 'none';
             }
           });
-          
+
           // Reset all other buttons
           document.querySelectorAll('.view-more-btn').forEach((btn) => {
             if (btn !== newButton) {
@@ -145,10 +153,10 @@ const { title, tagline, image, id } = Astro.props;
               btn.setAttribute('aria-expanded', 'false');
             }
           });
-          
+
           // Toggle current profile
           const isHidden = profile.classList.contains('hidden');
-          
+
           if (isHidden) {
             profile.classList.remove('hidden');
             profile.style.display = 'block';
@@ -156,7 +164,7 @@ const { title, tagline, image, id } = Astro.props;
             profile.classList.add('hidden');
             profile.style.display = 'none';
           }
-          
+
           // Update button state
           const icon = newButton.querySelector('.btn-icon');
           const text = newButton.querySelector('.btn-text');
@@ -167,7 +175,7 @@ const { title, tagline, image, id } = Astro.props;
             text.textContent = isHidden ? 'Ascunde' : 'Detalii';
           }
           newButton.setAttribute('aria-expanded', String(isHidden));
-          
+
           // Scroll to profile if opening
           if (isHidden) {
             setTimeout(() => {
@@ -176,22 +184,22 @@ const { title, tagline, image, id } = Astro.props;
           }
         });
       });
-      
+
       // Handle close buttons
       document.querySelectorAll('.close-profile-btn').forEach((button) => {
         const newButton = button.cloneNode(true);
         button.parentNode.replaceChild(newButton, button);
-        
-        newButton.addEventListener('click', function() {
+
+        newButton.addEventListener('click', function () {
           const targetId = this.dataset.target;
           if (!targetId) return;
-          
+
           const profile = document.getElementById(targetId);
           if (!profile) return;
-          
+
           profile.classList.add('hidden');
           profile.style.display = 'none';
-          
+
           // Reset corresponding "View More" button
           const viewMoreBtn = document.querySelector(`[data-target="${targetId}"].view-more-btn`);
           if (viewMoreBtn) {
@@ -204,7 +212,7 @@ const { title, tagline, image, id } = Astro.props;
         });
       });
     }
-    
+
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initTeamMembers);
@@ -212,7 +220,7 @@ const { title, tagline, image, id } = Astro.props;
       // DOM already loaded
       initTeamMembers();
     }
-    
+
     // Re-initialize on Astro page transitions
     document.addEventListener('astro:page-load', initTeamMembers);
   }

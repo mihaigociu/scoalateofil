@@ -7,6 +7,7 @@
 All content is in: `src/data/pages/`
 
 **Structure:**
+
 ```
 src/data/pages/
 ├── acasa/
@@ -30,6 +31,7 @@ src/data/pages/
 Open the file and edit the content. Each file has two parts:
 
 #### Frontmatter (between the `---`)
+
 ```markdown
 ---
 title: 'Your Page Title'
@@ -41,6 +43,7 @@ image: '/images/gradinita/hero-image.jpg'
 ```
 
 #### Content (below the `---`)
+
 ```markdown
 # Main Heading
 
@@ -53,7 +56,7 @@ More content...
 - Bullet point 1
 - Bullet point 2
 
-**Bold text** and *italic text*
+**Bold text** and _italic text_
 ```
 
 ### Step 3: Save and Preview
@@ -71,6 +74,7 @@ npm run dev
 ### For Hero Images (top of page)
 
 1. **Add image to folder:**
+
    ```
    public/images/gradinita/metoda-hero.jpg
    ```
@@ -85,6 +89,7 @@ npm run dev
 ### For Gallery Images
 
 1. **Add images to gallery folder:**
+
    ```
    public/images/gradinita/gallery/
    ├── foto-1.jpg
@@ -111,50 +116,61 @@ npm run dev
 ## ✍️ Markdown Formatting Cheat Sheet
 
 ### Headings
+
 ```markdown
 # Heading 1 (largest)
+
 ## Heading 2
+
 ### Heading 3
 ```
 
 ### Text Formatting
+
 ```markdown
 **Bold text**
-*Italic text*
-***Bold and italic***
+_Italic text_
+**_Bold and italic_**
 ```
 
 ### Lists
+
 ```markdown
 Unordered list:
+
 - Item 1
 - Item 2
   - Sub-item
 
 Ordered list:
+
 1. First item
 2. Second item
 ```
 
 ### Links
+
 ```markdown
 [Link text](https://example.com)
 ```
 
 ### Images
+
 ```markdown
 ![Alt text](/path/to/image.jpg)
 ```
 
 ### Quotes
+
 ```markdown
 > This is a quote
 ```
 
 ### Tables
+
 ```markdown
 | Column 1 | Column 2 |
-|----------|----------|
+| -------- | -------- |
 | Row 1    | Data     |
 | Row 2    | Data     |
 ```
@@ -164,6 +180,7 @@ Ordered list:
 ### Step 1: Create New File
 
 Create a new file in `src/data/post/`:
+
 ```
 src/data/post/2025-11-03-titlu-articol.md
 ```
@@ -174,11 +191,11 @@ src/data/post/2025-11-03-titlu-articol.md
 ---
 title: 'Titlul articolului'
 publishDate: 2025-11-03
-category: 'gradinita'  # or 'scoala-primara', 'scoala-gimnaziala'
+category: 'gradinita' # or 'scoala-primara', 'scoala-gimnaziala'
 image: '/images/gradinita/article-image.jpg'
 excerpt: 'Scurtă descriere a articolului'
 tags: ['evenimente', 'activitati']
-draft: false  # Set to true to hide from site
+draft: false # Set to true to hide from site
 ---
 
 # Titlul articolului
@@ -222,7 +239,9 @@ Before publishing, make sure:
 ## 🆘 Common Issues
 
 ### Issue: Images not showing
+
 **Solution:** Check the path starts with `/` and matches the folder structure:
+
 ```markdown
 ✅ /images/gradinita/photo.jpg
 ❌ images/gradinita/photo.jpg
@@ -230,13 +249,17 @@ Before publishing, make sure:
 ```
 
 ### Issue: Changes not appearing
-**Solution:** 
+
+**Solution:**
+
 1. Save the file
 2. Check terminal for errors
 3. Refresh browser (hard refresh: Cmd+Shift+R on Mac)
 
 ### Issue: Build errors
+
 **Solution:** Check for:
+
 - Missing closing quotes in frontmatter
 - Incorrect date format (should be YYYY-MM-DD)
 - Missing required fields in frontmatter
