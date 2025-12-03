@@ -1,0 +1,121 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
+
+const metadata = {
+  title: 'Scurt istoric - Școala Teofil',
+  description: 'Descoperă povestea Școlii Teofil, valorile și evoluția noastră de-a lungul anilor.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    title="Scurt istoric"
+    subtitle="Povestea Școlii Teofil"
+  />
+
+  <ExpandableCards
+    cards={[
+      {
+        title: 'Începuturile noastre',
+        image: {
+          src: '~/assets/images/istoric-1.jpg',
+          alt: 'Istoric Școala Teofil',
+        },
+        summary: 'Școala „Teofil" a fost înființată cu scopul de a oferi o educație de calitate, bazată pe respect, iubire și dezvoltare armonioasă a fiecărui copil.',
+        content: `
+          <p class="mb-4">
+            De la început, ne-am dorit să creăm un mediu educațional în care fiecare copil să fie respectat în unicitatea sa și să fie sprijinit în dezvoltarea deplină a personalității sale.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Viziunea fondatorilor</h4>
+          <p class="mb-4">
+            Fondatorii Școlii Teofil și-au propus să creeze o instituție de învățământ care să pună accent pe:
+          </p>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Educația personalizată, adaptată nevoilor fiecărui copil</li>
+            <li>Dezvoltarea caracterului și a valorilor morale</li>
+            <li>Parteneriat solid între școală și familie</li>
+            <li>Excelență academică dublată de dezvoltare emoțională</li>
+          </ul>
+        `,
+      },
+      {
+        title: 'Evoluția școlii',
+        image: {
+          src: '~/assets/images/istoric-2.jpg',
+          alt: 'Evoluția Școlii Teofil',
+        },
+        summary: 'De-a lungul anilor, Școala Teofil a crescut constant, extinzându-și oferta educațională și numărul de elevi.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Etape importante</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Înființarea Grădiniței „Teofil" cu metodă Montessori</li>
+            <li>Extinderea cu Școala Primară „Teofil" (clasele 0-IV)</li>
+            <li>Deschiderea Școlii Gimnaziale „Teofil" (clasa a V-a)</li>
+            <li>Obținerea acreditării de la statul român</li>
+          </ul>
+          
+          <p class="mb-4">
+            Fiecare etapă a fost marcată de angajamentul nostru constant față de calitatea educației și dezvoltarea armonioasă a copiilor.
+          </p>
+        `,
+      },
+      {
+        title: 'Valorile noastre',
+        image: {
+          src: '~/assets/images/valori.jpg',
+          alt: 'Valorile Școlii Teofil',
+        },
+        summary: 'Pe parcursul evoluției noastre, am rămas fideli valorilor fundamentale care ne definesc.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Respect</h4>
+          <p class="mb-4">
+            Respectăm unicitatea fiecărui copil și îl sprijinim în dezvoltarea sa personală.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Iubire și grijă</h4>
+          <p class="mb-4">
+            Creăm un mediu călduros și securizant, unde copiii se simt iubiți și prețuiți.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Excelență</h4>
+          <p class="mb-4">
+            Ne străduim pentru excelență în tot ce facem, oferind o educație de înaltă calitate.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Parteneriat cu familiile</h4>
+          <p class="mb-4">
+            Considerăm părinții parteneri egali în educația copiilor și îi implicăm activ în procesul educațional.
+          </p>
+        `,
+      },
+      {
+        title: 'Astăzi și viitorul',
+        image: {
+          src: '~/assets/images/viitor.jpg',
+          alt: 'Viitorul Școlii Teofil',
+        },
+        summary: 'Astăzi, Școala Teofil este o instituție de învățământ recunoscută pentru calitatea educației și pentru mediul călduros pe care îl oferă copiilor.',
+        content: `
+          <p class="mb-4">
+            Ne mândrim cu echipa noastră de pedagogi dedicați, cu rezultatele elevilor noștri și cu încrederea pe care părinții o acordă școlii noastre.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Perspective de viitor</h4>
+          <p class="mb-4">
+            Privim cu încredere spre viitor, continuând să ne dezvoltăm și să îmbunătățim constant calitatea educației pe care o oferim.
+          </p>
+          <p class="mb-4">
+            Obiectivul nostru rămâne același: să oferim fiecărui copil cea mai bună educație posibilă, într-un mediu sigur, cald și stimulativ.
+          </p>
+        `,
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ExpandableCards>
+</Layout>

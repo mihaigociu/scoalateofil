@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Rezultate - Școala Teofil',
+  description: 'Realizările și succesele elevilor Școlii Teofil în diverse competiții și activități educaționale.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    title="Rezultate"
+    subtitle="Mândri de realizările elevilor noștri"
+  />
+
+  <Content
+    title="Realizările noastre"
+    image={{
+      src: '~/assets/images/rezultate.jpg',
+      alt: 'Rezultate',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Elevii Școlii Teofil se remarcă constant prin performanțe deosebite în diverse domenii: științe, arte, sport și activități extracurriculare.
+      </p>
+      <p class="mb-4">
+        Ne mândrim cu rezultatele obținute și cu dedicarea fiecărui elev în drumul său spre excelență.
+      </p>
+      
+      <h3 class="text-xl font-bold mb-3 mt-6">Competiții și concursuri</h3>
+      <p class="mb-4">
+        Elevii noștri participă activ la competiții locale, naționale și internaționale, obținând rezultate remarcabile.
+      </p>
+      
+      <h3 class="text-xl font-bold mb-3 mt-6">Proiecte și inițiative</h3>
+      <p class="mb-4">
+        Prin proiecte educaționale inovatoare, elevii dezvoltă competențe practice și își manifestă creativitatea.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+</Layout>

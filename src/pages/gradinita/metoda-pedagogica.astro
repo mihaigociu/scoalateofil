@@ -1,0 +1,124 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
+
+const metadata = {
+  title: 'Metoda pedagogică - Grădinița Teofil',
+  description: 'Metoda Montessori aplicată în Grădinița Teofil - principii, beneficii și implementare.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Grădiniță" 
+    title="Metoda pedagogică Montessori"
+    subtitle="Educație bazată pe respect pentru dezvoltarea naturală a copilului"
+  />
+
+  <ExpandableCards
+    cards={[
+      {
+        title: 'Ce este metoda Montessori?',
+        image: {
+          src: '~/assets/images/montessori-1.jpg',
+          alt: 'Metoda Montessori',
+        },
+        summary: 'Metoda Montessori este o abordare educațională dezvoltată de Dr. Maria Montessori, centrată pe dezvoltarea naturală a copilului într-un mediu pregătit cu grijă.',
+        content: `
+          <p class="mb-4">
+            Această metodă pune accent pe independența copilului, libertatea în limite și respect pentru dezvoltarea psihologică, fizică și socială naturală a copilului.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Principii fundamentale</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Respectul pentru copil și ritmul său de dezvoltare</li>
+            <li>Mediul pregătit - materiale adaptate vârstei și intereselor</li>
+            <li>Educatorul ca observator și ghid</li>
+            <li>Învățarea prin explorare și experiență directă</li>
+            <li>Perioadele sensibile de dezvoltare</li>
+          </ul>
+        `,
+      },
+      {
+        title: 'Mediul pregătit',
+        image: {
+          src: '~/assets/images/mediu-pregatit.jpg',
+          alt: 'Mediu pregătit Montessori',
+        },
+        summary: 'Mediul Montessori este special conceput pentru a răspunde nevoilor de dezvoltare ale copilului, cu materiale didactice specifice și mobilier adaptat.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Caracteristici</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Mobilier adaptat dimensiunilor copilului</li>
+            <li>Materiale autocorecte și atractive</li>
+            <li>Ordine și organizare clare</li>
+            <li>Acces liber la materiale</li>
+            <li>Spații pentru activități individuale și de grup</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Zone de activitate</h4>
+          <p class="mb-4">
+            Sala este organizată în zone: viața practică, senzorial, matematică, limbaj, cultură și artă.
+          </p>
+        `,
+      },
+      {
+        title: 'Activități și materiale',
+        image: {
+          src: '~/assets/images/activitati-montessori.jpg',
+          alt: 'Activități Montessori',
+        },
+        summary: 'Materialele Montessori sunt special concepute pentru a dezvolta anumite abilități și concepte prin manipulare și explorare.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Tipuri de activități</h4>
+          
+          <p class="mb-2"><strong>Viața practică:</strong></p>
+          <p class="mb-4">Activități din viața de zi cu zi - turnatul, sortarea, îngrijirea personală și a mediului.</p>
+          
+          <p class="mb-2"><strong>Educație senzorială:</strong></p>
+          <p class="mb-4">Materiale pentru rafinarea simțurilor - culori, forme, sunete, texturi.</p>
+          
+          <p class="mb-2"><strong>Matematică:</strong></p>
+          <p class="mb-4">Introducerea conceptelor matematice prin materiale concrete.</p>
+          
+          <p class="mb-2"><strong>Limbaj:</strong></p>
+          <p class="mb-4">Dezvoltarea vorbirii, scrierii și citirii într-un mod natural.</p>
+        `,
+      },
+      {
+        title: 'Beneficiile metodei',
+        image: {
+          src: '~/assets/images/beneficii-montessori.jpg',
+          alt: 'Beneficii metoda Montessori',
+        },
+        summary: 'Copiii care învață prin metoda Montessori dezvoltă independență, concentrare, iubire pentru învățare și abilități sociale puternice.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Dezvoltare cognitivă</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Gândire critică și rezolvare de probleme</li>
+            <li>Concentrare și atenție susținută</li>
+            <li>Memorie și organizare</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Dezvoltare socio-emoțională</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Independență și încredere în sine</li>
+            <li>Auto-reglare emoțională</li>
+            <li>Empatie și respect pentru ceilalți</li>
+            <li>Colaborare și comunicare</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Iubire pentru învățare</h4>
+          <p class="mb-4">
+            Copiii dezvoltă o curiozitate naturală și dorința de a explora și învăța pe tot parcursul vieții.
+          </p>
+        `,
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ExpandableCards>
+</Layout>

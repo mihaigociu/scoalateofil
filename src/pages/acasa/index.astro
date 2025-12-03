@@ -1,0 +1,100 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Acasă - Școala Teofil',
+  description: 'Descoperă toate aspectele Școlii Teofil - istoric, rezultate, echipa, noutăți și multe altele.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+  <HeroText 
+    title="Bine ați venit la Școala Teofil!"
+    subtitle="Explorează tot ce avem de oferit - de la istoria noastră, la realizările elevilor, echipa dedicată și activitățile noastre."
+  />
+
+  <!-- Features2 Widget ************** -->
+  <Features2
+    title="Descoperă mai multe despre Școala Teofil"
+    subtitle=""
+    columns={3}
+    items={[
+      {
+        title: 'Scurt istoric',
+        description: 'Descoperiți povestea noastră, valorile și evoluția Școlii Teofil de-a lungul anilor.',
+        icon: 'tabler:book',
+        callToAction: {
+          text: 'Citește mai mult',
+          href: '/acasa/scurt-istoric',
+        },
+      },
+      {
+        title: 'Rezultate',
+        description: 'Realizările și succesele elevilor noștri în diverse competiții și activități educaționale.',
+        icon: 'tabler:trophy',
+        callToAction: {
+          text: 'Vezi rezultatele',
+          href: '/acasa/rezultate',
+        },
+      },
+      {
+        title: 'Echipa noastră',
+        description: 'Cunoașteți echipa dedicată de profesori și pedagogi care lucrează cu pasiune pentru educația copiilor.',
+        icon: 'tabler:users',
+        callToAction: {
+          text: 'Cunoaște echipa',
+          href: '/acasa/echipa-noastra',
+        },
+      },
+      {
+        title: 'Noutăți',
+        description: 'Ultimele știri, evenimente și activități din viața Școlii Teofil.',
+        icon: 'tabler:news',
+        callToAction: {
+          text: 'Vezi noutățile',
+          href: '/acasa/noutati',
+        },
+      },
+      {
+        title: 'Tutoriale',
+        description: 'Resurse educaționale și materiale utile pentru părinți și elevi.',
+        icon: 'tabler:bulb',
+        callToAction: {
+          text: 'Explorează tutorialele',
+          href: '/acasa/tutoriale',
+        },
+      },
+      {
+        title: 'Revista școlii',
+        description: 'Publicația noastră cu articole scrise de elevi, profesori și părinți.',
+        icon: 'tabler:book-2',
+        callToAction: {
+          text: 'Citește revista',
+          href: '/acasa/revista-scolii',
+        },
+      },
+      {
+        title: 'Emisiuni',
+        description: 'Emisiuni video și audio cu activități, interviuri și momente speciale din școală.',
+        icon: 'tabler:video',
+        callToAction: {
+          text: 'Vizionează emisiunile',
+          href: '/acasa/emisiuni',
+        },
+      },
+      {
+        title: 'Clubul de cercetași',
+        description: 'Activitățile clubului de cercetași - aventuri în natură, învățare prin joc și dezvoltare personală.',
+        icon: 'tabler:tent',
+        callToAction: {
+          text: 'Descoperă clubul',
+          href: '/acasa/clubul-de-cercetasi',
+        },
+      },
+    ]}
+  />
+</Layout>

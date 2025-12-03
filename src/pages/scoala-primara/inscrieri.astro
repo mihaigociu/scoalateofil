@@ -1,0 +1,155 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Înscrieri - Școala Primară Teofil',
+  description: 'Informații despre înscrierile la Școala Primară Teofil - procedură, documente, calendar.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Primară" 
+    title="Înscrieri"
+    subtitle="Informații despre procesul de înscriere la Școala Primară Teofil"
+  />
+
+  <ExpandableCards
+    cards={[
+      {
+        title: 'Condiții de înscriere',
+        image: {
+          src: '~/assets/images/inscriere-primara.jpg',
+          alt: 'Condiții de înscriere',
+        },
+        summary: 'Școala Primară Teofil primește elevi pentru clasele 0-IV, cu parcurgerea unui proces de evaluare inițială.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Criterii</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Vârsta corespunzătoare clasei solicitate</li>
+            <li>Evaluare inițială pentru stabilirea nivelului</li>
+            <li>Întâlnire cu părinții despre valorile și principiile școlii</li>
+            <li>Disponibilitatea locurilor</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Clase disponibile</h4>
+          <p class="mb-4">
+            Oferim educație pentru clasele 0 (pregătitoare) până la clasa a IV-a, asigurând continuitate în ciclul primar.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Evaluare inițială</h4>
+          <p class="mb-4">
+            Evaluarea inițială ne ajută să înțelegem nevoile educaționale ale copilului și să personalizăm programul de învățare.
+          </p>
+        `,
+      },
+      {
+        title: 'Documente necesare',
+        image: {
+          src: '~/assets/images/documente-primara.jpg',
+          alt: 'Documente necesare',
+        },
+        summary: 'Pentru finalizarea înscrierii, sunt necesare câteva documente standard și acte școlare.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Lista documentelor</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Cerere de înscriere (formular școală)</li>
+            <li>Copie certificat de naștere elev</li>
+            <li>Copie CI părinți/tutori legali</li>
+            <li>Fișa medicală a elevului</li>
+            <li>Adeverință medicală</li>
+            <li>Foaie matricolă (pentru transferuri)</li>
+            <li>Documente de la școala anterioară (dacă este cazul)</li>
+            <li>Foto elev (4 bucăți)</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Pentru transferuri</h4>
+          <p class="mb-4">
+            În cazul transferurilor de la alte școli, sunt necesare documente suplimentare care să ateste parcursul școlar anterior.
+          </p>
+        `,
+      },
+      {
+        title: 'Procesul de înscriere',
+        image: {
+          src: '~/assets/images/proces-inscriere-primara.jpg',
+          alt: 'Proces de înscriere',
+        },
+        summary: 'Înscrierea se desfășoară în mai multe etape pentru a asigura o integrare optimă.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Etape</h4>
+          
+          <p class="mb-2"><strong>1. Contactare și informare</strong></p>
+          <p class="mb-4">Discuție inițială despre școală, metode și așteptări.</p>
+          
+          <p class="mb-2"><strong>2. Vizita la școală</strong></p>
+          <p class="mb-4">Programare pentru vizită, cunoașterea spațiilor și a echipei.</p>
+          
+          <p class="mb-2"><strong>3. Întâlnire cu părinții</strong></p>
+          <p class="mb-4">Discuție detaliată despre principiile educaționale și nevoile copilului.</p>
+          
+          <p class="mb-2"><strong>4. Evaluare inițială</strong></p>
+          <p class="mb-4">Evaluarea nivelului academic și a nevoilor educaționale ale elevului.</p>
+          
+          <p class="mb-2"><strong>5. Completare documente</strong></p>
+          <p class="mb-4">Depunerea documentelor și semnarea contractului de școlarizare.</p>
+          
+          <p class="mb-2"><strong>6. Integrare</strong></p>
+          <p class="mb-4">Începerea cursurilor și suport pentru adaptare.</p>
+        `,
+      },
+      {
+        title: 'Program și organizare',
+        image: {
+          src: '~/assets/images/program-primara.jpg',
+          alt: 'Program școlar',
+        },
+        summary: 'Informații despre programul școlar, organizarea zilei și serviciile oferite.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Programul zilnic</h4>
+          <p class="mb-4">
+            Școala funcționează de luni până vineri, cu program complet care include ore de curs, pauze, masă și activități extracurriculare.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Servicii incluse</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Masă caldă și gustări</li>
+            <li>Materiale didactice și manuale</li>
+            <li>Activități extracurriculare</li>
+            <li>Suport pentru teme</li>
+            <li>Consiliere școlară</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Calendar școlar</h4>
+          <p class="mb-4">
+            Urmărim calendarul școlar oficial cu adaptări specifice nevoilor școlii. Înscrierile se pot face pe tot parcursul anului, în funcție de disponibilitatea locurilor.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Taxe</h4>
+          <p class="mb-4">
+            Pentru informații detaliate despre taxele de școlarizare, vă rugăm să ne contactați direct.
+          </p>
+        `,
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ExpandableCards>
+
+  <CallToAction
+    title="Vrei să înscrii copilul la Școala Primară Teofil?"
+    subtitle="Contactează-ne pentru mai multe informații sau pentru a programa o vizită!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contactează-ne',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>

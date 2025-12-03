@@ -1,0 +1,65 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Echipa noastră - Școala Gimnazială Teofil',
+  description: 'Cunoaște echipa de profesori de specialitate din Școala Gimnazială Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Gimnazială" 
+    title="Echipa noastră"
+    subtitle="Profesori de specialitate dedicați și experimentați"
+  />
+
+  <Features2
+    title="Echipa pedagogică"
+    subtitle="Profesioniști cu experiență și pasiune pentru educația elevilor"
+    columns={3}
+    items={[
+      {
+        title: 'Profesori de specialitate',
+        description: 'Toți profesorii noștri au diplomă de licență și/sau master în domeniul lor și experiență vastă în predare.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Pregătire pentru performanță',
+        description: 'Echipa include profesori specializați în pregătirea pentru olimpiade și evaluări naționale.',
+        icon: 'tabler:trophy',
+      },
+      {
+        title: 'Formare continuă',
+        description: 'Participare regulată la cursuri, conferințe și traininguri pentru actualizarea metodelor de predare.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Mentoring individual',
+        description: 'Fiecare elev are un mentor dedicat care îl ghidează în parcursul școlar și în dezvoltarea personală.',
+        icon: 'tabler:user-heart',
+      },
+      {
+        title: 'Colaborare cu părinții',
+        description: 'Comunicare constantă și transparentă pentru a asigura succesul școlar al fiecărui elev.',
+        icon: 'tabler:message-circle',
+      },
+      {
+        title: 'Pasiune și dedicare',
+        description: 'Fiecare profesor este dedicat succesului academic și dezvoltării personale a elevilor.',
+        icon: 'tabler:heart',
+      },
+    ]}
+  />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Cunoaște-ne mai bine</h2>
+      <p class="text-lg text-muted">
+        Pentru detalii despre membrii echipei noastre, vă rugăm să ne contactați direct sau să programați o vizită la școală.
+      </p>
+    </div>
+  </div>
+</Layout>

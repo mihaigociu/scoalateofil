@@ -1,0 +1,80 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Școala Primară - Școala Teofil',
+  description: 'Școala Primară Teofil - educație de calitate pentru clasele 0-IV.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Primară" 
+    title="Școala Primară Teofil"
+    subtitle="Educație de calitate pentru clasele 0-IV, bazată pe respect, curiozitate și dezvoltare armonioasă."
+  />
+
+  <Features2
+    title="Descoperă mai multe despre Școala Primară Teofil"
+    subtitle=""
+    columns={3}
+    items={[
+      {
+        title: 'Metoda pedagogică',
+        description: 'Descoperă abordarea noastră educațională care combină excelența academică cu dezvoltarea personală a elevilor.',
+        icon: 'tabler:book-2',
+        callToAction: {
+          text: 'Citește mai mult',
+          href: '/scoala-primara/metoda-pedagogica',
+        },
+      },
+      {
+        title: 'Echipa noastră',
+        description: 'Cunoaște echipa de învățători și profesori dedicați care lucrează cu pasiune pentru educația copiilor.',
+        icon: 'tabler:users',
+        callToAction: {
+          text: 'Cunoaște echipa',
+          href: '/scoala-primara/echipa-noastra',
+        },
+      },
+      {
+        title: 'Noutăți',
+        description: 'Ultimele știri, evenimente și activități din Școala Primară Teofil.',
+        icon: 'tabler:news',
+        callToAction: {
+          text: 'Vezi noutățile',
+          href: '/scoala-primara/noutati',
+        },
+      },
+      {
+        title: 'Galerie foto',
+        description: 'Momente speciale din viața școlii - activități, evenimente și realizările elevilor noștri.',
+        icon: 'tabler:photo',
+        callToAction: {
+          text: 'Vezi galeria',
+          href: '/scoala-primara/galerie-foto',
+        },
+      },
+      {
+        title: 'Înscrieri',
+        description: 'Informații despre procesul de înscriere, locuri disponibile, documente necesare și etape.',
+        icon: 'tabler:clipboard-check',
+        callToAction: {
+          text: 'Informații înscrieri',
+          href: '/scoala-primara/inscrieri',
+        },
+      },
+      {
+        title: 'Informații utile (Q&A)',
+        description: 'Răspunsuri la întrebările frecvente despre școala primară, program, activități și servicii.',
+        icon: 'tabler:help',
+        callToAction: {
+          text: 'Vezi întrebări frecvente',
+          href: '/scoala-primara/informatii-utile',
+        },
+      },
+    ]}
+  />
+</Layout>

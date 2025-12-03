@@ -1,0 +1,132 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
+
+const metadata = {
+  title: 'Metoda pedagogică - Școala Primară Teofil',
+  description: 'Metoda pedagogică aplicată în Școala Primară Teofil - principii, abordare și implementare.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Primară" 
+    title="Metoda pedagogică"
+    subtitle="Educație centrată pe elev, bazată pe respect și excelență"
+  />
+
+  <ExpandableCards
+    cards={[
+      {
+        title: 'Abordarea noastră educațională',
+        image: {
+          src: '~/assets/images/metoda-primara-1.jpg',
+          alt: 'Metoda pedagogică',
+        },
+        summary: 'Combinăm excelența academică cu dezvoltarea personală, creativitatea și gândirea critică a elevilor.',
+        content: `
+          <p class="mb-4">
+            În Școala Primară Teofil, educația este un proces holistic care vizează nu doar achiziția de cunoștințe, ci și formarea caracterului, dezvoltarea abilităților sociale și cultivarea iubirii pentru învățare.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Principii fundamentale</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Respectul pentru unicitatea fiecărui elev</li>
+            <li>Învățare activă și participativă</li>
+            <li>Dezvoltarea gândirii critice și creative</li>
+            <li>Educație personalizată și diferențiată</li>
+            <li>Colaborare și comunicare eficientă</li>
+          </ul>
+        `,
+      },
+      {
+        title: 'Curriculum și discipline',
+        image: {
+          src: '~/assets/images/curriculum.jpg',
+          alt: 'Curriculum școlar',
+        },
+        summary: 'Urmăm programa școlară oficială, îmbogățită cu activități suplimentare pentru o educație completă.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Discipline de bază</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Limba și literatura română</li>
+            <li>Matematică și științe</li>
+            <li>Limbi străine (engleză)</li>
+            <li>Științe ale naturii</li>
+            <li>Arte și educație fizică</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Activități complementare</h4>
+          <p class="mb-4">
+            Pe lângă disciplinele de bază, elevii participă la activități extracurriculare: arte, sport, muzică, teatru, și proiecte tematice.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Metode de predare</h4>
+          <p class="mb-4">
+            Folosim metode interactive și moderne: învățare prin proiecte, lucru în echipă, prezentări, experimente, și utilizarea tehnologiei educaționale.
+          </p>
+        `,
+      },
+      {
+        title: 'Evaluare și feedback',
+        image: {
+          src: '~/assets/images/evaluare.jpg',
+          alt: 'Evaluare și feedback',
+        },
+        summary: 'Evaluarea este continuă și formativă, centrată pe progresul individual al fiecărui elev.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Tipuri de evaluare</h4>
+          <p class="mb-4">
+            Combinăm evaluarea formativă (continuă) cu evaluarea sumativă (periodică) pentru o imagine completă a progresului elevului.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Comunicare cu părinții</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Întâlniri regulate părinte-profesor</li>
+            <li>Rapoarte de progres periodice</li>
+            <li>Comunicare deschisă și transparentă</li>
+            <li>Implicare în procesul educațional</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Focus pe progres</h4>
+          <p class="mb-4">
+            Evaluăm nu doar rezultatele finale, ci și efortul, progresul și atitudinea elevului față de învățare.
+          </p>
+        `,
+      },
+      {
+        title: 'Dezvoltare personală și socială',
+        image: {
+          src: '~/assets/images/dezvoltare-personala.jpg',
+          alt: 'Dezvoltare personală',
+        },
+        summary: 'Acordăm o atenție deosebită dezvoltării emoționale, sociale și a abilităților de viață ale elevilor.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Competențe sociale și emoționale</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Autocunoaștere și încredere în sine</li>
+            <li>Empatie și înțelegere a altora</li>
+            <li>Gestionarea emoțiilor</li>
+            <li>Comunicare și rezolvare de conflicte</li>
+            <li>Lucru în echipă și colaborare</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Valori și caracter</h4>
+          <p class="mb-4">
+            Cultivăm valori precum respectul, responsabilitatea, cinstea, perseverența și compasiunea prin modelul oferit și activitățile zilnice.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Autonomie și inițiativă</h4>
+          <p class="mb-4">
+            Încurajăm elevii să își asume responsabilități, să ia decizii și să își dezvolte independența în învățare și viață.
+          </p>
+        `,
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ExpandableCards>
+</Layout>

@@ -1,0 +1,50 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Echipa noastră - Grădinița Teofil',
+  description: 'Cunoaște echipa de educatori Montessori dedicați din Grădinița Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Grădiniță" 
+    title="Echipa noastră"
+    subtitle="Educatori Montessori dedicați și pasionați"
+  />
+
+  <Features2
+    title="Educatorii noștri"
+    subtitle="Profesioniști cu pregătire Montessori și experiență în lucrul cu copiii"
+    columns={3}
+    items={[
+      {
+        title: 'Educatori certificați',
+        description: 'Toți educatorii noștri au certificare Montessori internațională și experiență vastă în lucrul cu copiii de vârstă preșcolară.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Formare continuă',
+        description: 'Echipa participă regulat la cursuri și workshopuri pentru actualizarea cunoștințelor și dezvoltarea profesională.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Pasiune pentru educație',
+        description: 'Fiecare membru al echipei este dedicat dezvoltării armonioase a copiilor și creează relații calde cu fiecare copil.',
+        icon: 'tabler:heart',
+      },
+    ]}
+  />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Informații suplimentare</h2>
+      <p class="text-lg text-muted">
+        Pentru detalii despre membrii echipei noastre, vă rugăm să ne contactați direct sau să programați o vizită la grădiniță.
+      </p>
+    </div>
+  </div>
+</Layout>

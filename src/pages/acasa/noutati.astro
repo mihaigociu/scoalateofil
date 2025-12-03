@@ -1,0 +1,22 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const metadata = {
+  title: 'Noutăți - Școala Teofil',
+  description: 'Ultimele știri, evenimente și activități din viața Școlii Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    title="Noutăți"
+    subtitle="Ultimele știri și evenimente din Școala Teofil"
+  />
+
+  <BlogLatestPosts
+    title="Ultimele noutăți"
+    information={`Rămâi la curent cu tot ce se întâmplă în Școala Teofil - evenimente, activități, realizări și multe altele.`}
+  />
+</Layout>

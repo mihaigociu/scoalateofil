@@ -1,0 +1,49 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Galerie foto - Grădinița Teofil',
+  description: 'Momente speciale din viața Grădiniței Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Grădiniță" 
+    title="Galerie foto"
+    subtitle="Momente speciale din viața grădiniței"
+  />
+
+  <Content
+    title="Albumele noastre"
+    image={{
+      src: '~/assets/images/galerie-gradinita.jpg',
+      alt: 'Galerie foto Grădinița Teofil',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Explorează albumele noastre foto pentru a vedea momente speciale din viața grădiniței - activități zilnice, sărbători, evenimente și zâmbetele copiilor noștri.
+      </p>
+      
+      <h3 class="text-xl font-bold mb-3 mt-6">Categorii de albume</h3>
+      <ul class="list-disc list-inside mb-4 space-y-2">
+        <li>Activități zilnice</li>
+        <li>Evenimente speciale și sărbători</li>
+        <li>Ieșiri în natură</li>
+        <li>Activități artistice</li>
+        <li>Momente creative</li>
+      </ul>
+      
+      <p class="mb-4 text-sm text-muted italic">
+        Notă: Galeriile foto detaliate vor fi disponibile în curând. Pentru moment, puteți vedea actualizări pe paginile noastre de social media.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+</Layout>

@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+const metadata = {
+  title: 'Noutăți - Grădinița Teofil',
+  description: 'Ultimele știri și evenimente din Grădinița Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Grădiniță" 
+    title="Noutăți"
+    subtitle="Ultimele știri și evenimente din Grădinița Teofil"
+  />
+
+  <BlogLatestPosts
+    title="Ultimele noutăți"
+    information={`Rămâi la curent cu activitățile, evenimentele și realizările din Grădinița Teofil.`}
+  />
+</Layout>

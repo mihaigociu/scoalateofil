@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { SITE } from 'astrowind:config';
 import { getHomePermalink } from '~/utils/permalinks';
+import Image from '~/components/common/Image.astro';
 
 interface Link {
   text?: string;
@@ -32,25 +33,79 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
     class="relative max-w-7xl mx-auto px-4 sm:px-6 dark:text-slate-300 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
   >
     <div class="grid grid-cols-12 gap-4 gap-y-8 sm:gap-8 py-8 md:py-12">
+      <!-- Logo and Contact Info Section -->
       <div class="col-span-12 lg:col-span-4">
-        <div class="mb-2">
-          <a class="inline-block font-bold text-xl" href={getHomePermalink()}>{SITE?.name}</a>
+        <div class="mb-4">
+          <a class="inline-block" href={getHomePermalink()}>
+            <img
+              src="/scoala-teofil-logo.jpg"
+              alt="Logo Școala Teofil"
+              class="h-10 md:h-12 w-auto"
+              width="300"
+              height="150"
+            />
+          </a>
         </div>
-        <div class="text-sm text-muted flex gap-1">
-          {
-            secondaryLinks.map(({ text, href }, index) => (
-              <>
-                {index !== 0 ? ' · ' : ''}
-                <a
-                  class="text-muted hover:text-gray-700 dark:text-gray-400 hover:underline transition duration-150 ease-in-out"
-                  href={href}
-                  set:html={text}
-                />
-              </>
-            ))
-          }
+        
+        <!-- Contact Information -->
+        <div class="space-y-3 mb-4">
+          <div class="flex items-center gap-2 text-sm">
+            <Icon name="tabler:phone" class="w-5 h-5 text-primary" />
+            <a href="tel:0723537819" class="hover:text-primary transition-colors">
+              0723 537 819
+            </a>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+            <Icon name="tabler:mail" class="w-5 h-5 text-primary" />
+            <a href="mailto:scoalateofil@gmail.com" class="hover:text-primary transition-colors">
+              scoalateofil@gmail.com
+            </a>
+          </div>
+          <div class="flex items-start gap-2 text-sm">
+            <Icon name="tabler:map-pin" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+            <div>
+              <div class="mb-1">
+                <strong>Grădinița:</strong><br />
+                str. Mărgăului nr. 2, Cluj-Napoca
+              </div>
+              <div>
+                <strong>Școala:</strong><br />
+                Aleea Moldoveanu 3, Cluj-Napoca
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        {socialLinks?.length && (
+          <div class="flex gap-2">
+            {socialLinks.map(({ ariaLabel, href, icon }) => (
+              <a
+                class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-primary focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center transition-colors"
+                aria-label={ariaLabel}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {icon && <Icon name={icon} class="w-5 h-5" />}
+              </a>
+            ))}
+          </div>
+        )}
+
+        <!-- Contact Form Toggle Button -->
+        <div class="mt-4">
+          <button
+            id="contact-form-toggle"
+            class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-secondary transition-colors duration-200 font-semibold"
+          >
+            <Icon name="tabler:message" class="w-5 h-5" />
+            Contactați-ne
+          </button>
         </div>
       </div>
+
+      <!-- Navigation Links -->
       {
         links.map(({ title, links }) => (
           <div class="col-span-6 md:col-span-3 lg:col-span-2">
@@ -74,31 +129,176 @@ const { socialLinks = [], secondaryLinks = [], links = [], footNote = '', theme 
         ))
       }
     </div>
-    <div class="md:flex md:items-center md:justify-between py-6 md:py-8">
-      {
-        socialLinks?.length ? (
-          <ul class="flex mb-4 md:order-1 -ml-2 md:ml-4 md:mb-0 rtl:ml-0 rtl:-mr-2 rtl:md:ml-0 rtl:md:mr-4">
-            {socialLinks.map(({ ariaLabel, href, text, icon }) => (
-              <li>
-                <a
-                  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
-                  aria-label={ariaLabel}
-                  href={href}
-                >
-                  {icon && <Icon name={icon} class="w-5 h-5" />}
-                  <Fragment set:html={text} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          ''
-        )
-      }
 
-      <div class="text-sm mr-4 dark:text-muted">
+    <!-- Contact Form Modal -->
+    <div
+      id="contact-form-modal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+    >
+      <div class="bg-white dark:bg-slate-800 rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Formular de înscriere</h2>
+            <button
+              id="close-modal"
+              class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+              aria-label="Închide"
+            >
+              <Icon name="tabler:x" class="w-6 h-6" />
+            </button>
+          </div>
+
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
+            <!-- Nivel -->
+            <div>
+              <label for="nivel" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Nivel de învățământ *
+              </label>
+              <select
+                id="nivel"
+                name="nivel"
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white"
+              >
+                <option value="">Selectează nivelul</option>
+                <option value="gradinita">Grădiniță</option>
+                <option value="primar">Școala Primară</option>
+                <option value="gimnaziu">Școala Gimnazială</option>
+              </select>
+            </div>
+
+            <!-- Nume -->
+            <div>
+              <label for="nume" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Nume *
+              </label>
+              <input
+                type="text"
+                id="nume"
+                name="nume"
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+
+            <!-- Prenume -->
+            <div>
+              <label for="prenume" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Prenume *
+              </label>
+              <input
+                type="text"
+                id="prenume"
+                name="prenume"
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email-form" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                id="email-form"
+                name="email"
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+
+            <!-- Telefon -->
+            <div>
+              <label for="telefon" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Telefon *
+              </label>
+              <input
+                type="tel"
+                id="telefon"
+                name="telefon"
+                required
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white"
+              />
+            </div>
+
+            <!-- Mesaj -->
+            <div>
+              <label for="mesaj" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Mesaj
+              </label>
+              <textarea
+                id="mesaj"
+                name="mesaj"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-slate-700 dark:text-white"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex gap-3">
+              <button
+                type="submit"
+                class="flex-1 bg-primary text-white px-6 py-3 rounded-lg hover:bg-secondary transition-colors duration-200 font-semibold"
+              >
+                Trimite
+              </button>
+              <button
+                type="button"
+                id="cancel-modal"
+                class="px-6 py-3 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200"
+              >
+                Anulează
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="border-t border-gray-200 dark:border-slate-800 py-6 md:py-8">
+      <div class="text-sm text-center text-muted dark:text-gray-400">
         <Fragment set:html={footNote} />
       </div>
     </div>
   </div>
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('contact-form-toggle');
+    const modal = document.getElementById('contact-form-modal');
+    const closeBtn = document.getElementById('close-modal');
+    const cancelBtn = document.getElementById('cancel-modal');
+
+    const openModal = () => {
+      modal?.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+      modal?.classList.add('hidden');
+      document.body.style.overflow = '';
+    };
+
+    toggleBtn?.addEventListener('click', openModal);
+    closeBtn?.addEventListener('click', closeModal);
+    cancelBtn?.addEventListener('click', closeModal);
+
+    // Close modal when clicking outside
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal?.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  });
+</script>

@@ -1,0 +1,135 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Înscrieri - Grădinița Teofil',
+  description: 'Informații despre înscrierile la Grădinița Teofil - procedură, documente, calendar.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Grădiniță" 
+    title="Înscrieri"
+    subtitle="Informații despre procesul de înscriere la Grădinița Teofil"
+  />
+
+  <ExpandableCards
+    cards={[
+      {
+        title: 'Condiții de înscriere',
+        image: {
+          src: '~/assets/images/inscriere-conditii.jpg',
+          alt: 'Condiții de înscriere',
+        },
+        summary: 'Grădinița Teofil primește copii cu vârste cuprinse între 2,6 ani și 6 ani.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Criterii</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Vârsta copilului: minimum 2 ani și 6 luni</li>
+            <li>Discuție cu părinții despre metodologia Montessori</li>
+            <li>Perioada de adaptare (dacă este necesar)</li>
+            <li>Disponibilitatea locurilor</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Grupuri</h4>
+          <p class="mb-4">
+            Copiii sunt organizați în grupuri multi-vârstă, specific metodologiei Montessori, ceea ce facilitează învățarea prin observare și colaborare.
+          </p>
+        `,
+      },
+      {
+        title: 'Documente necesare',
+        image: {
+          src: '~/assets/images/documente.jpg',
+          alt: 'Documente necesare',
+        },
+        summary: 'Pentru finalizarea înscrierii, sunt necesare câteva documente standard.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Lista documentelor</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Cerere de înscriere (formular școală)</li>
+            <li>Copie certificat de naștere copil</li>
+            <li>Copie CI părinți/tutori legali</li>
+            <li>Fișa medicală a copilului</li>
+            <li>Adeverință medicală (pentru grădiniță)</li>
+            <li>Foto copil (2 bucăți)</li>
+          </ul>
+          
+          <p class="mb-4">
+            Documentele pot fi depuse personal la sediul grădiniței sau transmise electronic, urmând să fie aduse în original la prima întâlnire.
+          </p>
+        `,
+      },
+      {
+        title: 'Procesul de înscriere',
+        image: {
+          src: '~/assets/images/proces-inscriere.jpg',
+          alt: 'Proces de înscriere',
+        },
+        summary: 'Înscrierea se desfășoară în mai multe etape pentru a asigura o integrare optimă.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Etape</h4>
+          
+          <p class="mb-2"><strong>1. Contactare inițială</strong></p>
+          <p class="mb-4">Discuție telefonică sau prin email pentru informații generale.</p>
+          
+          <p class="mb-2"><strong>2. Vizita la grădiniță</strong></p>
+          <p class="mb-4">Programare pentru vizită, cunoașterea spațiilor și a echipei.</p>
+          
+          <p class="mb-2"><strong>3. Întâlnire cu părinții</strong></p>
+          <p class="mb-4">Discuție despre metodologia Montessori, așteptări și nevoile copilului.</p>
+          
+          <p class="mb-2"><strong>4. Completare documente</strong></p>
+          <p class="mb-4">Depunerea documentelor și semnarea contractului.</p>
+          
+          <p class="mb-2"><strong>5. Perioada de adaptare</strong></p>
+          <p class="mb-4">Integrare treptată pentru o tranziție ușoară.</p>
+        `,
+      },
+      {
+        title: 'Taxe și calendar',
+        image: {
+          src: '~/assets/images/taxe.jpg',
+          alt: 'Taxe și calendar',
+        },
+        summary: 'Informații despre taxele de școlarizare și calendarul anului școlar.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Structura taxelor</h4>
+          <p class="mb-4">
+            Pentru informații detaliate despre taxele de școlarizare, vă rugăm să ne contactați direct. Oferim transparență completă și posibilitatea de a discuta opțiuni de plată.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Calendar</h4>
+          <p class="mb-4">
+            Anul școlar urmează calendarul oficial, cu adaptări specifice nevoilor grădiniței. Înscrierile se pot face pe tot parcursul anului, în limita locurilor disponibile.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Program</h4>
+          <p class="mb-4">
+            Grădinița funcționează de luni până vineri, cu posibilitatea de program prelungit.
+          </p>
+        `,
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ExpandableCards>
+
+  <CallToAction
+    title="Vrei să înscrii copilul la Grădinița Teofil?"
+    subtitle="Contactează-ne pentru mai multe informații sau pentru a programa o vizită!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contactează-ne',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>

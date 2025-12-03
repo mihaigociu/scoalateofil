@@ -1,0 +1,86 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Informații utile - Școala Gimnazială Teofil',
+  description: 'Răspunsuri la întrebările frecvente despre Școala Gimnazială Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Gimnazială" 
+    title="Informații utile (Q&A)"
+    subtitle="Răspunsuri la întrebările tale"
+  />
+
+  <FAQs
+    title="Întrebări frecvente"
+    subtitle="Găsește răspunsuri la cele mai comune întrebări despre Școala Gimnazială Teofil"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Ce clase sunt disponibile la gimnaziu?',
+        description:
+          'În prezent avem clasele V-VIII, acoperind întreg ciclul gimnazial. Fiecare clasă beneficiază de profesori de specialitate pentru toate disciplinele și de program personalizat în funcție de nevoile elevilor.',
+      },
+      {
+        title: 'Cum se face admiterea?',
+        description:
+          'Admiterea include: întâlnire inițială, vizită la școală, evaluare academică (teste la matematică, română, engleză), analiza dosarului școlar și întâlnire finală cu părinții și elevul. Procesul durează aproximativ 1-2 săptămâni.',
+      },
+      {
+        title: 'Care este programul zilnic?',
+        description:
+          'Programul include ore de curs (dimineața și după-amiaza), pauze, masă, pregătire suplimentară la discipline fundamentale și activități extracurriculare. Elevii sunt la școală aproximativ 8-9 ore pe zi, în funcție de clasă și opțiuni.',
+      },
+      {
+        title: 'Oferă școala pregătire pentru Evaluarea Națională?',
+        description:
+          'Da, pentru clasa a VIII-a avem program special de pregătire pentru Evaluarea Națională, cu ore suplimentare, simulări periodice, materiale de pregătire și monitorizare constantă a progresului. Rezultatele elevilor noștri sunt consistente.',
+      },
+      {
+        title: 'Putem participa la olimpiade?',
+        description:
+          'Da, încurajăm și susținem participarea la olimpiade școlare. Avem profesori specializați în pregătirea pentru olimpiade și oferim ore suplimentare pentru elevii interesați. Mulți dintre elevii noștri obțin performanțe notabile.',
+      },
+      {
+        title: 'Câți elevi sunt într-o clasă?',
+        description:
+          'Menținem clase cu maxim 15-20 elevi pentru a asigura atenție individualizată, interacțiune eficientă cu profesorii și un mediu optim de învățare. Acest lucru permite personalizarea abordării pedagogice.',
+      },
+      {
+        title: 'Cum se face evaluarea?',
+        description:
+          'Evaluarea este continuă și include: teste periodice, teze semestriale, proiecte, prezentări, teme și participare activă. Notarea respectă metodologia națională. Părinții primesc rapoarte regulate și au acces la catalog online.',
+      },
+      {
+        title: 'Oferă școala activități extracurriculare?',
+        description:
+          'Da, oferim diverse activități: sport, arte, teatru, debate, robotică, club de știință, jurnalism și altele. Unele sunt incluse în taxă, altele pot avea costuri suplimentare. Activitățile variază anual în funcție de interesul elevilor.',
+      },
+      {
+        title: 'Cum se face comunicarea cu părinții?',
+        description:
+          'Comunicăm prin: întâlniri regulate părinte-profesor, rapoarte de progres, catalog online, email, platformă educațională și telefon. Pentru situații urgente, răspundem prompt. Părinții sunt încurajați să fie parteneri activi în educație.',
+      },
+      {
+        title: 'Care sunt costurile?',
+        description:
+          'Taxa lunară include: educație, materiale didactice, manuale, masă, ore suplimentare la discipline fundamentale și majoritatea activităților. Pentru detalii exacte despre costuri, vă rugăm să ne contactați direct.',
+      },
+      {
+        title: 'Acceptați transferuri în timpul anului?',
+        description:
+          'Da, acceptăm transferuri pe parcursul anului școlar, în funcție de disponibilitatea locurilor. Este necesară evaluarea academică și analiza dosarului școlar. Procesul de integrare este supravegheat și facilitat de mentorii noștri.',
+      },
+      {
+        title: 'Cum pregătiți elevii pentru liceu?',
+        description:
+          'Oferim consiliere pentru alegerea liceului, pregătire academică solidă, simulări ale admiterii, participare la porți deschise ale liceelor și orientare în carieră. Majoritatea absolvenților noștri sunt admiși la liceele dorite.',
+      },
+    ]}
+  />
+</Layout>

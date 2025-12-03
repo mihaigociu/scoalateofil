@@ -1,0 +1,51 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Galerie foto - Școala Gimnazială Teofil',
+  description: 'Momente speciale din viața Școlii Gimnaziale Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Gimnazială" 
+    title="Galerie foto"
+    subtitle="Momente speciale din viața școlii"
+  />
+
+  <Content
+    title="Albumele noastre"
+    image={{
+      src: '~/assets/images/galerie-gimnaziu.jpg',
+      alt: 'Galerie foto Școala Gimnazială Teofil',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Explorează albumele noastre foto pentru a vedea momente speciale din viața școlii - proiecte, competiții, olimpiade, evenimente și realizările elevilor noștri.
+      </p>
+      
+      <h3 class="text-xl font-bold mb-3 mt-6">Categorii de albume</h3>
+      <ul class="list-disc list-inside mb-4 space-y-2">
+        <li>Activități și proiecte școlare</li>
+        <li>Competiții și olimpiade</li>
+        <li>Evenimente și sărbători</li>
+        <li>Excursii și activități outdoor</li>
+        <li>Activități sportive și artistice</li>
+        <li>Realizări și premiere</li>
+        <li>Absolvire și evenimente speciale</li>
+      </ul>
+      
+      <p class="mb-4 text-sm text-muted italic">
+        Notă: Galeriile foto detaliate vor fi disponibile în curând. Pentru moment, puteți vedea actualizări pe paginile noastre de social media.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+</Layout>

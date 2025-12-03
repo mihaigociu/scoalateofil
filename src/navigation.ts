@@ -4,14 +4,39 @@ export const headerData = {
   links: [
     {
       text: 'ACASĂ',
+      href: getPermalink('/acasa/'),
       links: [
         {
           text: 'Scurt istoric',
           href: getPermalink('/acasa/scurt-istoric'),
         },
         {
+          text: 'Rezultate',
+          href: getPermalink('/acasa/rezultate'),
+        },
+        {
           text: 'Echipa noastră',
           href: getPermalink('/acasa/echipa-noastra'),
+        },
+        {
+          text: 'Noutăți',
+          href: getPermalink('/acasa/noutati'),
+        },
+        {
+          text: 'Tutoriale',
+          href: getPermalink('/acasa/tutoriale'),
+        },
+        {
+          text: 'Revista școlii',
+          href: getPermalink('/acasa/revista-scolii'),
+        },
+        {
+          text: 'Emisiuni',
+          href: getPermalink('/acasa/emisiuni'),
+        },
+        {
+          text: 'Clubul de cercetași',
+          href: getPermalink('/acasa/clubul-de-cercetasi'),
         },
         {
           text: 'Contact',
@@ -21,6 +46,7 @@ export const headerData = {
     },
     {
       text: 'GRĂDINIȚĂ',
+      href: getPermalink('/gradinita/'),
       links: [
         {
           text: 'Metoda pedagogică',
@@ -50,6 +76,7 @@ export const headerData = {
     },
     {
       text: 'PRIMAR',
+      href: getPermalink('/scoala-primara/'),
       links: [
         {
           text: 'Metoda pedagogică',
@@ -79,6 +106,7 @@ export const headerData = {
     },
     {
       text: 'GIMNAZIU',
+      href: getPermalink('/scoala-gimnaziala/'),
       links: [
         {
           text: 'Metoda pedagogică',
@@ -116,7 +144,9 @@ export const footerData = {
       title: 'ACASĂ',
       links: [
         { text: 'Scurt istoric', href: getPermalink('/acasa/scurt-istoric') },
+        { text: 'Rezultate', href: getPermalink('/acasa/rezultate') },
         { text: 'Echipa noastră', href: getPermalink('/acasa/echipa-noastra') },
+        { text: 'Noutăți', href: getPermalink('/acasa/noutati') },
       ],
     },
     {
@@ -144,12 +174,10 @@ export const footerData = {
       ],
     },
   ],
-  secondaryLinks: [
-    { text: 'Contact', href: getPermalink('/contact') },
-  ],
+  secondaryLinks: [],
   socialLinks: [
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
+    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/scoalateofil' },
+    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/scoalateofil' },
   ],
   footNote: `
     © ${new Date().getFullYear()} Școala Teofil. Toate drepturile rezervate.

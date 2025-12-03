@@ -1,0 +1,86 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Clubul de cercetași - Școala Teofil',
+  description: 'Activitățile clubului de cercetași - aventuri în natură, învățare prin joc și dezvoltare personală.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    title="Clubul de cercetași"
+    subtitle="Aventuri în natură și dezvoltare personală"
+  />
+
+  <Content
+    isReversed
+    title="Despre clubul nostru"
+    image={{
+      src: '~/assets/images/cercetasi.jpg',
+      alt: 'Clubul de cercetași',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Clubul de cercetași al Școlii Teofil oferă copiilor oportunitatea de a explora natura, de a învăța prin joc și de a dezvolta abilități practice și sociale.
+      </p>
+      <p class="mb-4">
+        Prin activitățile noastre, copiii învață despre lucru în echipă, responsabilitate, respect pentru natură și dezvoltare personală.
+      </p>
+      
+      <h3 class="text-xl font-bold mb-3 mt-6">Valori</h3>
+      <ul class="list-disc list-inside mb-4 space-y-2">
+        <li>Respect pentru natură</li>
+        <li>Lucru în echipă</li>
+        <li>Dezvoltare personală</li>
+        <li>Responsabilitate și autonomie</li>
+      </ul>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Features2
+    title="Activități"
+    subtitle="Ce facem în clubul de cercetași"
+    columns={3}
+    items={[
+      {
+        title: 'Drumeții și camping',
+        description: 'Explorări în natură, campare și activități outdoor pentru dezvoltarea spiritului de aventură.',
+        icon: 'tabler:tent',
+      },
+      {
+        title: 'Abilități practice',
+        description: 'Învățarea de abilități utile: orientare, noduri, focul de tabără, primul ajutor.',
+        icon: 'tabler:tool',
+      },
+      {
+        title: 'Jocuri și activități',
+        description: 'Jocuri de echipă, provocări și activități ludice pentru dezvoltarea socială.',
+        icon: 'tabler:puzzle',
+      },
+      {
+        title: 'Proiecte de mediu',
+        description: 'Activități de protecție a mediului și educație ecologică.',
+        icon: 'tabler:leaf',
+      },
+      {
+        title: 'Tabere tematice',
+        description: 'Tabere de weekend și vară cu teme educaționale și de aventură.',
+        icon: 'tabler:campfire',
+      },
+      {
+        title: 'Dezvoltare personală',
+        description: 'Activități pentru dezvoltarea încrederii în sine și a autonomiei.',
+        icon: 'tabler:heart',
+      },
+    ]}
+  />
+</Layout>

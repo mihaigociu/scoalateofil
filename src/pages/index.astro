@@ -11,6 +11,7 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -41,265 +42,169 @@ const metadata = {
     </Fragment>
   </Hero>
 
-  <!-- Content Widget **************** -->
+  <!-- Expandable Cards Widget **************** -->
 
-  <Content
-    isReversed
-    title="VIZIUNEA NOASTRĂ"
-    image={{
-      src: '~/assets/images/viziunea_noastra.jpg',
-      alt: 'Viziunea noastră',
-    }}
-  >
-    <Fragment slot="content">
-      Credem într-o lume armonioasă și echilibrată, unde fiecare copil își dezvoltă pe deplin personalitatea.
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    title="MISIUNEA NOASTRĂ"
-    image={{
-      src: '~/assets/images/misiunea_noastra.jpg',
-      alt: 'Misiunea noastră',
-    }}
-  >
-    <Fragment slot="content">
-      Organizăm activități prin care susținem copiii în dezvoltarea personalității într-un mediu atent pregătit și activități prin care ajutăm părinții în creșterea propriilor copii prin întâlniri tematice.
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    title="Ce este educația ?"
-    image={{
-      src: '~/assets/images/ce-este-edicatia-1.jpg',
-      alt: 'Ce este educația',
-    }}
-  >
-    <Fragment slot="content">
-      <p class="mb-4">
-        Educația este un proces de dezvoltare a persoanei care are ca scop formarea persoanei în vederea trăirii unei vieți echilibrate, armonioase, pozitive și împlinite.
-      </p>
-      <p class="mb-4">
-        Educația presupune două elemente de bază:
-      </p>
-      <ol class="list-decimal list-inside mb-6 space-y-2">
-        <li>Pedagogul</li>
-        <li>Programul de activități</li>
-      </ol>
-      
-      <h4 class="text-xl font-bold mb-3">Pedagogul</h4>
-      <p class="mb-4">
-        Educația este determinată de relația de atașament care se realizează între părinți și copil, între pedagog și copil. De aceea, pentru ca o persoană să fie un pedagog potrivit, este obligatoriu să aibă un caracter puternic și bine dezvoltat, în așa fel încât să poată crea o relație pozitivă și echilibrată cu copiii. Relația de atașament presupune dragoste și grijă din partea pedagogului, iar din partea copilului, ascultare și colaborare. Pentru ca educația copilului să fie optimă, este nevoie ca părinții să găsească acel pedagog care să-i poată suplini în educația copiilor.
-      </p>
-      
-      <h4 class="text-xl font-bold mb-3">Programul de activități</h4>
-      <p class="mb-4">
-        Suma activităților pe care le realizăm determină formarea structurii sufletești și a celei fizice a elevilor. De aceea, planul de activități trebuie să fie adaptat fiecărui copil și potrivit măsurii lui de dezvoltare. Realizarea activităților determină dezvoltarea competențelor și a abilităților personale, atât la nivel mintal, cât și la nivel fizic. Este nevoie ca activitățile stabilite să răspundă atât interesului de dezvoltare a copiilor, cât și curiozității și dorinței lor de cunoaștere.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    title="Principii și obiective în educație"
-    image={{
-      src: '~/assets/images/principii-educatie-1.jpg',
-      alt: 'Principii în educație',
-    }}
-  >
-    <Fragment slot="content">
-      <h4 class="text-xl font-bold mb-3">Principii în educație</h4>
-      <ul class="list-disc list-inside mb-6 space-y-2">
-        <li>Nevoile de dezvoltare ale copiilor sunt stabilite de către părinți.</li>
-        <li>Tot ceea ce se face în educație se face pentru binele copiilor.</li>
-        <li>Copilul este ajutat să-și dezvolte independența.</li>
-        <li>Ajutăm copilul acolo unde acesta nu poate.</li>
-        <li>Respectăm specificul fiecărui copil.</li>
-        <li>Respectăm principiile și valorile fiecărei familii.</li>
-        <li>Susținem dezvoltarea fiecărei persoane și cultivăm relațiile sociale.</li>
-      </ul>
-      
-      <h4 class="text-xl font-bold mb-3">Obiectivele educației</h4>
-      <p class="mb-3">
-        Obiectivele generale ale educației sunt următoarele:
-      </p>
-      <ul class="list-disc list-inside mb-6 space-y-2">
-        <li>Formarea caracterului;</li>
-        <li>Dezvoltarea competențelor și a abilităților;</li>
-        <li>Înțelegerea raționamentelor pentru care se realizează lucrurile;</li>
-        <li>Transmiterea de informații.</li>
-      </ul>
-      
-      <p class="mb-3">
-        Aceste obiective generale ne ghidează în educarea și formarea copiilor. Pe lângă acestea, mai sunt și obiective specifice. Acestea sunt:
-      </p>
-      <ul class="list-disc list-inside mb-4 space-y-2">
-        <li>Dezvoltare sufletească/emoțională;</li>
-        <li>Dezvoltare cognitivă/rațională;</li>
-        <li>Dezvoltare fizică;</li>
-        <li>Dezvoltare academică;</li>
-        <li>Dezvoltare socială;</li>
-        <li>Crearea unui mediu pozitiv și sănătos;</li>
-        <li>Alimentație sănătoasă;</li>
-        <li>Dezvoltarea atitudinii ecologice.</li>
-      </ul>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    title="Elemente de bază în educaţie"
-    image={{
-      src: '~/assets/images/elemente-baza-educatie.jpg',
-      alt: 'Elemente de bază în educație',
-    }}
-  >
-    <Fragment slot="content">
-      <h4 class="text-xl font-bold mb-3">Relația de atașament</h4>
-      <p class="mb-4">
-        La vârstă mică, până la 6 ani, principalele activități desfășurate cu copiii sunt legate de dezvoltarea emoțională. Acest lucru se realizează prin atașamentul care se creează între educator și copil. Din acest motiv, educatorul trebuie să fie o persoană echilibrată din punct de vedere emoțional.
-      </p>
-      <p class="mb-3">
-        Relația de atașament presupune:
-      </p>
-      <ul class="list-disc list-inside mb-4 space-y-2">
-        <li>Dragoste;</li>
-        <li>Îndrumarea copilului pentru a descoperi;</li>
-        <li>Grija educatorului pentru copii.</li>
-      </ul>
-      <p class="mb-6">
-        Pe măsură ce copilul crește, se dezvoltă din ce în ce mai mult și celelalte categorii de competențe.
-      </p>
-      
-      <h4 class="text-xl font-bold mb-3">Comunicarea</h4>
-      <p class="mb-6">
-        În toate activitățile pe care le realizăm cu copiii, este nevoie să arătăm și să explicăm pentru ca acesta să înțeleagă cum este potrivit să se realizeze lucrurile și care este raționamentul pentru care le facem.
-      </p>
-      
-      <h4 class="text-xl font-bold mb-3">Grija pentru nevoile de bază ale copilului</h4>
-      <p class="mb-4">
-        Aici ne referim la grija pentru siguranță, hrană, odihnă, curățenie personală și de mediu, relaționare etc.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    title="Implicarea părinţilor în procesul pedagogic"
-    image={{
-      src: '~/assets/images/implicare-parinti.jpg',
-      alt: 'Implicarea părinților',
-    }}
-  >
-    <Fragment slot="content">
-      <p class="mb-4">
-        Părinții au dreptul și obligația de a-și educa propriii copii așa cum consideră că este mai potrivit. Deoarece o parte dintre părinți nu au timpul și pregătirea necesară pentru a oferi această educație copiilor, apelează la persoane pregătite în acest sens. Astfel, educatorii și învățătorii devin parteneri ai părinților în educarea copiilor.
-      </p>
-      <p class="mb-4">
-        Din acest motiv, atât activitățile care se realizează în educație, cât și mediul în care se realizează educația trebuie să corespundă așteptărilor părinților și principiilor pedagogice.
-      </p>
-      <p class="mb-3">
-        Parteneriatul pedagogic ce se realizează între părinți și școală presupune următoarele lucruri:
-      </p>
-      
-      <h4 class="text-lg font-bold mb-2">1. Din partea părinților:</h4>
-      <ul class="list-disc list-inside mb-4 space-y-2">
-        <li>Asumarea și respectarea principiilor și valorilor școlii;</li>
-        <li>Stabilirea obiectivelor de realizat în ceea ce privește educația copiilor;</li>
-        <li>Implicare în planul de dezvoltare a copiilor și în activitățile de remediere, dacă este cazul;</li>
-        <li>Participarea la activități de formare dedicate părinților.</li>
-      </ul>
-      
-      <h4 class="text-lg font-bold mb-2">2. Din partea școlii:</h4>
-      <ul class="list-disc list-inside mb-4 space-y-2">
-        <li>Stabilirea principiilor și a valorilor școlii și aplicarea acestora în toate activitățile pe care le realizează;</li>
-        <li>Stabilirea obiectivelor pedagogice;</li>
-        <li>Realizarea planului de dezvoltare și evidențierea nevoilor specifice ale fiecărui copil;</li>
-        <li>Evaluarea periodică și stabilirea măsurilor de îmbunătățire și remediere, dacă este cazul;</li>
-        <li>Realizarea de activități de formare pentru părinți, în vederea dezvoltării acestora pe plan pedagogic.</li>
-      </ul>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
+  <ExpandableCards
+    cards={[
       {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+        title: 'VIZIUNEA NOASTRĂ',
+        image: {
+          src: '~/assets/images/viziunea_noastra.jpg',
+          alt: 'Viziunea noastră',
+        },
+        summary: 'Credem într-o lume armonioasă și echilibrată, unde fiecare copil își dezvoltă pe deplin personalitatea.',
+        content: '',
       },
       {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+        title: 'MISIUNEA NOASTRĂ',
+        image: {
+          src: '~/assets/images/misiunea_noastra.jpg',
+          alt: 'Misiunea noastră',
+        },
+        summary: 'Organizăm activități prin care susținem copiii în dezvoltarea personalității într-un mediu atent pregătit și activități prin care ajutăm părinții în creșterea propriilor copii prin întâlniri tematice.',
+        content: '',
       },
       {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+        title: 'Ce este educația?',
+        image: {
+          src: '~/assets/images/ce-este-edicatia-1.jpg',
+          alt: 'Ce este educația',
+        },
+        summary: 'Educația este un proces de dezvoltare a persoanei care are ca scop formarea persoanei în vederea trăirii unei vieți echilibrate, armonioase, pozitive și împlinite.',
+        content: `
+          <p class="mb-4">Educația presupune două elemente de bază:</p>
+          <ol class="list-decimal list-inside mb-6 space-y-2">
+            <li>Pedagogul</li>
+            <li>Programul de activități</li>
+          </ol>
+          
+          <h4 class="text-xl font-bold mb-3">Pedagogul</h4>
+          <p class="mb-4">
+            Educația este determinată de relația de atașament care se realizează între părinți și copil, între pedagog și copil. De aceea, pentru ca o persoană să fie un pedagog potrivit, este obligatoriu să aibă un caracter puternic și bine dezvoltat, în așa fel încât să poată crea o relație pozitivă și echilibrată cu copiii. Relația de atașament presupune dragoste și grijă din partea pedagogului, iar din partea copilului, ascultare și colaborare. Pentru ca educația copilului să fie optimă, este nevoie ca părinții să găsească acel pedagog care să-i poată suplini în educația copiilor.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Programul de activități</h4>
+          <p class="mb-4">
+            Suma activităților pe care le realizăm determină formarea structurii sufletești și a celei fizice a elevilor. De aceea, planul de activități trebuie să fie adaptat fiecărui copil și potrivit măsurii lui de dezvoltare. Realizarea activităților determină dezvoltarea competențelor și a abilităților personale, atât la nivel mintal, cât și la nivel fizic. Este nevoie ca activitățile stabilite să răspundă atât interesului de dezvoltare a copiilor, cât și curiozității și dorinței lor de cunoaștere.
+          </p>
+        `,
       },
       {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+        title: 'Principii și obiective în educație',
+        image: {
+          src: '~/assets/images/principii-educatie-1.jpg',
+          alt: 'Principii în educație',
+        },
+        summary: 'Principiile și obiectivele care ne ghidează în educarea și formarea copiilor.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Principii în educație</h4>
+          <ul class="list-disc list-inside mb-6 space-y-2">
+            <li>Nevoile de dezvoltare ale copiilor sunt stabilite de către părinți.</li>
+            <li>Tot ceea ce se face în educație se face pentru binele copiilor.</li>
+            <li>Copilul este ajutat să-și dezvolte independența.</li>
+            <li>Ajutăm copilul acolo unde acesta nu poate.</li>
+            <li>Respectăm specificul fiecărui copil.</li>
+            <li>Respectăm principiile și valorile fiecărei familii.</li>
+            <li>Susținem dezvoltarea fiecărei persoane și cultivăm relațiile sociale.</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Obiectivele educației</h4>
+          <p class="mb-3">Obiectivele generale ale educației sunt următoarele:</p>
+          <ul class="list-disc list-inside mb-6 space-y-2">
+            <li>Formarea caracterului;</li>
+            <li>Dezvoltarea competențelor și a abilităților;</li>
+            <li>Înțelegerea raționamentelor pentru care se realizează lucrurile;</li>
+            <li>Transmiterea de informații.</li>
+          </ul>
+          
+          <p class="mb-3">Aceste obiective generale ne ghidează în educarea și formarea copiilor. Pe lângă acestea, mai sunt și obiective specifice. Acestea sunt:</p>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Dezvoltare sufletească/emoțională;</li>
+            <li>Dezvoltare cognitivă/rațională;</li>
+            <li>Dezvoltare fizică;</li>
+            <li>Dezvoltare academică;</li>
+            <li>Dezvoltare socială;</li>
+            <li>Crearea unui mediu pozitiv și sănătos;</li>
+            <li>Alimentație sănătoasă;</li>
+            <li>Dezvoltarea atitudinii ecologice.</li>
+          </ul>
+        `,
       },
       {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+        title: 'Elemente de bază în educație',
+        image: {
+          src: '~/assets/images/elemente-baza-educatie.jpg',
+          alt: 'Elemente de bază în educație',
+        },
+        summary: 'Elementele fundamentale care stau la baza procesului educațional.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Relația de atașament</h4>
+          <p class="mb-4">
+            La vârstă mică, până la 6 ani, principalele activități desfășurate cu copiii sunt legate de dezvoltarea emoțională. Acest lucru se realizează prin atașamentul care se creează între educator și copil. Din acest motiv, educatorul trebuie să fie o persoană echilibrată din punct de vedere emoțional.
+          </p>
+          <p class="mb-3">Relația de atașament presupune:</p>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Dragoste;</li>
+            <li>Îndrumarea copilului pentru a descoperi;</li>
+            <li>Grija educatorului pentru copii.</li>
+          </ul>
+          <p class="mb-6">
+            Pe măsură ce copilul crește, se dezvoltă din ce în ce mai mult și celelalte categorii de competențe.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Comunicarea</h4>
+          <p class="mb-6">
+            În toate activitățile pe care le realizăm cu copiii, este nevoie să arătăm și să explicăm pentru ca acesta să înțeleagă cum este potrivit să se realizeze lucrurile și care este raționamentul pentru care le facem.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Grija pentru nevoile de bază ale copilului</h4>
+          <p class="mb-4">
+            Aici ne referim la grija pentru siguranță, hrană, odihnă, curățenie personală și de mediu, relaționare etc.
+          </p>
+        `,
       },
       {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+        title: 'Implicarea părinților în procesul pedagogic',
+        image: {
+          src: '~/assets/images/implicare-parinti.jpg',
+          alt: 'Implicarea părinților',
+        },
+        summary: 'Părinții au dreptul și obligația de a-și educa propriii copii așa cum consideră că este mai potrivit.',
+        content: `
+          <p class="mb-4">
+            Deoarece o parte dintre părinți nu au timpul și pregătirea necesară pentru a oferi această educație copiilor, apelează la persoane pregătite în acest sens. Astfel, educatorii și învățătorii devin parteneri ai părinților în educarea copiilor.
+          </p>
+          <p class="mb-4">
+            Din acest motiv, atât activitățile care se realizează în educație, cât și mediul în care se realizează educația trebuie să corespundă așteptărilor părinților și principiilor pedagogice.
+          </p>
+          <p class="mb-3">
+            Parteneriatul pedagogic ce se realizează între părinți și școală presupune următoarele lucruri:
+          </p>
+          
+          <h4 class="text-lg font-bold mb-2">1. Din partea părinților:</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Asumarea și respectarea principiilor și valorilor școlii;</li>
+            <li>Stabilirea obiectivelor de realizat în ceea ce privește educația copiilor;</li>
+            <li>Implicare în planul de dezvoltare a copiilor și în activitățile de remediere, dacă este cazul;</li>
+            <li>Participarea la activități de formare dedicate părinților.</li>
+          </ul>
+          
+          <h4 class="text-lg font-bold mb-2">2. Din partea școlii:</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Stabilirea principiilor și a valorilor școlii și aplicarea acestora în toate activitățile pe care le realizează;</li>
+            <li>Stabilirea obiectivelor pedagogice;</li>
+            <li>Realizarea planului de dezvoltare și evidențierea nevoilor specifice ale fiecărui copil;</li>
+            <li>Evaluarea periodică și stabilirea măsurilor de îmbunătățire și remediere, dacă este cazul;</li>
+            <li>Realizarea de activități de formare pentru părinți, în vederea dezvoltării acestora pe plan pedagogic.</li>
+          </ul>
+        `,
       },
     ]}
-  />
-
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ExpandableCards>
 
     <Fragment slot="title">
       Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>

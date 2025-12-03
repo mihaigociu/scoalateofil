@@ -1,0 +1,162 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Înscrieri - Școala Gimnazială Teofil',
+  description: 'Informații despre înscrierile la Școala Gimnazială Teofil - procedură, documente, calendar.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Gimnazială" 
+    title="Înscrieri"
+    subtitle="Informații despre procesul de înscriere la Școala Gimnazială Teofil"
+  />
+
+  <ExpandableCards
+    cards={[
+      {
+        title: 'Condiții de înscriere',
+        image: {
+          src: '~/assets/images/inscriere-gimnaziu.jpg',
+          alt: 'Condiții de înscriere',
+        },
+        summary: 'Școala Gimnazială Teofil primește elevi pentru clasele V-VIII, cu parcurgerea unui proces de evaluare academică.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Criterii</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Vârsta corespunzătoare clasei solicitate</li>
+            <li>Evaluare academică la discipline fundamentale</li>
+            <li>Dosar cu rezultate școlare anterioare</li>
+            <li>Întâlnire cu părinții și elevul</li>
+            <li>Disponibilitatea locurilor</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Clase disponibile</h4>
+          <p class="mb-4">
+            În prezent avem clasele V-VIII, oferind continuitate în ciclul gimnazial. Extinderea către clasele superioare este în plan.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Evaluare academică</h4>
+          <p class="mb-4">
+            Evaluarea inițială constă în teste la matematică, limba română și limba engleză pentru a determina nivelul academic al elevului și a personaliza programul de studiu.
+          </p>
+        `,
+      },
+      {
+        title: 'Documente necesare',
+        image: {
+          src: '~/assets/images/documente-gimnaziu.jpg',
+          alt: 'Documente necesare',
+        },
+        summary: 'Pentru finalizarea înscrierii, sunt necesare documente școlare și acte de identitate.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Lista documentelor</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Cerere de înscriere (formular școală)</li>
+            <li>Copie certificat de naștere elev</li>
+            <li>Copie CI părinți/tutori legali</li>
+            <li>Fișa medicală a elevului</li>
+            <li>Adeverință medicală</li>
+            <li>Foaie matricolă</li>
+            <li>Cataloage/carnete de note din anii anteriori</li>
+            <li>Diplome/certificate (olimpiade, concursuri)</li>
+            <li>Foto elev (4 bucăți)</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Documente suplimentare</h4>
+          <p class="mb-4">
+            Pentru elevii cu realizări deosebite (olimpiade, concursuri), diplomele și certificatele sunt binevenite și pot fi luate în considerare.
+          </p>
+        `,
+      },
+      {
+        title: 'Procesul de înscriere',
+        image: {
+          src: '~/assets/images/proces-gimnaziu.jpg',
+          alt: 'Proces de înscriere',
+        },
+        summary: 'Înscrierea include mai multe etape pentru a asigura o potrivire optimă între elev și școală.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Etape</h4>
+          
+          <p class="mb-2"><strong>1. Contactare și informare</strong></p>
+          <p class="mb-4">Discuție inițială despre școală, obiective și așteptări.</p>
+          
+          <p class="mb-2"><strong>2. Vizita la școală</strong></p>
+          <p class="mb-4">Programare pentru vizită și cunoașterea profesorilor.</p>
+          
+          <p class="mb-2"><strong>3. Evaluare academică</strong></p>
+          <p class="mb-4">Teste la discipline fundamentale pentru determinarea nivelului.</p>
+          
+          <p class="mb-2"><strong>4. Întâlnire cu părinții și elevul</strong></p>
+          <p class="mb-4">Discuție despre program, așteptări și obiective educaționale.</p>
+          
+          <p class="mb-2"><strong>5. Analiza dosarului</strong></p>
+          <p class="mb-4">Evaluarea rezultatelor anterioare și a potențialului elevului.</p>
+          
+          <p class="mb-2"><strong>6. Decizie de admitere</strong></p>
+          <p class="mb-4">Comunicarea deciziei și pașii următori.</p>
+          
+          <p class="mb-2"><strong>7. Completare documente și început</strong></p>
+          <p class="mb-4">Semnarea contractului și integrarea în colectiv.</p>
+        `,
+      },
+      {
+        title: 'Program și performanță',
+        image: {
+          src: '~/assets/images/program-gimnaziu.jpg',
+          alt: 'Program școlar',
+        },
+        summary: 'Program complet cu focus pe pregătire academică solidă și dezvoltare personală.',
+        content: `
+          <h4 class="text-xl font-bold mb-3">Programul zilnic</h4>
+          <p class="mb-4">
+            Școala funcționează de luni până vineri cu program complet: ore de curs, pauze, masă, pregătire suplimentară și activități extracurriculare.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Servicii incluse</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Masă caldă și gustări</li>
+            <li>Manuale și materiale didactice</li>
+            <li>Ore suplimentare la discipline fundamentale</li>
+            <li>Pregătire pentru olimpiade (opțional)</li>
+            <li>Pregătire pentru Evaluarea Națională (cls. VIII)</li>
+            <li>Consiliere și mentoring</li>
+            <li>Activități extracurriculare</li>
+          </ul>
+          
+          <h4 class="text-xl font-bold mb-3">Focus pe rezultate</h4>
+          <p class="mb-4">
+            Urmărim performanța elevilor și oferim suport personalizat pentru admiterea la liceele de top și pentru olimpiade.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Taxe</h4>
+          <p class="mb-4">
+            Pentru informații detaliate despre taxele de școlarizare, vă rugăm să ne contactați direct.
+          </p>
+        `,
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </ExpandableCards>
+
+  <CallToAction
+    title="Vrei să înscrii copilul la Școala Gimnazială Teofil?"
+    subtitle="Contactează-ne pentru mai multe informații sau pentru a programa o vizită și evaluare!"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contactează-ne',
+        href: '/contact',
+      },
+    ]}
+  />
+</Layout>

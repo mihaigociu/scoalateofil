@@ -1,0 +1,76 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Informații utile - Grădinița Teofil',
+  description: 'Răspunsuri la întrebările frecvente despre Grădinița Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Grădiniță" 
+    title="Informații utile (Q&A)"
+    subtitle="Răspunsuri la întrebările tale"
+  />
+
+  <FAQs
+    title="Întrebări frecvente"
+    subtitle="Găsește răspunsuri la cele mai comune întrebări despre Grădinița Teofil"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Ce este metoda Montessori?',
+        description:
+          'Metoda Montessori este o abordare educațională centrată pe copil, dezvoltată de Dr. Maria Montessori. Pune accent pe independența copilului, libertatea în limite și respectul pentru dezvoltarea naturală a acestuia. Copiii învață prin explorare și manipulare a materialelor didactice speciale, în propriul ritm.',
+      },
+      {
+        title: 'Care este vârsta minimă de înscriere?',
+        description:
+          'Primim copii începând cu vârsta de 2 ani și 6 luni. Această vârstă permite copiilor să beneficieze optim de mediul și activitățile Montessori, având deja un nivel de independență de bază.',
+      },
+      {
+        title: 'Care este programul grădiniței?',
+        description:
+          'Grădinița funcționează de luni până vineri, cu posibilitatea de program normal sau prelungit. Programul exact și detaliile despre opțiunile disponibile pot fi discutate în cadrul întâlnirii de înscriere.',
+      },
+      {
+        title: 'Câți copii sunt într-o grupă?',
+        description:
+          'Grupele Montessori sunt de tip multi-vârstă, cu un număr limitat de copii pentru a permite interacțiunea personalizată a educatorului cu fiecare copil. Raportul educator-copii este conform normelor și principiilor Montessori.',
+      },
+      {
+        title: 'Ce activități se desfășoară la grădiniță?',
+        description:
+          'Activitățile sunt organizate în zone: viața practică, senzorial, matematică, limbaj, cultură și artă. Copiii aleg liber activitățile, ghidați de educatori. Se includ și ieșiri în natură, sărbători și evenimente speciale.',
+      },
+      {
+        title: 'Trebuie să am cunoștințe despre metoda Montessori?',
+        description:
+          'Nu este necesar să cunoașteți în detaliu metoda Montessori. Echipa noastră vă va prezenta principiile de bază și va fi alături de dvs. în acest proces. Organizăm și întâlniri pentru părinți pentru a vă familiariza cu metodologia.',
+      },
+      {
+        title: 'Ce se întâmplă în perioada de adaptare?',
+        description:
+          'Perioada de adaptare este personalizată pentru fiecare copil. Inițial, copilul vine pentru perioade scurte, împreună cu un părinte, iar treptat durata creește. Educatorul va comunica constant cu părinții pentru a asigura o tranziție lină.',
+      },
+      {
+        title: 'Oferă grădinița masă?',
+        description:
+          'Da, oferim mese pregătite cu ingrediente de calitate. Meniul este adaptat vârstei copiilor și include opțiuni pentru diverse nevoi alimentare. Detalii complete sunt disponibile la înscriere.',
+      },
+      {
+        title: 'Cum pot programa o vizită?',
+        description:
+          'Puteți programa o vizită contactându-ne telefonic la 0723 537 819 sau prin email la scoalateofil@gmail.com. Ne face plăcere să vă prezentăm grădinița și să răspundem la toate întrebările dvs.',
+      },
+      {
+        title: 'Ce se întâmplă dacă copilul se îmbolnăvește?',
+        description:
+          'În cazul îmbolnăvirii, rugăm părinții să țină copilul acasă pentru recuperare și pentru a proteja ceilalți copii. La revenire, poate fi necesar un certificat medical, în funcție de afecțiune. Comunicăm deschis cu părinții în astfel de situații.',
+      },
+    ]}
+  />
+</Layout>

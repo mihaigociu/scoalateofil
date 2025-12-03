@@ -1,0 +1,80 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Școala Gimnazială - Școala Teofil',
+  description: 'Școala Gimnazială Teofil - educație de calitate pentru clasele V-VIII.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Gimnazială" 
+    title="Școala Gimnazială Teofil"
+    subtitle="Educație de calitate pentru clasele V-VIII, pregătind elevii pentru succes academic și dezvoltare personală."
+  />
+
+  <Features2
+    title="Secțiuni"
+    subtitle="Descoperă mai multe despre Școala Gimnazială Teofil"
+    columns={3}
+    items={[
+      {
+        title: 'Metoda pedagogică',
+        description: 'Descoperă abordarea noastră educațională care pregătește elevii pentru provocările gimnaziului și ale vieții.',
+        icon: 'tabler:book-2',
+        callToAction: {
+          text: 'Citește mai mult',
+          href: '/scoala-gimnaziala/metoda-pedagogica',
+        },
+      },
+      {
+        title: 'Echipa noastră',
+        description: 'Cunoaște echipa de profesori de specialitate dedicați educației și formării elevilor.',
+        icon: 'tabler:users',
+        callToAction: {
+          text: 'Cunoaște echipa',
+          href: '/scoala-gimnaziala/echipa-noastra',
+        },
+      },
+      {
+        title: 'Noutăți',
+        description: 'Ultimele știri, evenimente și activități din Școala Gimnazială Teofil.',
+        icon: 'tabler:news',
+        callToAction: {
+          text: 'Vezi noutățile',
+          href: '/scoala-gimnaziala/noutati',
+        },
+      },
+      {
+        title: 'Galerie foto',
+        description: 'Momente speciale din viața școlii - proiecte, competiții, evenimente și realizările elevilor.',
+        icon: 'tabler:photo',
+        callToAction: {
+          text: 'Vezi galeria',
+          href: '/scoala-gimnaziala/galerie-foto',
+        },
+      },
+      {
+        title: 'Înscrieri',
+        description: 'Informații despre procesul de înscriere, locuri disponibile, documente necesare și etape.',
+        icon: 'tabler:clipboard-check',
+        callToAction: {
+          text: 'Informații înscrieri',
+          href: '/scoala-gimnaziala/inscrieri',
+        },
+      },
+      {
+        title: 'Informații utile (Q&A)',
+        description: 'Răspunsuri la întrebările frecvente despre școala gimnazială, program, activități și servicii.',
+        icon: 'tabler:help',
+        callToAction: {
+          text: 'Vezi întrebări frecvente',
+          href: '/scoala-gimnaziala/informatii-utile',
+        },
+      },
+    ]}
+  />
+</Layout>

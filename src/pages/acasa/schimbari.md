@@ -27,6 +27,9 @@ Datele de contact in footer-ul paginii (unde este acum linkul pentru pagina Cont
 
 
 Acasa
+adaugam pagina /acasa/
+  - card widgets pentru fiecare subsectiune
+Subsectiuni Acasa:
 - Scurt istoric
 - Rezultate
 - Echipa noastra
@@ -35,8 +38,6 @@ Acasa
 - Revista scolii
 - Emisiuni
 - Clubul de cercetasi
-- adaugam pagina /acasa/
-  - card widgets pentru fiecare subsectiune
 
 Gradinita
 - pagina cu astrowid card widgets pentru fiecare sub sectiune

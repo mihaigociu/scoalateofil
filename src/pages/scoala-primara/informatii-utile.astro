@@ -1,0 +1,86 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+
+const metadata = {
+  title: 'Informații utile - Școala Primară Teofil',
+  description: 'Răspunsuri la întrebările frecvente despre Școala Primară Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Primară" 
+    title="Informații utile (Q&A)"
+    subtitle="Răspunsuri la întrebările tale"
+  />
+
+  <FAQs
+    title="Întrebări frecvente"
+    subtitle="Găsește răspunsuri la cele mai comune întrebări despre Școala Primară Teofil"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Ce clase sunt disponibile?',
+        description:
+          'Școala Primară Teofil oferă educație pentru clasele 0 (pregătitoare) până la clasa a IV-a, acoperind întreg ciclul primar. Fiecare clasă are un învățător dedicat și profesori de specialitate pentru anumite discipline.',
+      },
+      {
+        title: 'Care este programul zilnic?',
+        description:
+          'Școala funcționează de luni până vineri, cu program complet care include ore de curs (dimineața), pauze, masă și activități după-amiaza. Programul exact variază în funcție de clasă și poate fi discutat în detaliu la înscriere.',
+      },
+      {
+        title: 'Cum se face evaluarea elevilor?',
+        description:
+          'Evaluarea este continuă și include observații zilnice, teste periodice, proiecte și prezentări. Ne concentrăm pe progresul individual al fiecărui elev și oferim feedback regulat părinților prin întâlniri și rapoarte de progres.',
+      },
+      {
+        title: 'Câți elevi sunt într-o clasă?',
+        description:
+          'Menținem clase cu număr redus de elevi (maximum 15-20) pentru a asigura atenție individualizată și un mediu de învățare optim. Acest lucru permite învățătorilor să cunoască fiecare copil și să adapteze predarea la nevoile acestuia.',
+      },
+      {
+        title: 'Ce discipline se studiază?',
+        description:
+          'Urmăm programa școlară oficială: limba română, matematică, limba engleză, științe ale naturii, educație civică, arte, muzică, educație fizică și tehnologie. Adăugăm și activități extracurriculare: teatru, sport, arte plastice, proiecte tematice.',
+      },
+      {
+        title: 'Oferă școala masă?',
+        description:
+          'Da, oferim masă caldă pregătită cu ingrediente de calitate. Meniul este adaptat vârstei copiilor, echilibrat din punct de vedere nutrițional și include opțiuni pentru diverse nevoi alimentare (alergii, intoleranțe). Meniul săptămânal este disponibil pentru părinți.',
+      },
+      {
+        title: 'Sunt incluse manualele și materialele?',
+        description:
+          'Da, taxa de școlarizare include manualele, caietele și majoritatea materialelor didactice necesare. Pentru anumite proiecte speciale sau excursii pot exista costuri suplimentare, despre care părinții sunt informați în avans.',
+      },
+      {
+        title: 'Cum se face comunicarea cu părinții?',
+        description:
+          'Menținem o comunicare constantă prin: întâlniri regulate părinte-profesor, rapoarte de progres periodice, email, platformă online și telefon. Părinții sunt încurajați să ne contacteze oricând au întrebări sau preocupări.',
+      },
+      {
+        title: 'Există activități extracurriculare?',
+        description:
+          'Da, oferim diverse activități după programul de bază: sport, arte, muzică, teatru, șah, robotică, club de lectură și altele. Unele sunt incluse în taxă, altele pot avea costuri suplimentare. Activitățile variază în funcție de interes și disponibilitate.',
+      },
+      {
+        title: 'Cum se face înscrierea?',
+        description:
+          'Procesul începe cu o discuție telefonică, urmată de o vizită la școală. După întâlnirea cu părinții și evaluarea inițială a copilului, se depun documentele și se semnează contractul. Puteți programa o vizită contactându-ne la 0723 537 819.',
+      },
+      {
+        title: 'Acceptați transferuri de la alte școli?',
+        description:
+          'Da, acceptăm transferuri pe parcursul anului școlar, în funcție de disponibilitatea locurilor. Este necesar să aduceți documentele școlare de la unitatea anterioară (foaie matricolă, caracterizare) și să participați la o evaluare inițială.',
+      },
+      {
+        title: 'Ce se întâmplă în vacanțe?',
+        description:
+          'Urmăm calendarul școlar oficial pentru vacanțe. În timpul vacanțelor de vară și a altor perioade, putem organiza tabere și activități pentru copiii care doresc să participe (cu costuri separate). Detalii sunt comunicate părinților cu anticipație.',
+      },
+    ]}
+  />
+</Layout>

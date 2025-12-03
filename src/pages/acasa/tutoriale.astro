@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Tutoriale - Școala Teofil',
+  description: 'Resurse educaționale și materiale utile pentru părinți și elevi.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    title="Tutoriale"
+    subtitle="Resurse educaționale pentru părinți și elevi"
+  />
+
+  <Features2
+    title="Materiale educaționale"
+    subtitle="Ghiduri, tutoriale și resurse pentru sprijinirea educației"
+    columns={2}
+    items={[
+      {
+        title: 'Ghiduri pentru părinți',
+        description: 'Materiale utile pentru părinți despre dezvoltarea copilului, metode pedagogice și implicarea în educație.',
+        icon: 'tabler:book-2',
+      },
+      {
+        title: 'Resurse pentru elevi',
+        description: 'Materiale educaționale, exerciții și activități pentru completarea cunoștințelor dobândite la școală.',
+        icon: 'tabler:pencil',
+      },
+      {
+        title: 'Metode de învățare',
+        description: 'Informații despre metodele pedagogice utilizate și cum pot fi aplicate și acasă.',
+        icon: 'tabler:bulb',
+      },
+      {
+        title: 'Activități practice',
+        description: 'Sugestii de activități practice pe care le puteți realiza acasă pentru dezvoltarea copilului.',
+        icon: 'tabler:puzzle',
+      },
+    ]}
+  />
+</Layout>

@@ -1,0 +1,65 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Echipa noastră - Școala Primară Teofil',
+  description: 'Cunoaște echipa de învățători și profesori dedicați din Școala Primară Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText 
+    tagline="Școala Primară" 
+    title="Echipa noastră"
+    subtitle="Învățători și profesori dedicați și pasionați"
+  />
+
+  <Features2
+    title="Echipa pedagogică"
+    subtitle="Profesioniști cu experiență și dedicare în educația copiilor"
+    columns={3}
+    items={[
+      {
+        title: 'Învățători calificați',
+        description: 'Toți învățătorii noștri au pregătire pedagogică superioară și experiență vastă în lucrul cu elevii de ciclu primar.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Profesori de specialitate',
+        description: 'Echipa include profesori pentru limbi străine, educație fizică, arte și muzică, asigurând o educație completă.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Formare continuă',
+        description: 'Echipa participă regulat la cursuri, conferințe și workshopuri pentru actualizarea metodelor pedagogice.',
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Suport individualizat',
+        description: 'Fiecare copil beneficiază de atenție personalizată și sprijin adaptat nevoilor sale de învățare.',
+        icon: 'tabler:heart',
+      },
+      {
+        title: 'Comunicare cu părinții',
+        description: 'Menținem o comunicare constantă cu părinții pentru a asigura un parteneriat educațional eficient.',
+        icon: 'tabler:message',
+      },
+      {
+        title: 'Pasiune pentru educație',
+        description: 'Fiecare membru al echipei este dedicat succesului și dezvoltării armonioase a fiecărui elev.',
+        icon: 'tabler:star',
+      },
+    ]}
+  />
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">Cunoaște-ne mai bine</h2>
+      <p class="text-lg text-muted">
+        Pentru detalii despre membrii echipei noastre, vă rugăm să ne contactați direct sau să programați o vizită la școală.
+      </p>
+    </div>
+  </div>
+</Layout>
