@@ -1,0 +1,61 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Rezultate - Școala Gimnazială Teofil',
+  description:
+    'Realizările și succesele elevilor din ciclul gimnazial în diverse competiții și activități educaționale.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Școala Gimnazială" title="Rezultate" subtitle="Mândri de realizările elevilor noștri" />
+
+  <Content
+    title="Realizările noastre"
+    image={{
+      src: '~/assets/images/scoala-gimnaziala/rezultate.jpg',
+      alt: 'Rezultate Școala Gimnazială',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Elevii din ciclul gimnazial se remarcă prin performanțe deosebite la învățătură, participare activă la
+        olimpiade și competiții naționale și internaționale.
+      </p>
+      <p class="mb-4">
+        Ne mândrim cu rezultatele obținute și cu dedicarea fiecărui elev în drumul său spre excelență academică.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Olimpiade și competiții</h3>
+      <p class="mb-4">
+        Elevii noștri obțin rezultate remarcabile la olimpiadele și concursurile naționale și internaționale, în
+        domenii precum matematică, fizică, chimie, informatică, limbi străine și multe altele.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Proiecte de cercetare</h3>
+      <p class="mb-4">
+        Prin proiecte de cercetare și inovare, elevii își dezvoltă gândirea critică și competențele de cercetare
+        științifică.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Admitere la liceu</h3>
+      <p class="mb-4">
+        Absolvenții noștri sunt admiși la cele mai prestigioase licee din țară, continuându-și parcursul academic cu
+        succes.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Activități extracurriculare</h3>
+      <p class="mb-4">
+        Elevii participă activ la proiecte culturale, artistice și sportive, demonstrând talente variate și pasiune
+        pentru învățare.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+</Layout>

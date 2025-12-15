@@ -14,7 +14,7 @@ gallery:
   # Adăugați mai multe imagini aici
 metadata:
   title: 'Galerie foto - Școală Primară - Școala Teofil'
-  description: 'Vezi fotografii cu activitățile și evenimentele de la școala primară'
+  description: 'Vedeți fotografii cu activitățile și evenimentele de la școala primară'
 ---
 
 # Galerie foto

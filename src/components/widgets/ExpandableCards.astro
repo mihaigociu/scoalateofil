@@ -47,44 +47,47 @@ const {
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
     {
       cards.map((card, index) => (
-        <div class="expandable-card rounded-lg shadow-lg overflow-hidden bg-white dark:bg-slate-800 transition-all duration-300">
-          <div class="relative h-48 overflow-hidden">
+        <div class="expandable-card rounded-lg shadow-lg overflow-hidden transition-all duration-300">
+          <div class="relative card-container">
             <Image
               src={card.image.src}
               alt={card.image.alt}
-              class="w-full h-full object-cover"
+              class="w-full h-full object-cover card-image absolute inset-0"
               widths={[400, 768]}
               sizes="(max-width: 768px) 100vw, 400px"
               loading="lazy"
             />
-          </div>
+            
+            {/* Overlay gradient for better text readability */}
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70"></div>
 
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{card.title}</h3>
+            <div class="relative p-6 flex flex-col justify-end text-white card-content">
+              <h3 class="text-xl font-bold mb-3 drop-shadow-lg">{card.title}</h3>
 
-            <p class="text-gray-600 dark:text-gray-300 mb-4">{card.summary}</p>
+              <p class="mb-4 drop-shadow-md">{card.summary}</p>
 
-            <div class="expandable-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
-              <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
-                <div class="prose prose-sm dark:prose-invert max-w-none" set:html={card.content} />
+              <div class="expandable-content max-h-0 transition-all duration-500 ease-in-out">
+                <div class="pt-4 border-t border-white/30 expandable-inner">
+                  <div class="prose prose-sm prose-invert max-w-none" set:html={card.content} />
+                </div>
               </div>
-            </div>
 
-            <button
-              class="expand-btn mt-4 flex items-center gap-2 text-primary hover:text-secondary transition-colors duration-200 font-semibold"
-              aria-expanded="false"
-              aria-controls={`card-content-${index}`}
-            >
-              <span class="expand-text">Citește mai mult</span>
-              <svg
-                class="expand-icon w-5 h-5 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <button
+                class="expand-btn mt-4 flex items-center gap-2 text-white hover:text-gray-200 transition-colors duration-200 font-semibold self-start"
+                aria-expanded="false"
+                aria-controls={`card-content-${index}`}
               >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
+                <span class="expand-text">Citiți mai mult</span>
+                <svg
+                  class="expand-icon w-5 h-5 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       ))
@@ -93,7 +96,7 @@ const {
 </WidgetWrapper>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  function initializeExpandableCards() {
     const cards = document.querySelectorAll('.expandable-card');
 
     cards.forEach((card) => {
@@ -104,31 +107,101 @@ const {
 
       if (!button || !content || !icon || !text) return;
 
-      button.addEventListener('click', () => {
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      // Remove existing listener if any (to prevent duplicates)
+      const newButton = button.cloneNode(true);
+      button.parentNode?.replaceChild(newButton, button);
+
+      newButton.addEventListener('click', () => {
+        const isExpanded = newButton.getAttribute('aria-expanded') === 'true';
 
         if (isExpanded) {
           // Collapse
           (content as HTMLElement).style.maxHeight = '0';
-          button.setAttribute('aria-expanded', 'false');
+          newButton.setAttribute('aria-expanded', 'false');
           (icon as HTMLElement).style.transform = 'rotate(0deg)';
-          text.textContent = 'Citește mai mult';
+          (text as HTMLElement).textContent = 'Citiți mai mult';
+          card.classList.remove('expanded');
         } else {
-          // Expand
-          (content as HTMLElement).style.maxHeight = (content as HTMLElement).scrollHeight + 'px';
-          button.setAttribute('aria-expanded', 'true');
+          // Expand - set to a fixed height to allow scrolling
+          (content as HTMLElement).style.maxHeight = '200px';
+          newButton.setAttribute('aria-expanded', 'true');
           (icon as HTMLElement).style.transform = 'rotate(180deg)';
-          text.textContent = 'Citește mai puțin';
+          (text as HTMLElement).textContent = 'Citiți mai puțin';
+          card.classList.add('expanded');
         }
       });
     });
-  });
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', initializeExpandableCards);
+  
+  // Re-initialize after Astro view transitions (if enabled)
+  document.addEventListener('astro:page-load', initializeExpandableCards);
+  
+  // Fallback: also initialize immediately if DOM is already loaded
+  if (document.readyState === 'loading') {
+    // DOM still loading, wait for DOMContentLoaded
+  } else {
+    // DOM already loaded
+    initializeExpandableCards();
+  }
 </script>
 
 <style>
+  .expandable-card {
+    position: relative;
+  }
+
   .expandable-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-container {
+    height: 350px;
+    transition: height 0.5s ease-in-out;
+  }
+
+  .expandable-card.expanded .card-container {
+    height: 500px;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-content {
+    min-height: 350px;
+  }
+
+  .expandable-card.expanded .card-content {
+    min-height: 500px;
+  }
+
+  .expandable-content {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+  }
+
+  .expandable-content::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .expandable-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .expandable-content::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+  }
+
+  .expandable-content::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.7);
   }
 
   .prose :global(h4) {
@@ -136,19 +209,23 @@ const {
     font-weight: 700;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+    color: white;
   }
 
   .prose :global(p) {
     margin-bottom: 0.75rem;
+    color: white;
   }
 
   .prose :global(ul),
   .prose :global(ol) {
     margin-bottom: 1rem;
     padding-left: 1.5rem;
+    color: white;
   }
 
   .prose :global(li) {
     margin-bottom: 0.25rem;
+    color: white;
   }
 </style>

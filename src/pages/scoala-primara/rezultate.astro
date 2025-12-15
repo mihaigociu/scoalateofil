@@ -1,0 +1,54 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Rezultate - Școala Primară Teofil',
+  description: 'Realizările și succesele elevilor din ciclul primar în diverse competiții și activități educaționale.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Școala Primară" title="Rezultate" subtitle="Mândri de realizările elevilor noștri" />
+
+  <Content
+    title="Realizările noastre"
+    image={{
+      src: '~/assets/images/scoala-primara/rezultate.jpg',
+      alt: 'Rezultate Școala Primară',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Elevii din ciclul primar se remarcă prin rezultate deosebite la învățătură și prin participarea activă la
+        diverse competiții și proiecte educaționale.
+      </p>
+      <p class="mb-4">
+        Ne mândrim cu fiecare premiu, mențiune și, mai ales, cu progresul constant al fiecărui elev.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Competiții școlare</h3>
+      <p class="mb-4">
+        Elevii noștri participă la olimpiade și concursuri școlare, obținând rezultate remarcabile la matematică,
+        limba română, științe și alte discipline.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Proiecte educaționale</h3>
+      <p class="mb-4">
+        Prin proiecte interdisciplinare și activități extracurriculare, elevii își dezvoltă competențele practice și
+        creativitatea.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Dezvoltare personală</h3>
+      <p class="mb-4">
+        Fiecare elev este încurajat să își descopere și să își dezvolte talentele, într-un mediu care promovează
+        excelența și colaborarea.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+</Layout>
