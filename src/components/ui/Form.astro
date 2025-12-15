@@ -5,10 +5,15 @@ import Button from '~/components/ui/Button.astro';
 const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form action="https://formspree.io/f/xwpgjkaw" method="POST">
-  <!-- Hidden fields pentru Formspree -->
-  <input type="hidden" name="_next" value="https://scoala-teofil.netlify.app/contact-success" />
-  <input type="hidden" name="_subject" value="Mesaj nou din formularul de contact" />
+<form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact-success">
+  <!-- Netlify Forms hidden fields -->
+  <input type="hidden" name="form-name" value="contact" />
+  <!-- Honeypot for spam protection -->
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
   {
     inputs &&
       inputs.map(

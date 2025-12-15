@@ -146,11 +146,22 @@ const { socialLinks = [], links = [], footNote = '', theme = 'light' } = Astro.p
             </button>
           </div>
 
-          <form action="https://formspree.io/f/xwpgjkaw" method="POST" class="space-y-2.5 sm:space-y-3">
-            <!-- Redirect după submit -->
-            <input type="hidden" name="_next" value="https://scoala-teofil.netlify.app/contact-success" />
-            <!-- Subject personalizat -->
-            <input type="hidden" name="_subject" value="Formular contact nou de pe site" />
+          <form
+            name="footer-contact"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            action="/contact-success"
+            class="space-y-2.5 sm:space-y-3"
+          >
+            <!-- Netlify Forms hidden fields -->
+            <input type="hidden" name="form-name" value="footer-contact" />
+            <!-- Honeypot for spam protection -->
+            <p class="hidden">
+              <label>
+                Don't fill this out if you're human: <input name="bot-field" />
+              </label>
+            </p>
 
             <!-- Nume -->
             <div>
