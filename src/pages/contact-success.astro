@@ -1,0 +1,87 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Mesaj trimis cu succes',
+  description: 'Mesajul dvs. a fost trimis cu succes. Vă vom contacta în curând.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <div class="text-center">
+      <!-- Success Icon -->
+      <div class="flex justify-center mb-6">
+        <div class="rounded-full bg-green-100 dark:bg-green-900 p-6">
+          <Icon name="tabler:check" class="w-16 h-16 text-green-600 dark:text-green-400" />
+        </div>
+      </div>
+
+      <!-- Success Message -->
+      <h1 class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
+        Mesaj trimis cu succes!
+      </h1>
+      
+      <p class="text-xl text-muted dark:text-slate-400 mb-8">
+        Vă mulțumim pentru interes! Am primit mesajul dumneavoastră și vă vom contacta în cel mai scurt timp posibil.
+      </p>
+
+      <!-- Contact Info -->
+      <div class="bg-blue-50 dark:bg-slate-800 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+        <h2 class="text-lg font-semibold mb-4">Informații de contact</h2>
+        <div class="space-y-3 text-left">
+          <div class="flex items-center gap-3">
+            <Icon name="tabler:phone" class="w-5 h-5 text-primary flex-shrink-0" />
+            <div>
+              <span class="font-medium">Telefon:</span>
+              <a href="tel:0723537819" class="ml-2 text-primary hover:underline">0723 537 819</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <Icon name="tabler:mail" class="w-5 h-5 text-primary flex-shrink-0" />
+            <div>
+              <span class="font-medium">Email:</span>
+              <a href="mailto:scoalateofil@gmail.com" class="ml-2 text-primary hover:underline">
+                scoalateofil@gmail.com
+              </a>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="tabler:map-pin" class="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+            <div>
+              <div class="mb-2">
+                <span class="font-medium">Grădinița:</span>
+                <br />
+                str. Mărgăului nr. 2, Cluj-Napoca
+              </div>
+              <div>
+                <span class="font-medium">Școala:</span>
+                <br />
+                Aleea Moldoveanu 3, Cluj-Napoca
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/"
+          class="btn bg-primary text-white hover:bg-secondary px-6 py-3 rounded-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+        >
+          <Icon name="tabler:home" class="w-5 h-5" />
+          Înapoi la pagina principală
+        </a>
+        <a
+          href="/about"
+          class="btn border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-slate-700 px-6 py-3 rounded-lg font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2"
+        >
+          <Icon name="tabler:info-circle" class="w-5 h-5" />
+          Despre noi
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

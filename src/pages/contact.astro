@@ -21,17 +21,28 @@ const metadata = {
     inputs={[
       {
         type: 'text',
-        name: 'name',
-        label: 'Nume',
+        name: 'nume',
+        label: 'Nume *',
+        placeholder: 'Nume complet',
       },
       {
         type: 'email',
         name: 'email',
-        label: 'Email',
+        label: 'Email *',
+        placeholder: 'exemplu@email.com',
+      },
+      {
+        type: 'tel',
+        name: 'telefon',
+        label: 'Telefon *',
+        placeholder: '0723 XXX XXX',
       },
     ]}
     textarea={{
-      label: 'Mesaj',
+      label: 'Mesaj *',
+      name: 'mesaj',
+      rows: 5,
+      placeholder: 'Scrie-ți mesajul aici...',
     }}
     disclaimer={{
       label:
