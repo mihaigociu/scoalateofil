@@ -296,7 +296,7 @@ const { socialLinks = [], links = [], footNote = '', theme = 'light' } = Astro.p
     // Remove existing listeners to prevent duplicates
     const newToggleBtn = toggleBtn.cloneNode(true);
     toggleBtn.parentNode?.replaceChild(newToggleBtn, toggleBtn);
-    
+
     newToggleBtn.addEventListener('click', (e) => {
       e.preventDefault();
       openModal();
@@ -306,7 +306,7 @@ const { socialLinks = [], links = [], footNote = '', theme = 'light' } = Astro.p
       e.preventDefault();
       closeModal();
     });
-    
+
     cancelBtn?.addEventListener('click', (e) => {
       e.preventDefault();
       closeModal();

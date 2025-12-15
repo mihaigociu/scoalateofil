@@ -1,37 +1,42 @@
 schimbari
 
 index page:
+
 - textul peste poza (text alb) vezi https://www.bundespraesident.de/EN/home/home_node.html
 
 footer:
+
 - culoare de background inchisa
 - text alb
 - adaugam datele de contact (email, telefon, adresa fizica)
 
 scurt istoric:
-- 
+
+-
 
 ##############################################################################
 
 Prima pagina:
 
 Search tool
+
 - index website content
 - search results + links
 
-Despre noi 
- - Text 
- - sub section with links to "echipa noastra": Gradinita, Primar, Gimnaziu
-Valorile fundamentale ale educatiei
-Viziunea
-Misiunea
-Obiectivele educatiei
+Despre noi
+
+- Text
+- sub section with links to "echipa noastra": Gradinita, Primar, Gimnaziu
+  Valorile fundamentale ale educatiei
+  Viziunea
+  Misiunea
+  Obiectivele educatiei
 - toate sectiunile pe pagina, expandable la click
 - use astrowind card widgets
 - find suitable icons for each section
 
-
 Datele de contact in footer-ul paginii (unde este acum linkul pentru pagina Contact)
+
 - FB, Instagram, email, telefon, sigla site-ului
 
 - formular de inscriere cu selectia nivelului, nume, prenume, mesaj
@@ -40,8 +45,9 @@ Datele de contact in footer-ul paginii (unde este acum linkul pentru pagina Cont
 
 Acasa
 adaugam pagina /acasa/
-  - card widgets pentru fiecare subsectiune
-Subsectiuni Acasa:
+
+- card widgets pentru fiecare subsectiune
+  Subsectiuni Acasa:
 - Scurt istoric
 - Rezultate
 - Echipa noastra
@@ -52,11 +58,14 @@ Subsectiuni Acasa:
 - Clubul de cercetasi
 
 Gradinita
+
 - pagina cu astrowid card widgets pentru fiecare sub sectiune
 
 Acasa
+
 - similar cu Gradinita, astrowind card widgets
 
 Noutati
+
 - pagina de Noutati ramane pentru fiecare nivel
 - La Acasa sa avem o sectiune de Noutati cu ultimele Noutati de la toate nivelele

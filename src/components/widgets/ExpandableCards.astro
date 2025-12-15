@@ -57,9 +57,9 @@ const {
               sizes="(max-width: 768px) 100vw, 400px"
               loading="lazy"
             />
-            
+
             {/* Overlay gradient for better text readability */}
-            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
 
             <div class="relative p-6 flex flex-col justify-end text-white card-content">
               <h3 class="text-xl font-bold mb-3 drop-shadow-lg">{card.title}</h3>
@@ -135,10 +135,10 @@ const {
 
   // Initialize on page load
   document.addEventListener('DOMContentLoaded', initializeExpandableCards);
-  
+
   // Re-initialize after Astro view transitions (if enabled)
   document.addEventListener('astro:page-load', initializeExpandableCards);
-  
+
   // Fallback: also initialize immediately if DOM is already loaded
   if (document.readyState === 'loading') {
     // DOM still loading, wait for DOMContentLoaded
