@@ -7,8 +7,7 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
 
 <form action="https://formspree.io/f/xwpgjkaw" method="POST">
   <!-- Hidden fields pentru Formspree -->
-  <input type="hidden" name="_to" value="scoalateofil@gmail.com" />
-  <input type="hidden" name="_next" value="/contact-success" />
+  <input type="hidden" name="_next" value="https://scoala-teofil.netlify.app/contact-success" />
   <input type="hidden" name="_subject" value="Mesaj nou din formularul de contact" />
   {
     inputs &&
