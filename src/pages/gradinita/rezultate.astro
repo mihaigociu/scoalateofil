@@ -1,0 +1,53 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Content from '~/components/widgets/Content.astro';
+
+const metadata = {
+  title: 'Rezultate - Grădinița Teofil',
+  description: 'Realizările și succesele copiilor din Grădinița Teofil în diverse activități educaționale.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText tagline="Grădiniță" title="Rezultate" subtitle="Mândri de realizările copiilor noștri" />
+
+  <Content
+    title="Realizările noastre"
+    image={{
+      src: '~/assets/images/gradinita/rezultate.jpg',
+      alt: 'Rezultate Grădiniță',
+    }}
+  >
+    <Fragment slot="content">
+      <p class="mb-4">
+        Copiii din Grădinița Teofil se remarcă prin creativitate, curiozitate și dezvoltare armonioasă în toate
+        domeniile de activitate.
+      </p>
+      <p class="mb-4">
+        Ne mândrim cu fiecare progres și realizare a copiilor noștri în drumul lor spre descoperire și învățare.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Activități creative</h3>
+      <p class="mb-4">
+        Copiii participă la diverse activități artistice și creative, dezvoltându-și imaginația și abilitățile de
+        exprimare.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Proiecte educaționale</h3>
+      <p class="mb-4">
+        Prin proiecte educaționale adaptate vârstei, copiii învață să colaboreze, să exploreze și să descopere lumea
+        înconjurătoare.
+      </p>
+
+      <h3 class="text-xl font-bold mb-3 mt-6">Dezvoltare personală</h3>
+      <p class="mb-4">
+        Fiecare copil este încurajat să își dezvolte propriile talente și abilități într-un mediu sigur și stimulativ.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+</Layout>

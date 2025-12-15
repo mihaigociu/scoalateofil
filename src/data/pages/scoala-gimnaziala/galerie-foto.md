@@ -14,7 +14,7 @@ gallery:
   # Adăugați mai multe imagini aici
 metadata:
   title: 'Galerie foto - Școală Gimnazială - Școala Teofil'
-  description: 'Vezi fotografii cu activitățile și evenimentele de la școala gimnazială'
+  description: 'Vedeți fotografii cu activitățile și evenimentele de la școala gimnazială'
 ---
 
 # Galerie foto

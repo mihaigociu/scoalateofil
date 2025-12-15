@@ -9,7 +9,7 @@ draft: false
 image: '/images/acasa/istoric-hero.jpg'
 metadata:
   title: 'Scurt istoric - Școala Teofil'
-  description: 'Descoperă istoria și evoluția Școlii Teofil de-a lungul anilor'
+  description: 'Descoperiți istoria și evoluția Școlii Teofil de-a lungul anilor'
 ---
 
 # Scurt istoric

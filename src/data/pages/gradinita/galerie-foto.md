@@ -14,7 +14,7 @@ gallery:
   # Adăugați mai multe imagini aici
 metadata:
   title: 'Galerie foto - Grădiniță - Școala Teofil'
-  description: 'Vezi fotografii cu activitățile și evenimentele de la grădiniță'
+  description: 'Vedeți fotografii cu activitățile și evenimentele de la grădiniță'
 ---
 
 # Galerie foto

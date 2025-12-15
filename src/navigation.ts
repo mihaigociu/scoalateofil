@@ -4,19 +4,19 @@ export const headerData = {
   links: [
     {
       text: 'ACASĂ',
-      href: getPermalink('/acasa/'),
+      href: getPermalink('/'),
       links: [
         {
           text: 'Scurt istoric',
           href: getPermalink('/acasa/scurt-istoric'),
         },
         {
-          text: 'Rezultate',
-          href: getPermalink('/acasa/rezultate'),
-        },
-        {
           text: 'Echipa noastră',
           href: getPermalink('/acasa/echipa-noastra'),
+        },
+        {
+          text: 'Rezultate',
+          href: getPermalink('/acasa/rezultate'),
         },
         {
           text: 'Noutăți',
@@ -57,6 +57,10 @@ export const headerData = {
           href: getPermalink('/gradinita/echipa-noastra'),
         },
         {
+          text: 'Rezultate',
+          href: getPermalink('/gradinita/rezultate'),
+        },
+        {
           text: 'Noutăți',
           href: getPermalink('/gradinita/noutati'),
         },
@@ -87,6 +91,10 @@ export const headerData = {
           href: getPermalink('/scoala-primara/echipa-noastra'),
         },
         {
+          text: 'Rezultate',
+          href: getPermalink('/scoala-primara/rezultate'),
+        },
+        {
           text: 'Noutăți',
           href: getPermalink('/scoala-primara/noutati'),
         },
@@ -115,6 +123,10 @@ export const headerData = {
         {
           text: 'Echipa noastră',
           href: getPermalink('/scoala-gimnaziala/echipa-noastra'),
+        },
+        {
+          text: 'Rezultate',
+          href: getPermalink('/scoala-gimnaziala/rezultate'),
         },
         {
           text: 'Noutăți',
