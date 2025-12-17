@@ -1,7 +1,17 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import TeamMember from '~/components/widgets/TeamMember.astro';
+
+// Import team member data
+import { bogdanHerteg, elizaPurcaru, tatianaOnilov, rominaSopoian, laviniaSabou } from '~/data/team';
+
+// Import all team images
+import bogdanHertegImg from '~/assets/images/echipa/bogdan-herteg.jpg';
+import elizaPurcaruImg from '~/assets/images/echipa/eliza-purcaru.jpg';
+import tatianaOnilovImg from '~/assets/images/echipa/tatiana-onilov.jpg';
+import rominaSopoianImg from '~/assets/images/echipa/romina-sopoian.jpg';
+import laviniaSabouImg from '~/assets/images/echipa/lavinia-sabou.jpg';
 
 const metadata = {
   title: 'Echipa noastră - Școala Gimnazială Teofil',
@@ -10,60 +20,66 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
   <HeroText
     tagline="Școala Gimnazială"
     title="Echipa noastră"
     subtitle="Profesori de specialitate dedicați și experimentați"
   />
 
-  <Features2
-    title="Echipa pedagogică"
-    subtitle="Profesioniști cu experiență și pasiune pentru educația elevilor"
-    columns={3}
-    items={[
-      {
-        title: 'Profesori de specialitate',
-        description:
-          'Toți profesorii noștri au diplomă de licență și/sau master în domeniul lor și experiență vastă în predare.',
-        icon: 'tabler:certificate',
-      },
-      {
-        title: 'Pregătire pentru performanță',
-        description: 'Echipa include profesori specializați în pregătirea pentru olimpiade și evaluări naționale.',
-        icon: 'tabler:trophy',
-      },
-      {
-        title: 'Formare continuă',
-        description:
-          'Participare regulată la cursuri, conferințe și traininguri pentru actualizarea metodelor de predare.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Mentoring individual',
-        description:
-          'Fiecare elev are un mentor dedicat care îl ghidează în parcursul școlar și în dezvoltarea personală.',
-        icon: 'tabler:user-heart',
-      },
-      {
-        title: 'Colaborare cu părinții',
-        description: 'Comunicare constantă și transparentă pentru a asigura succesul școlar al fiecărui elev.',
-        icon: 'tabler:message-circle',
-      },
-      {
-        title: 'Pasiune și dedicare',
-        description: 'Fiecare profesor este dedicat succesului academic și dezvoltării personale a elevilor.',
-        icon: 'tabler:heart',
-      },
-    ]}
-  />
+  <!-- Team Grid Section -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Team Member 1: Bogdan Herțeg -->
+      <TeamMember
+        id={bogdanHerteg.id}
+        title={bogdanHerteg.title}
+        tagline={bogdanHerteg.tagline}
+        image={bogdanHertegImg}
+      >
+        <Fragment set:html={bogdanHerteg.content} />
+      </TeamMember>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4">Cunoașteți-ne mai bine</h2>
-      <p class="text-lg text-muted">
-        Pentru detalii despre membrii echipei noastre, vă rugăm să ne contactați direct sau să programați o vizită la
-        școală.
-      </p>
+      <!-- Team Member 2: Eliza Purcaru -->
+      <TeamMember
+        id={elizaPurcaru.id}
+        title={elizaPurcaru.title}
+        tagline={elizaPurcaru.tagline}
+        image={elizaPurcaruImg}
+      >
+        <Fragment set:html={elizaPurcaru.content} />
+      </TeamMember>
+
+      <!-- Team Member 3: Tatiana Onilov -->
+      <TeamMember
+        id={tatianaOnilov.id}
+        title={tatianaOnilov.title}
+        tagline={tatianaOnilov.tagline}
+        image={tatianaOnilovImg}
+      >
+        <Fragment set:html={tatianaOnilov.content} />
+      </TeamMember>
+
+      <!-- Team Member 4: Romina Sopoian -->
+      <TeamMember
+        id={rominaSopoian.id}
+        title={rominaSopoian.title}
+        tagline={rominaSopoian.tagline}
+        image={rominaSopoianImg}
+      >
+        <Fragment set:html={rominaSopoian.content} />
+      </TeamMember>
+
+      <!-- Team Member 5: Lavinia Sabou -->
+      <TeamMember
+        id={laviniaSabou.id}
+        title={laviniaSabou.title}
+        tagline={laviniaSabou.tagline}
+        image={laviniaSabouImg}
+      >
+        <Fragment set:html={laviniaSabou.content} />
+      </TeamMember>
     </div>
-  </div>
+  </section>
 </Layout>

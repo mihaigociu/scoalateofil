@@ -1,7 +1,25 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import TeamMember from '~/components/widgets/TeamMember.astro';
+
+// Import team member data
+import {
+  claudiuPrecup,
+  valentinaSandu,
+  andreeaLauraBeian,
+  virginiaNeacsu,
+  flaviusEmilian,
+  simonaMuller,
+} from '~/data/team';
+
+// Import all team images
+import prClaudiuPrecupImg from '~/assets/images/echipa/pr-claudiu-precup.jpg';
+import valentinaSanduImg from '~/assets/images/echipa/valentina-sandu.jpg';
+import andreeaLauraBeianImg from '~/assets/images/echipa/andreea-laura-beian.jpg';
+import virginiaNeacsuImg from '~/assets/images/echipa/virginia-neacsu.jpg';
+import flaviusEmilianImg from '~/assets/images/echipa/flavius-emilian.jpg';
+import simonaMullerImg from '~/assets/images/echipa/simona-muller.jpg';
 
 const metadata = {
   title: 'Echipa noastră - Grădinița Teofil',
@@ -10,41 +28,72 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
   <HeroText tagline="Grădiniță" title="Echipa noastră" subtitle="Educatori Montessori dedicați și pasionați" />
 
-  <Features2
-    title="Educatorii noștri"
-    subtitle="Profesioniști cu pregătire Montessori și experiență în lucrul cu copiii"
-    columns={3}
-    items={[
-      {
-        title: 'Educatori certificați',
-        description:
-          'Toți educatorii noștri au certificare Montessori internațională și experiență vastă în lucrul cu copiii de vârstă preșcolară.',
-        icon: 'tabler:certificate',
-      },
-      {
-        title: 'Formare continuă',
-        description:
-          'Echipa participă regulat la cursuri și workshopuri pentru actualizarea cunoștințelor și dezvoltarea profesională.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Pasiune pentru educație',
-        description:
-          'Fiecare membru al echipei este dedicat dezvoltării armonioase a copiilor și creează relații calde cu fiecare copil.',
-        icon: 'tabler:heart',
-      },
-    ]}
-  />
+  <!-- Team Grid Section -->
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Team Member 1: Claudiu Precup -->
+      <TeamMember
+        id={claudiuPrecup.id}
+        title={claudiuPrecup.title}
+        tagline={claudiuPrecup.tagline}
+        image={prClaudiuPrecupImg}
+      >
+        <Fragment set:html={claudiuPrecup.content} />
+      </TeamMember>
 
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4">Informații suplimentare</h2>
-      <p class="text-lg text-muted">
-        Pentru detalii despre membrii echipei noastre, vă rugăm să ne contactați direct sau să programați o vizită la
-        grădiniță.
-      </p>
+      <!-- Team Member 2: Valentina Sandu -->
+      <TeamMember
+        id={valentinaSandu.id}
+        title={valentinaSandu.title}
+        tagline={valentinaSandu.tagline}
+        image={valentinaSanduImg}
+      >
+        <Fragment set:html={valentinaSandu.content} />
+      </TeamMember>
+
+      <!-- Team Member 3: Andreea Laura Beian -->
+      <TeamMember
+        id={andreeaLauraBeian.id}
+        title={andreeaLauraBeian.title}
+        tagline={andreeaLauraBeian.tagline}
+        image={andreeaLauraBeianImg}
+      >
+        <Fragment set:html={andreeaLauraBeian.content} />
+      </TeamMember>
+
+      <!-- Team Member 4: Virginia Neacșu -->
+      <TeamMember
+        id={virginiaNeacsu.id}
+        title={virginiaNeacsu.title}
+        tagline={virginiaNeacsu.tagline}
+        image={virginiaNeacsuImg}
+      >
+        <Fragment set:html={virginiaNeacsu.content} />
+      </TeamMember>
+
+      <!-- Team Member 5: Flavius Emilian -->
+      <TeamMember
+        id={flaviusEmilian.id}
+        title={flaviusEmilian.title}
+        tagline={flaviusEmilian.tagline}
+        image={flaviusEmilianImg}
+      >
+        <Fragment set:html={flaviusEmilian.content} />
+      </TeamMember>
+
+      <!-- Team Member 6: Simona Muller -->
+      <TeamMember
+        id={simonaMuller.id}
+        title={simonaMuller.title}
+        tagline={simonaMuller.tagline}
+        image={simonaMullerImg}
+      >
+        <Fragment set:html={simonaMuller.content} />
+      </TeamMember>
     </div>
-  </div>
+  </section>
 </Layout>
