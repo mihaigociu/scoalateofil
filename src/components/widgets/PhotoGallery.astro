@@ -64,7 +64,7 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
     <div class={`grid grid-cols-1 ${columnClasses[columns]} gap-4 md:gap-6`}>
       {
         images.map((image, index) => (
-          <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 aspect-square cursor-pointer intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade">
+          <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 aspect-square cursor-pointer gallery-fade-item">
             <a href={`#gallery-lightbox-${index}`} class="block w-full h-full">
               <Image
                 src={image.src}
@@ -174,13 +174,73 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
   body:has(.lightbox:target) {
     overflow: hidden !important;
   }
+
+  /* Gallery fade animation - start visible, then animate in if JS is ready */
+  .gallery-fade-item {
+    opacity: 1;
+    animation: none;
+  }
+
+  /* Add animation class via JS when ready */
+  .gallery-fade-item.animate-ready {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .gallery-fade-item.animate-ready.visible {
+    animation-play-state: running;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-fade-item.animate-ready {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
 </style>
 
 <script>
+  // Store scroll position globally so it persists
+  let savedScrollPosition = 0;
+  let isInitialized = false;
+
+  // Close the lightbox
+  function closeLightbox(e?: Event) {
+    if (e) {
+      e.preventDefault();
+    }
+    
+    // Remove the hash without causing scroll
+    history.pushState('', document.title, window.location.pathname + window.location.search);
+    
+    // Manually trigger the close behavior
+    document.body.style.overflow = '';
+    
+    // Restore scroll position
+    if (savedScrollPosition > 0) {
+      window.scrollTo({ top: savedScrollPosition, behavior: 'instant' });
+    }
+  }
+
   // Lock/unlock body scroll
   function updateBodyScroll() {
     const hasOpenLightbox = window.location.hash.startsWith('#gallery-lightbox-');
     if (hasOpenLightbox) {
+      // Save current scroll position
+      savedScrollPosition = window.scrollY;
       document.body.style.overflow = 'hidden';
       // Scroll to top when opening lightbox
       window.scrollTo({ top: 0, behavior: 'instant' });
@@ -189,19 +249,13 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
     }
   }
 
-  // Update on hash change
-  window.addEventListener('hashchange', updateBodyScroll);
-
-  // Check on load
-  updateBodyScroll();
-
-  // Add keyboard navigation
-  document.addEventListener('keydown', (e) => {
+  // Keyboard navigation handler
+  function handleKeyboard(e) {
     const currentLightbox = document.querySelector('.lightbox:target');
     if (!currentLightbox) return;
 
     if (e.key === 'Escape') {
-      window.location.hash = '';
+      closeLightbox();
     } else if (e.key === 'ArrowLeft') {
       const prevButton = currentLightbox.querySelector('a[aria-label="Previous"]');
       if (prevButton) (prevButton as HTMLAnchorElement).click();
@@ -209,15 +263,82 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
       const nextButton = currentLightbox.querySelector('a[aria-label="Next"]');
       if (nextButton) (nextButton as HTMLAnchorElement).click();
     }
-  });
+  }
 
-  // Close lightbox when clicking the background
-  document.querySelectorAll('.lightbox').forEach((lightbox) => {
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        window.location.hash = '';
-      }
-    });
-  });
+  // Initialize gallery on both page load and view transitions
+  function initGallery() {
+    // Set up event listeners only once
+    if (!isInitialized) {
+      window.addEventListener('hashchange', updateBodyScroll);
+      document.addEventListener('keydown', handleKeyboard);
+      
+      // Use event delegation for close buttons and lightbox clicks
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        
+        // Check if close button was clicked
+        const closeBtn = target.closest('a[aria-label="Close"]');
+        if (closeBtn && closeBtn.closest('.lightbox')) {
+          e.preventDefault();
+          closeLightbox();
+          return;
+        }
+        
+        // Check if lightbox background was clicked
+        const lightbox = target.closest('.lightbox');
+        if (lightbox && target === lightbox) {
+          e.preventDefault();
+          closeLightbox();
+        }
+      });
+      
+      isInitialized = true;
+    }
+
+    // Check on load
+    updateBodyScroll();
+
+    // Initialize fade-in animations
+    const galleryItems = document.querySelectorAll('.gallery-fade-item');
+    
+    if (galleryItems.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      // Add animate-ready class to enable animations
+      galleryItems.forEach((item) => {
+        item.classList.add('animate-ready');
+      });
+
+      // Set up intersection observer for fade-in effect
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target); // Only animate once
+            }
+          });
+        },
+        {
+          threshold: 0.1,
+          rootMargin: '50px',
+        }
+      );
+
+      // Observe all gallery items
+      galleryItems.forEach((item) => {
+        observer.observe(item);
+      });
+    } else {
+      // If reduced motion is preferred or no items, ensure all items are visible
+      galleryItems.forEach((item) => {
+        item.style.opacity = '1';
+      });
+    }
+  }
+
+  // Run on initial load
+  initGallery();
+
+  // Re-run on Astro view transitions (client-side navigation)
+  document.addEventListener('astro:page-load', initGallery);
 </script>
 ```
