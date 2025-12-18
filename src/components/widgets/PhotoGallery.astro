@@ -1,0 +1,223 @@
+---
+import { Image } from 'astro:assets';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import type { Widget } from '~/types';
+
+interface Props extends Widget {
+  title?: string;
+  subtitle?: string;
+  images: {
+    src: ImageMetadata;
+    alt: string;
+    caption?: string;
+  }[];
+  columns?: 2 | 3 | 4;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline,
+  images = [],
+  columns = 3,
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
+
+const columnClasses = {
+  2: 'sm:grid-cols-2 lg:grid-cols-2',
+  3: 'sm:grid-cols-2 lg:grid-cols-3',
+  4: 'sm:grid-cols-2 lg:grid-cols-4',
+};
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container} bg={bg}>
+  <div class="max-w-7xl mx-auto">
+    {
+      (title || subtitle || tagline) && (
+        <div class="mb-8 md:mb-12 text-center">
+          {tagline && (
+            <p
+              class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase"
+              set:html={tagline}
+            />
+          )}
+          {title && (
+            <h2
+              class="text-4xl md:text-5xl font-bold leading-tighter tracking-tighter mb-4 font-heading"
+              set:html={title}
+            />
+          )}
+          {subtitle && (
+            <p class="max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400" set:html={subtitle} />
+          )}
+        </div>
+      )
+    }
+
+    <div class={`grid grid-cols-1 ${columnClasses[columns]} gap-4 md:gap-6`}>
+      {
+        images.map((image, index) => (
+          <div class="gallery-item group relative overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800 aspect-square cursor-pointer intersect-once motion-safe:opacity-0 motion-safe:intersect:animate-fade">
+            <a href={`#gallery-lightbox-${index}`} class="block w-full h-full">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                widths={[400, 768]}
+                sizes="(max-width: 768px) 100vw, 400px"
+                loading={index < 6 ? 'eager' : 'lazy'}
+              />
+              {image.caption && (
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <p class="text-white text-sm p-4 w-full">{image.caption}</p>
+                </div>
+              )}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</WidgetWrapper>
+
+<!-- Lightbox Modals - Outside WidgetWrapper -->
+{
+  images.map((image, index) => (
+    <div
+      id={`gallery-lightbox-${index}`}
+      class="lightbox fixed inset-0 bg-black/95 z-[9999] hidden opacity-0 transition-opacity duration-300"
+      style="top: 0; left: 0; right: 0; bottom: 0;"
+    >
+      {/* Close button */}
+      <a
+        href="#"
+        class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+        aria-label="Close"
+      >
+        <svg
+          class="w-8 h-8 md:w-10 md:h-10"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </a>
+
+      {/* Previous button */}
+      {index > 0 && (
+        <a
+          href={`#gallery-lightbox-${index - 1}`}
+          class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors p-2 z-10"
+          aria-label="Previous"
+        >
+          <svg
+            class="w-8 h-8 md:w-12 md:h-12"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </a>
+      )}
+
+      {/* Next button */}
+      {index < images.length - 1 && (
+        <a
+          href={`#gallery-lightbox-${index + 1}`}
+          class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors p-2 z-10"
+          aria-label="Next"
+        >
+          <svg
+            class="w-8 h-8 md:w-12 md:h-12"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      )}
+
+      {/* Image Container */}
+      <div class="w-full h-full flex items-center justify-center p-4 md:p-16">
+        <div class="relative flex flex-col items-center justify-center">
+          <img
+            src={image.src.src}
+            alt={image.alt}
+            class="max-w-full max-h-[85vh] w-auto h-auto object-contain"
+          />
+          {image.caption && (
+            <p class="text-white text-center mt-4 text-sm md:text-lg max-w-3xl px-4">{image.caption}</p>
+          )}
+        </div>
+      </div>
+    </div>
+  ))
+}
+
+<style>
+  /* Show lightbox when targeted */
+  .lightbox:target {
+    display: flex !important;
+    opacity: 1 !important;
+  }
+
+  /* Lock body scroll when lightbox is open */
+  body:has(.lightbox:target) {
+    overflow: hidden !important;
+  }
+</style>
+
+<script>
+  // Lock/unlock body scroll
+  function updateBodyScroll() {
+    const hasOpenLightbox = window.location.hash.startsWith('#gallery-lightbox-');
+    if (hasOpenLightbox) {
+      document.body.style.overflow = 'hidden';
+      // Scroll to top when opening lightbox
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    } else {
+      document.body.style.overflow = '';
+    }
+  }
+
+  // Update on hash change
+  window.addEventListener('hashchange', updateBodyScroll);
+  
+  // Check on load
+  updateBodyScroll();
+
+  // Add keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    const currentLightbox = document.querySelector('.lightbox:target');
+    if (!currentLightbox) return;
+
+    if (e.key === 'Escape') {
+      window.location.hash = '';
+    } else if (e.key === 'ArrowLeft') {
+      const prevButton = currentLightbox.querySelector('a[aria-label="Previous"]');
+      if (prevButton) (prevButton as HTMLAnchorElement).click();
+    } else if (e.key === 'ArrowRight') {
+      const nextButton = currentLightbox.querySelector('a[aria-label="Next"]');
+      if (nextButton) (nextButton as HTMLAnchorElement).click();
+    }
+  });
+
+  // Close lightbox when clicking the background
+  document.querySelectorAll('.lightbox').forEach((lightbox) => {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        window.location.hash = '';
+      }
+    });
+  });
+</script>
+```

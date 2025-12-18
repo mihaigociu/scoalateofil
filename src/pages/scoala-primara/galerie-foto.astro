@@ -1,48 +1,40 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
+import PhotoGallery from '~/components/widgets/PhotoGallery.astro';
 
 const metadata = {
   title: 'Galerie foto - Școala Primară Teofil',
   description: 'Momente speciale din viața Școlii Primare Teofil.',
 };
+
+// Import all images from the scoala-primara gallery
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/galerie/scoala-primara/*.jpg',
+  { eager: true }
+);
+
+// Filter out thumbnails and prepare gallery images
+const galleryImages = Object.entries(images)
+  .filter(([path]) => !path.includes('-150x150'))
+  .map(([path, module]) => ({
+    src: module.default,
+    alt: path.split('/').pop()?.replace('.jpg', '').replace(/-/g, ' ') || 'Școala Primară Teofil',
+  }))
+  .sort((a, b) => a.alt.localeCompare(b.alt));
 ---
 
 <Layout metadata={metadata}>
   <HeroText tagline="Școala Primară" title="Galerie foto" subtitle="Momente speciale din viața școlii" />
 
-  <Content
-    title="Albumele noastre"
-    image={{
-      src: '~/assets/images/galerie-primara.jpg',
-      alt: 'Galerie foto Școala Primară Teofil',
-    }}
+  <PhotoGallery
+    title="Albumul nostru foto"
+    subtitle="Descoperă momente speciale din viața Școlii Primare Teofil - activități de învățare, proiecte, sărbători și realizările elevilor noștri."
+    images={galleryImages}
+    columns={3}
   >
-    <Fragment slot="content">
-      <p class="mb-4">
-        Explorați albumele noastre foto pentru a vedea momente speciale din viața școlii - activități de învățare,
-        proiecte, sărbători, excursii și realizările elevilor noștri.
-      </p>
-
-      <h3 class="text-xl font-bold mb-3 mt-6">Categorii de albume</h3>
-      <ul class="list-disc list-inside mb-4 space-y-2">
-        <li>Activități școlare zilnice</li>
-        <li>Proiecte și prezentări</li>
-        <li>Evenimente și sărbători</li>
-        <li>Excursii și ieșiri educaționale</li>
-        <li>Activități sportive și artistice</li>
-        <li>Realizări și competiții</li>
-      </ul>
-
-      <p class="mb-4 text-sm text-muted italic">
-        Notă: Galeriile foto detaliate vor fi disponibile în curând. Pentru moment, puteți vedea actualizări pe paginile
-        noastre de social media.
-      </p>
-    </Fragment>
-
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-blue-50 dark:bg-slate-800"></div>
     </Fragment>
-  </Content>
+  </PhotoGallery>
 </Layout>
