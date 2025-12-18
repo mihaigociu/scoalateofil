@@ -7,6 +7,7 @@ import type { Widget } from '~/types';
 interface Props extends Widget {
   title?: string;
   subtitle?: string;
+  tagline?: string;
   images: {
     src: ImageMetadata;
     alt: string;
@@ -32,9 +33,11 @@ const columnClasses = {
   3: 'sm:grid-cols-2 lg:grid-cols-3',
   4: 'sm:grid-cols-2 lg:grid-cols-4',
 };
+
+const containerClass = typeof classes?.container === 'string' ? classes.container : '';
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={classes?.container} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={containerClass} bg={bg}>
   <div class="max-w-7xl mx-auto">
     {
       (title || subtitle || tagline) && (
