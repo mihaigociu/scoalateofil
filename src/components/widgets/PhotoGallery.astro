@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import type { Widget } from '~/types';
 
@@ -149,11 +150,7 @@ const columnClasses = {
       {/* Image Container */}
       <div class="w-full h-full flex items-center justify-center p-4 md:p-16">
         <div class="relative flex flex-col items-center justify-center">
-          <img
-            src={image.src.src}
-            alt={image.alt}
-            class="max-w-full max-h-[85vh] w-auto h-auto object-contain"
-          />
+          <img src={image.src.src} alt={image.alt} class="max-w-full max-h-[85vh] w-auto h-auto object-contain" />
           {image.caption && (
             <p class="text-white text-center mt-4 text-sm md:text-lg max-w-3xl px-4">{image.caption}</p>
           )}
@@ -191,7 +188,7 @@ const columnClasses = {
 
   // Update on hash change
   window.addEventListener('hashchange', updateBodyScroll);
-  
+
   // Check on load
   updateBodyScroll();
 
