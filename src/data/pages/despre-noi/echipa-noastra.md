@@ -1,12 +1,12 @@
 ---
 title: 'Echipa noastră'
 description: 'Cunoașteți echipa Școlii Teofil'
-section: 'acasa'
+section: 'despre-noi'
 subsection: 'echipa-noastra'
 order: 2
 publishDate: 2025-11-03
 draft: false
-image: '/images/acasa/echipa-hero.jpg'
+image: '/images/despre-noi/echipa-hero.jpg'
 metadata:
   title: 'Echipa noastră - Școala Teofil'
   description: 'Cunoașteți profesorii și personalul dedicat al Școlii Teofil'

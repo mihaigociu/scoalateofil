@@ -9,6 +9,7 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
+import pagefind from 'astro-pagefind';
 import type { AstroIntegration } from 'astro';
 
 import astrowind from './vendor/integration';
@@ -23,6 +24,10 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+  trailingSlash: 'never',
+  build: {
+    format: 'file',
+  },
 
   integrations: [
     tailwind({
@@ -69,6 +74,8 @@ export default defineConfig({
     astrowind({
       config: './src/config.yaml',
     }),
+
+    pagefind(),
   ],
 
   image: {

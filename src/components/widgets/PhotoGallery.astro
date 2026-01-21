@@ -222,13 +222,13 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
     if (e) {
       e.preventDefault();
     }
-    
+
     // Remove the hash without causing scroll
     history.pushState('', document.title, window.location.pathname + window.location.search);
-    
+
     // Manually trigger the close behavior
     document.body.style.overflow = '';
-    
+
     // Restore scroll position
     if (savedScrollPosition > 0) {
       window.scrollTo({ top: savedScrollPosition, behavior: 'instant' });
@@ -250,7 +250,7 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
   }
 
   // Keyboard navigation handler
-  function handleKeyboard(e) {
+  function handleKeyboard(e: KeyboardEvent) {
     const currentLightbox = document.querySelector('.lightbox:target');
     if (!currentLightbox) return;
 
@@ -271,11 +271,11 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
     if (!isInitialized) {
       window.addEventListener('hashchange', updateBodyScroll);
       document.addEventListener('keydown', handleKeyboard);
-      
+
       // Use event delegation for close buttons and lightbox clicks
       document.addEventListener('click', (e) => {
         const target = e.target as HTMLElement;
-        
+
         // Check if close button was clicked
         const closeBtn = target.closest('a[aria-label="Close"]');
         if (closeBtn && closeBtn.closest('.lightbox')) {
@@ -283,7 +283,7 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
           closeLightbox();
           return;
         }
-        
+
         // Check if lightbox background was clicked
         const lightbox = target.closest('.lightbox');
         if (lightbox && target === lightbox) {
@@ -291,7 +291,7 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
           closeLightbox();
         }
       });
-      
+
       isInitialized = true;
     }
 
@@ -300,7 +300,7 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
 
     // Initialize fade-in animations
     const galleryItems = document.querySelectorAll('.gallery-fade-item');
-    
+
     if (galleryItems.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       // Add animate-ready class to enable animations
       galleryItems.forEach((item) => {
@@ -330,7 +330,7 @@ const containerClass = typeof classes?.container === 'string' ? classes.containe
     } else {
       // If reduced motion is preferred or no items, ensure all items are visible
       galleryItems.forEach((item) => {
-        item.style.opacity = '1';
+        (item as HTMLElement).style.opacity = '1';
       });
     }
   }

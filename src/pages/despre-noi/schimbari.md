@@ -1,10 +1,17 @@
-schimbari
+schimbari 15.01.2026
+
+DESPRE NOI in loc de ACASA - cu identitatea scolii, valorile, viziunea, misiunea, obiectivele educatiei etc.
+o noua pagina de ACTIVITATI SI MEDIA (/activitati/ - unde sa fie toate activitatile extra curriculare de la toate nivelele, revista scolii, emisiuni, clubul de cercetasi etc.)
+
+cartlinele cu incons sa aiba o imagine in spate in loc de icon (ca si cele cu text)
+
+##############################################################################
 
 index page:
 
 - textul peste poza (text alb) vezi https://www.bundespraesident.de/EN/home/home_node.html
 
-footer:
+footer:Ana,Meri,Ili,Nico,Nina11
 
 - culoare de background inchisa
 - text alb

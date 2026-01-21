@@ -1,12 +1,12 @@
 ---
 title: 'Scurt istoric'
 description: 'Istoria Școlii Teofil'
-section: 'acasa'
+section: 'despre-noi'
 subsection: 'scurt-istoric'
 order: 1
 publishDate: 2025-11-03
 draft: false
-image: '/images/acasa/istoric-hero.jpg'
+image: '/images/despre-noi/istoric-hero.jpg'
 metadata:
   title: 'Scurt istoric - Școala Teofil'
   description: 'Descoperiți istoria și evoluția Școlii Teofil de-a lungul anilor'

@@ -3,41 +3,26 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     {
-      text: 'ACASĂ',
+      text: 'DESPRE NOI',
       href: getPermalink('/'),
       links: [
         {
           text: 'Scurt istoric',
-          href: getPermalink('/acasa/scurt-istoric'),
+          href: getPermalink('/despre-noi/scurt-istoric'),
         },
         {
           text: 'Echipa noastră',
-          href: getPermalink('/acasa/echipa-noastra'),
+          href: getPermalink('/despre-noi/echipa-noastra'),
         },
         {
           text: 'Rezultate',
-          href: getPermalink('/acasa/rezultate'),
+          href: getPermalink('/despre-noi/rezultate'),
         },
-        {
-          text: 'Noutăți',
-          href: getPermalink('/acasa/noutati'),
-        },
-        {
-          text: 'Tutoriale',
-          href: getPermalink('/acasa/tutoriale'),
-        },
-        {
-          text: 'Revista școlii',
-          href: getPermalink('/acasa/revista-scolii'),
-        },
-        {
-          text: 'Emisiuni',
-          href: getPermalink('/acasa/emisiuni'),
-        },
-        {
-          text: 'Clubul de cercetași',
-          href: getPermalink('/acasa/clubul-de-cercetasi'),
-        },
+        // TODO: Uncomment when content is available
+        // {
+        //   text: 'Noutăți',
+        //   href: getPermalink('/despre-noi/noutati'),
+        // },
         {
           text: 'Contact',
           href: getPermalink('/contact'),
@@ -56,14 +41,15 @@ export const headerData = {
           text: 'Echipa noastră',
           href: getPermalink('/gradinita/echipa-noastra'),
         },
-        {
-          text: 'Rezultate',
-          href: getPermalink('/gradinita/rezultate'),
-        },
-        {
-          text: 'Noutăți',
-          href: getPermalink('/gradinita/noutati'),
-        },
+        // TODO: Uncomment when content is available
+        // {
+        //   text: 'Rezultate',
+        //   href: getPermalink('/gradinita/rezultate'),
+        // },
+        // {
+        //   text: 'Noutăți',
+        //   href: getPermalink('/gradinita/noutati'),
+        // },
         {
           text: 'Galerie foto',
           href: getPermalink('/gradinita/galerie-foto'),
@@ -90,14 +76,15 @@ export const headerData = {
           text: 'Echipa noastră',
           href: getPermalink('/scoala-primara/echipa-noastra'),
         },
-        {
-          text: 'Rezultate',
-          href: getPermalink('/scoala-primara/rezultate'),
-        },
-        {
-          text: 'Noutăți',
-          href: getPermalink('/scoala-primara/noutati'),
-        },
+        // TODO: Uncomment when content is available
+        // {
+        //   text: 'Rezultate',
+        //   href: getPermalink('/scoala-primara/rezultate'),
+        // },
+        // {
+        //   text: 'Noutăți',
+        //   href: getPermalink('/scoala-primara/noutati'),
+        // },
         {
           text: 'Galerie foto',
           href: getPermalink('/scoala-primara/galerie-foto'),
@@ -124,14 +111,15 @@ export const headerData = {
           text: 'Echipa noastră',
           href: getPermalink('/scoala-gimnaziala/echipa-noastra'),
         },
-        {
-          text: 'Rezultate',
-          href: getPermalink('/scoala-gimnaziala/rezultate'),
-        },
-        {
-          text: 'Noutăți',
-          href: getPermalink('/scoala-gimnaziala/noutati'),
-        },
+        // TODO: Uncomment when content is available
+        // {
+        //   text: 'Rezultate',
+        //   href: getPermalink('/scoala-gimnaziala/rezultate'),
+        // },
+        // {
+        //   text: 'Noutăți',
+        //   href: getPermalink('/scoala-gimnaziala/noutati'),
+        // },
         {
           text: 'Galerie foto',
           href: getPermalink('/scoala-gimnaziala/galerie-foto'),
@@ -146,6 +134,30 @@ export const headerData = {
         },
       ],
     },
+    {
+      text: 'ACTIVITĂȚI ȘI MEDIA',
+      href: getPermalink('/activitati/'),
+      links: [
+        {
+          text: 'Revista școlii',
+          href: getPermalink('/activitati/revista-scolii'),
+        },
+        // TODO: Uncomment when content is available
+        // {
+        //   text: 'Emisiuni',
+        //   href: getPermalink('/activitati/emisiuni'),
+        // },
+        {
+          text: 'Clubul de cercetași',
+          href: getPermalink('/activitati/clubul-de-cercetasi'),
+        },
+        // TODO: Uncomment when content is available
+        // {
+        //   text: 'Tutoriale',
+        //   href: getPermalink('/activitati/tutoriale'),
+        // },
+      ],
+    },
   ],
   actions: [],
 };
@@ -153,12 +165,14 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'ACASĂ',
+      title: 'DESPRE NOI',
       links: [
-        { text: 'Scurt istoric', href: getPermalink('/acasa/scurt-istoric') },
-        { text: 'Rezultate', href: getPermalink('/acasa/rezultate') },
-        { text: 'Echipa noastră', href: getPermalink('/acasa/echipa-noastra') },
-        { text: 'Noutăți', href: getPermalink('/acasa/noutati') },
+        { text: 'Scurt istoric', href: getPermalink('/despre-noi/scurt-istoric') },
+        { text: 'Echipa noastră', href: getPermalink('/despre-noi/echipa-noastra') },
+        { text: 'Rezultate', href: getPermalink('/despre-noi/rezultate') },
+        // TODO: Uncomment when content is available
+        // { text: 'Noutăți', href: getPermalink('/despre-noi/noutati') },
+        { text: 'Contact', href: getPermalink('/contact') },
       ],
     },
     {
@@ -166,7 +180,12 @@ export const footerData = {
       links: [
         { text: 'Metoda pedagogică', href: getPermalink('/gradinita/metoda-pedagogica') },
         { text: 'Echipa noastră', href: getPermalink('/gradinita/echipa-noastra') },
+        // TODO: Uncomment when content is available
+        // { text: 'Rezultate', href: getPermalink('/gradinita/rezultate') },
+        // { text: 'Noutăți', href: getPermalink('/gradinita/noutati') },
+        { text: 'Galerie foto', href: getPermalink('/gradinita/galerie-foto') },
         { text: 'Înscrieri', href: getPermalink('/gradinita/inscrieri') },
+        { text: 'Informații utile (Q&A)', href: getPermalink('/gradinita/informatii-utile') },
       ],
     },
     {
@@ -174,7 +193,12 @@ export const footerData = {
       links: [
         { text: 'Metoda pedagogică', href: getPermalink('/scoala-primara/metoda-pedagogica') },
         { text: 'Echipa noastră', href: getPermalink('/scoala-primara/echipa-noastra') },
+        // TODO: Uncomment when content is available
+        // { text: 'Rezultate', href: getPermalink('/scoala-primara/rezultate') },
+        // { text: 'Noutăți', href: getPermalink('/scoala-primara/noutati') },
+        { text: 'Galerie foto', href: getPermalink('/scoala-primara/galerie-foto') },
         { text: 'Înscrieri', href: getPermalink('/scoala-primara/inscrieri') },
+        { text: 'Informații utile (Q&A)', href: getPermalink('/scoala-primara/informatii-utile') },
       ],
     },
     {
@@ -182,7 +206,22 @@ export const footerData = {
       links: [
         { text: 'Metoda pedagogică', href: getPermalink('/scoala-gimnaziala/metoda-pedagogica') },
         { text: 'Echipa noastră', href: getPermalink('/scoala-gimnaziala/echipa-noastra') },
+        // TODO: Uncomment when content is available
+        // { text: 'Rezultate', href: getPermalink('/scoala-gimnaziala/rezultate') },
+        // { text: 'Noutăți', href: getPermalink('/scoala-gimnaziala/noutati') },
+        { text: 'Galerie foto', href: getPermalink('/scoala-gimnaziala/galerie-foto') },
         { text: 'Înscrieri', href: getPermalink('/scoala-gimnaziala/inscrieri') },
+        { text: 'Informații utile (Q&A)', href: getPermalink('/scoala-gimnaziala/informatii-utile') },
+      ],
+    },
+    {
+      title: 'ACTIVITĂȚI ȘI MEDIA',
+      links: [
+        { text: 'Revista școlii', href: getPermalink('/activitati/revista-scolii') },
+        // TODO: Uncomment when content is available
+        // { text: 'Emisiuni', href: getPermalink('/activitati/emisiuni') },
+        { text: 'Clubul de cercetași', href: getPermalink('/activitati/clubul-de-cercetasi') },
+        // { text: 'Tutoriale', href: getPermalink('/activitati/tutoriale') },
       ],
     },
   ],

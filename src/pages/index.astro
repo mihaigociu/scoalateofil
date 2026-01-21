@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -22,11 +23,20 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
-    image={{ src: '~/assets/images/Scoala-Teofil-logo-final-RGB.jpg', alt: 'Logo Școala Teofil' }}
-    subtitle='Școala „Teofil" este o instituție de învățământ privată din Cluj-Napoca, în cadrul căreia funcționează Grădinița „Teofil" (grădiniță cu metodă de predare Montessori), Școala Primară „Teofil", cu clasele  0 – IV, și Școala Gimnazială „Teofil", cu clasa a V-a. Școala „Teofil" este școală privată acreditată de statul român. Ne mândrim cu o echipă de oameni atent selecționați și cu o formare profesională greu de egalat. Oferim copiilor atât o formare academică de calitate, cât și un mediu călduros sufletește pentru o dezvoltare armonioasă.'
-  >
+  <Hero image={{ src: '~/assets/images/Scoala-Teofil-logo-final-RGB.jpg', alt: 'Logo Școala Teofil' }}>
     <Fragment slot="title"> Despre noi </Fragment>
+    <Fragment slot="subtitle">
+      <p class="mb-4">
+        Școala TEOFIL este o școală particulată integrată în sistemul public de învățământ din România și a fost
+        autorizată în anul 2021.
+      </p>
+      <p class="mb-2">Scopul pentru care este creată Școala TEOFIL este multiplu:</p>
+      <ol class="list-decimal list-inside space-y-1 ml-2">
+        <li>În primul rând construim un standard de calitate pedagogic</li>
+        <li>În al doilea rând selectăm persoane care corespund acestui standard pedagogic</li>
+        <li>În al treilea rând creăm un mediu potrivit în care să fie formați copiii și ajutați părinții</li>
+      </ol>
+    </Fragment>
   </Hero>
 
   <!-- Expandable Cards Widget **************** -->
@@ -40,7 +50,7 @@ const metadata = {
           alt: 'Viziunea noastră',
         },
         summary:
-          'Credem într-o lume armonioasă și echilibrată, unde fiecare copil își dezvoltă pe deplin personalitatea.',
+          'Credem într-o lume armonioasă și echilibrată în care fiecare persoană își dezvoltă pe deplin personalitatea.',
         content: '',
       },
       {
@@ -60,23 +70,16 @@ const metadata = {
           alt: 'Ce este educația',
         },
         summary:
-          'Educația este un proces de dezvoltare a persoanei care are ca scop formarea persoanei în vederea trăirii unei vieți echilibrate, armonioase, pozitive și împlinite.',
+          'Educația este un proces de creștere și dezvoltarea a persoanei. Prin educație se urmărește atât dezvoltarea structurală a persoanei cât și îmbogățirea cu competențe și cunoștințe necesare pentru viată în general și pentru situațiile la care vom fi expuși pe care vom fi nevoiți să le rezolvăm.',
         content: `
-          <p class="mb-4">Educația presupune două elemente de bază:</p>
+          <p class="mb-4">Pentru o educația eficientă este nevoie de câteva elemente de bază:</p>
           <ol class="list-decimal list-inside mb-6 space-y-2">
-            <li>Pedagogul</li>
-            <li>Programul de activități</li>
+            <li>Stabilirea unui standard de calitate pedagogic</li>
+            <li>Personal pregătit atât din punct de vedere al caracterului cât și profesional</li>
+            <li>Mediu pozitiv. Mediul pozitiv se referă la mediul fizic și la atitudinile și activitățile care se realizează în școală.</li>
+            <li>O bună colaborare și comunicare cu părinții elevilor.</li>
+            <li>Formarea permanentă a personalului școlii.</li>
           </ol>
-          
-          <h4 class="text-xl font-bold mb-3">Pedagogul</h4>
-          <p class="mb-4">
-            Educația este determinată de relația de atașament care se realizează între părinți și copil, între pedagog și copil. De aceea, pentru ca o persoană să fie un pedagog potrivit, este obligatoriu să aibă un caracter puternic și bine dezvoltat, în așa fel încât să poată crea o relație pozitivă și echilibrată cu copiii. Relația de atașament presupune dragoste și grijă din partea pedagogului, iar din partea copilului, ascultare și colaborare. Pentru ca educația copilului să fie optimă, este nevoie ca părinții să găsească acel pedagog care să-i poată suplini în educația copiilor.
-          </p>
-          
-          <h4 class="text-xl font-bold mb-3">Programul de activități</h4>
-          <p class="mb-4">
-            Suma activităților pe care le realizăm determină formarea structurii sufletești și a celei fizice a elevilor. De aceea, planul de activități trebuie să fie adaptat fiecărui copil și potrivit măsurii lui de dezvoltare. Realizarea activităților determină dezvoltarea competențelor și a abilităților personale, atât la nivel mintal, cât și la nivel fizic. Este nevoie ca activitățile stabilite să răspundă atât interesului de dezvoltare a copiilor, cât și curiozității și dorinței lor de cunoaștere.
-          </p>
         `,
       },
       {
@@ -85,39 +88,50 @@ const metadata = {
           src: '~/assets/images/principii-educatie-1.jpg',
           alt: 'Principii în educație',
         },
-        summary: 'Principiile și obiectivele care ne ghidează în educarea și formarea copiilor.',
+        summary:
+          'În sistemul de educați în general și în Școala TEOFIL în special sunt multe principii și obiective. Vă prezentăm principiile și obiectivele cele mai relevante.',
         content: `
-          <h4 class="text-xl font-bold mb-3">Principii în educație</h4>
-          <ul class="list-disc list-inside mb-6 space-y-2">
-            <li>Nevoile de dezvoltare ale copiilor sunt stabilite de către părinți.</li>
-            <li>Tot ceea ce se face în educație se face pentru binele copiilor.</li>
-            <li>Copilul este ajutat să-și dezvolte independența.</li>
-            <li>Ajutăm copilul acolo unde acesta nu poate.</li>
-            <li>Respectăm specificul fiecărui copil.</li>
-            <li>Respectăm principiile și valorile fiecărei familii.</li>
-            <li>Susținem dezvoltarea fiecărei persoane și cultivăm relațiile sociale.</li>
-          </ul>
+          <h4 class="text-xl font-bold mb-3">Principii:</h4>
+          <ol class="list-decimal list-inside mb-6 space-y-2">
+            <li>Principiul echității, în baza căruia toți elevii au acces la educație fără nici un fel de discriminare</li>
+            <li>Principiul calității, în baza căruia toate activitățile se realizează conform standardelor de calitate</li>
+            <li>Principiul relevanței, în baza căruia răspundem nevoilor de dezvoltare personală ale elevilor</li>
+            <li>Principiul eficienței, în baza căruia se urmărește obținerea de rezultate educaționale maxime</li>
+            <li>Principiul garantării identității culturale ale elevilor</li>
+            <li>Principiul asumării, dezvoltării, promovării și păstrării identității naționale și a valorilor poporului român</li>
+            <li>Principiul transparenței, prin asigurarea vizibilității deciziilor și rezultatelor școlare și comunicarea periodică a acestora</li>
+            <li>Principiul incluziunii sociale</li>
+            <li>Principiul centrării educației pe beneficiarii acesteia</li>
+            <li>Principiul muncii în echipă</li>
+            <li>Principiul participării și responsabilității părinților</li>
+            <li>Principiul fundamentării deciziilor pe dialog și consultare</li>
+            <li>Principiul respectării dreptului la opinie a elevului</li>
+            <li>Principiul ecologic</li>
+          </ol>
           
-          <h4 class="text-xl font-bold mb-3">Obiectivele educației</h4>
-          <p class="mb-3">Obiectivele generale ale educației sunt următoarele:</p>
-          <ul class="list-disc list-inside mb-6 space-y-2">
-            <li>Formarea caracterului;</li>
-            <li>Dezvoltarea competențelor și a abilităților;</li>
-            <li>Înțelegerea raționamentelor pentru care se realizează lucrurile;</li>
-            <li>Transmiterea de informații.</li>
-          </ul>
+          <h4 class="text-xl font-bold mb-3">Obiectivele didactice, principale ale Școlii TEOFIL:</h4>
+          <ol class="list-decimal list-inside mb-6 space-y-2">
+            <li>Formarea caracterului moral</li>
+            <li>Dezvoltarea capacității cognitive</li>
+            <li>Formarea competențelor academice</li>
+            <li>Transmiterea de informații și conținut academic</li>
+            <li>Dezvoltarea sănătății fizice</li>
+            <li>Dezvoltarea socială: a relațiilor și a responsabilității sociale</li>
+            <li>Formarea abilităților practice</li>
+            <li>Cultivarea tradițiilor</li>
+            <li>Educație religioasă</li>
+            <li>Formarea unei atitudini ecologice</li>
+          </ol>
           
-          <p class="mb-3">Aceste obiective generale ne ghidează în educarea și formarea copiilor. Pe lângă acestea, mai sunt și obiective specifice. Acestea sunt:</p>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>Dezvoltare sufletească/emoțională;</li>
-            <li>Dezvoltare cognitivă/rațională;</li>
-            <li>Dezvoltare fizică;</li>
-            <li>Dezvoltare academică;</li>
-            <li>Dezvoltare socială;</li>
-            <li>Crearea unui mediu pozitiv și sănătos;</li>
-            <li>Alimentație sănătoasă;</li>
-            <li>Dezvoltarea atitudinii ecologice.</li>
-          </ul>
+          <p class="mb-4">
+            Prin formarea caracterelor morale ne referim la acele capacități necesare față de Dumnezeu, față de propria persoană, în relația cu celelalte persoane, față de animale și natura înconjurătoare. De asemenea, caracterele morale se referă la a dezvolta atitudini folositoare atât față de noi înșine cât și față de celelalte persoane.
+          </p>
+          <p class="mb-4">
+            Competențele academice se referă la capacitatea cognitivă de a analiza, a alege, a rezolva problemele (în special cele academice) pe care le întâlnim. Acestea se referă și la capacitatea de a găsi soluții la diferitele situații cu care ne confruntăm.
+          </p>
+          <p class="mb-4">
+            Informațiile cu conținut academic se referă la toate acele informații care ne ajută să ajungem la cunoaștere și pe care le folosim în luarea deciziilor.
+          </p>
         `,
       },
       {
@@ -128,66 +142,35 @@ const metadata = {
         },
         summary: 'Elementele fundamentale care stau la baza procesului educațional.',
         content: `
-          <h4 class="text-xl font-bold mb-3">Relația de atașament</h4>
-          <p class="mb-4">
-            La vârstă mică, până la 6 ani, principalele activități desfășurate cu copiii sunt legate de dezvoltarea emoțională. Acest lucru se realizează prin atașamentul care se creează între educator și copil. Din acest motiv, educatorul trebuie să fie o persoană echilibrată din punct de vedere emoțional.
-          </p>
-          <p class="mb-3">Relația de atașament presupune:</p>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>Dragoste;</li>
-            <li>Îndrumarea copilului pentru a descoperi;</li>
-            <li>Grija educatorului pentru copii.</li>
-          </ul>
-          <p class="mb-6">
-            Pe măsură ce copilul crește, se dezvoltă din ce în ce mai mult și celelalte categorii de competențe.
-          </p>
-          
-          <h4 class="text-xl font-bold mb-3">Comunicarea</h4>
-          <p class="mb-6">
-            În toate activitățile pe care le realizăm cu copiii, este nevoie să arătăm și să explicăm pentru ca acesta să înțeleagă cum este potrivit să se realizeze lucrurile și care este raționamentul pentru care le facem.
-          </p>
-          
-          <h4 class="text-xl font-bold mb-3">Grija pentru nevoile de bază ale copilului</h4>
-          <p class="mb-4">
-            Aici ne referim la grija pentru siguranță, hrană, odihnă, curățenie personală și de mediu, relaționare etc.
-          </p>
+          <ol class="list-decimal list-inside mb-6 space-y-2">
+            <li>Relația de atașament dintre profesor și elev</li>
+            <li>Crearea unui mediu plăcut în sala de clasă și în școală</li>
+            <li>Organizarea și prezentarea informației într-un mod eficient</li>
+            <li>Implicarea elevilor în procesul didactic</li>
+            <li>Colaborarea și comunicarea cu părinții</li>
+            <li>Implicarea părinților în activități didactice</li>
+            <li>Evaluarea periodică a elevilor și analiza rezultatelor</li>
+            <li>Îmbunătățirea continuă</li>
+          </ol>
         `,
       },
       {
-        title: 'Implicarea părinților în procesul pedagogic',
+        title: 'Implicarea părinților în procesul educațional',
         image: {
           src: '~/assets/images/implicare-parinti.jpg',
           alt: 'Implicarea părinților',
         },
-        summary:
-          'Părinții au dreptul și obligația de a-și educa propriii copii așa cum consideră că este mai potrivit.',
+        summary: 'Părinții au dreptul și obligația de a-și educa copiii așa cum consideră că este mai potrivit.',
         content: `
           <p class="mb-4">
-            Deoarece o parte dintre părinți nu au timpul și pregătirea necesară pentru a oferi această educație copiilor, apelează la persoane pregătite în acest sens. Astfel, educatorii și învățătorii devin parteneri ai părinților în educarea copiilor.
+            Deoarece, în general, părinții nu sunt specialiști și nu au timpul necesar pentru educarea propriilor copii, aceștia apelează la profesorii și școala care oferă o educație cât mai aproape de ceea ce își doresc. În felul acesta se creează un parteneriat între părinți și școală, părinți și profesori.
           </p>
           <p class="mb-4">
-            Din acest motiv, atât activitățile care se realizează în educație, cât și mediul în care se realizează educația trebuie să corespundă așteptărilor părinților și principiilor pedagogice.
+            Pe de o parte părinții asumă valorile și principiile școlii în care își înscriu copiii iar pe de altă parte se implică în procesul didactic în măsura în care pot să aducă o contribuție la calitatea acestuia.
           </p>
-          <p class="mb-3">
-            Parteneriatul pedagogic ce se realizează între părinți și școală presupune următoarele lucruri:
+          <p class="mb-4">
+            Pentru ca educația elevilor să se dezvolte cât mai bine, între părinți și profesori se realizează o comunicare activă și regulată.
           </p>
-          
-          <h4 class="text-lg font-bold mb-2">1. Din partea părinților:</h4>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>Asumarea și respectarea principiilor și valorilor școlii;</li>
-            <li>Stabilirea obiectivelor de realizat în ceea ce privește educația copiilor;</li>
-            <li>Implicare în planul de dezvoltare a copiilor și în activitățile de remediere, dacă este cazul;</li>
-            <li>Participarea la activități de formare dedicate părinților.</li>
-          </ul>
-          
-          <h4 class="text-lg font-bold mb-2">2. Din partea școlii:</h4>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>Stabilirea principiilor și a valorilor școlii și aplicarea acestora în toate activitățile pe care le realizează;</li>
-            <li>Stabilirea obiectivelor pedagogice;</li>
-            <li>Realizarea planului de dezvoltare și evidențierea nevoilor specifice ale fiecărui copil;</li>
-            <li>Evaluarea periodică și stabilirea măsurilor de îmbunătățire și remediere, dacă este cazul;</li>
-            <li>Realizarea de activități de formare pentru părinți, în vederea dezvoltării acestora pe plan pedagogic.</li>
-          </ul>
         `,
       },
     ]}
@@ -196,4 +179,62 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </ExpandableCards>
+
+  <!-- Features2 Widget - Sub-pages **************** -->
+
+  <Features2
+    title="Explorați secțiunile"
+    subtitle=""
+    columns={3}
+    items={[
+      {
+        title: 'Scurt istoric',
+        description: 'Descoperiți povestea și evoluția Școlii Teofil de-a lungul anilor.',
+        icon: 'tabler:history',
+        callToAction: {
+          text: 'Aflați mai mult',
+          href: '/despre-noi/scurt-istoric',
+        },
+      },
+      {
+        title: 'Echipa noastră',
+        description: 'Cunoașteți echipa de profesori și educatori dedicați care fac parte din familia Teofil.',
+        icon: 'tabler:users',
+        callToAction: {
+          text: 'Vedeți echipa',
+          href: '/despre-noi/echipa-noastra',
+        },
+      },
+      // TODO: Uncomment when content is available
+      // {
+      //   title: 'Rezultate',
+      //   description:
+      //     'Performanțele și realizările elevilor noștri de-a lungul timpului.',
+      //   icon: 'tabler:trophy',
+      //   callToAction: {
+      //     text: 'Vedeți rezultatele',
+      //     href: '/despre-noi/rezultate',
+      //   },
+      // },
+      // {
+      //   title: 'Noutăți',
+      //   description:
+      //     'Ultimele știri și evenimente din viața școlii.',
+      //   icon: 'tabler:news',
+      //   callToAction: {
+      //     text: 'Citiți noutățile',
+      //     href: '/despre-noi/noutati',
+      //   },
+      // },
+      {
+        title: 'Contact',
+        description: 'Contactați-ne pentru mai multe informații sau pentru a programa o vizită.',
+        icon: 'tabler:mail',
+        callToAction: {
+          text: 'Contactați-ne',
+          href: '/contact',
+        },
+      },
+    ]}
+  />
 </Layout>

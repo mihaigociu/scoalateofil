@@ -1,0 +1,266 @@
+---
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  iconClass?: string;
+}
+
+const { iconClass = 'w-6 h-6' } = Astro.props;
+---
+
+<!-- Search Button -->
+<button
+  type="button"
+  id="search-button"
+  class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+  aria-label="Căutare"
+  title="Căutare (Ctrl+K)"
+>
+  <Icon name="tabler:search" class={iconClass} />
+</button>
+
+<!-- Search Modal -->
+<div
+  id="search-modal"
+  class="hidden fixed inset-0 z-50 overflow-y-auto"
+  aria-labelledby="search-modal-title"
+  role="dialog"
+  aria-modal="true"
+>
+  <!-- Backdrop -->
+  <div class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" id="search-backdrop"></div>
+
+  <!-- Modal Content -->
+  <div class="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-20">
+    <div
+      class="mx-auto max-w-2xl transform rounded-xl bg-white dark:bg-slate-800 shadow-2xl ring-1 ring-black/5 transition-all"
+    >
+      <!-- Search Container -->
+      <div id="pagefind-container" class="p-4">
+        <div class="flex items-center gap-2 mb-4">
+          <Icon name="tabler:search" class="w-5 h-5 text-gray-400" />
+          <span class="text-gray-500 dark:text-gray-400">Căutare în site...</span>
+          <button
+            type="button"
+            id="close-search"
+            class="ml-auto text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+            aria-label="Închide"
+          >
+            <Icon name="tabler:x" class="w-5 h-5" />
+          </button>
+        </div>
+        <div id="pagefind-search"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  /* Pagefind UI Customization */
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: #3b82f6;
+    --pagefind-ui-text: #1f2937;
+    --pagefind-ui-background: #ffffff;
+    --pagefind-ui-border: #e5e7eb;
+    --pagefind-ui-tag: #e5e7eb;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-image-border-radius: 8px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: inherit;
+  }
+
+  .dark {
+    --pagefind-ui-primary: #60a5fa;
+    --pagefind-ui-text: #f3f4f6;
+    --pagefind-ui-background: #1e293b;
+    --pagefind-ui-border: #374151;
+    --pagefind-ui-tag: #374151;
+  }
+
+  .pagefind-ui__search-input {
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .pagefind-ui__result-link {
+    font-weight: 600 !important;
+  }
+
+  .pagefind-ui__result-excerpt {
+    font-size: 0.875rem !important;
+  }
+
+  #pagefind-search .pagefind-ui__form {
+    margin-bottom: 0;
+  }
+</style>
+
+<script>
+  // Use global state to persist across page navigations
+  let pagefindLoaded = false;
+  let pagefindAvailable: boolean | null = null;
+
+  async function checkPagefindAvailable(): Promise<boolean> {
+    if (pagefindAvailable !== null) return pagefindAvailable;
+
+    try {
+      const response = await fetch('/pagefind/pagefind-ui.js', { method: 'HEAD' });
+      pagefindAvailable = response.ok;
+    } catch {
+      pagefindAvailable = false;
+    }
+    return pagefindAvailable;
+  }
+
+  async function loadPagefindCSS() {
+    if (document.querySelector('link[href="/pagefind/pagefind-ui.css"]')) return;
+
+    const isAvailable = await checkPagefindAvailable();
+    if (isAvailable) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = '/pagefind/pagefind-ui.css';
+      document.head.appendChild(link);
+    }
+  }
+
+  async function initPagefindUI() {
+    const container = document.getElementById('pagefind-search');
+    if (!container) return;
+
+    // Clear previous instance if any
+    container.innerHTML = '';
+
+    // @ts-expect-error - PagefindUI is loaded dynamically
+    if (typeof PagefindUI !== 'undefined') {
+      // @ts-expect-error - PagefindUI is loaded dynamically
+      new PagefindUI({
+        element: '#pagefind-search',
+        showSubResults: true,
+        showImages: false,
+        translations: {
+          placeholder: 'Căutare...',
+          zero_results: 'Nu s-au găsit rezultate pentru [SEARCH_TERM]',
+          many_results: '[COUNT] rezultate pentru [SEARCH_TERM]',
+          one_result: '1 rezultat pentru [SEARCH_TERM]',
+          searching: 'Se caută...',
+          load_more: 'Încarcă mai multe rezultate',
+        },
+        processResult: (result: { url?: string }) => {
+          if (result.url && result.url.endsWith('/') && result.url !== '/') {
+            result.url = result.url.slice(0, -1);
+          }
+          return result;
+        },
+      });
+
+      // Focus on search input
+      setTimeout(() => {
+        const input = document.querySelector('.pagefind-ui__search-input') as HTMLInputElement;
+        if (input) input.focus();
+      }, 100);
+    }
+  }
+
+  async function loadPagefind() {
+    const isAvailable = await checkPagefindAvailable();
+    if (!isAvailable) {
+      showFallbackMessage();
+      return;
+    }
+
+    try {
+      // Load Pagefind UI CSS first
+      await loadPagefindCSS();
+
+      // If already loaded, just reinitialize the UI
+      // @ts-expect-error - PagefindUI is loaded dynamically
+      if (pagefindLoaded && typeof PagefindUI !== 'undefined') {
+        await initPagefindUI();
+        return;
+      }
+
+      // Load Pagefind UI script dynamically
+      const script = document.createElement('script');
+      script.src = '/pagefind/pagefind-ui.js';
+      script.onload = () => {
+        pagefindLoaded = true;
+        initPagefindUI();
+      };
+      script.onerror = () => {
+        showFallbackMessage();
+      };
+      document.head.appendChild(script);
+    } catch {
+      showFallbackMessage();
+    }
+  }
+
+  function showFallbackMessage() {
+    const container = document.getElementById('pagefind-search');
+    if (container) {
+      container.innerHTML = `
+        <p class="text-gray-500 dark:text-gray-400 text-sm">
+          Funcția de căutare este disponibilă doar în versiunea publicată a site-ului.
+          <br>
+          <span class="text-xs">(Rulați <code>npm run build && npm run preview</code> pentru a testa căutarea)</span>
+        </p>
+      `;
+    }
+  }
+
+  function openSearch() {
+    const modal = document.getElementById('search-modal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      loadPagefind();
+    }
+  }
+
+  function closeSearch() {
+    const modal = document.getElementById('search-modal');
+    if (modal) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function setupSearchListeners() {
+    const searchButton = document.getElementById('search-button');
+    const closeButton = document.getElementById('close-search');
+    const backdrop = document.getElementById('search-backdrop');
+
+    // Remove existing listeners to avoid duplicates
+    searchButton?.removeEventListener('click', openSearch);
+    closeButton?.removeEventListener('click', closeSearch);
+    backdrop?.removeEventListener('click', closeSearch);
+
+    // Add fresh listeners
+    searchButton?.addEventListener('click', openSearch);
+    closeButton?.addEventListener('click', closeSearch);
+    backdrop?.addEventListener('click', closeSearch);
+  }
+
+  // Initialize on first load and after each page navigation (View Transitions)
+  setupSearchListeners();
+  document.addEventListener('astro:page-load', setupSearchListeners);
+
+  // Keyboard shortcuts (only add once, globally)
+  if (!(window as unknown as { __searchKeyboardInitialized?: boolean }).__searchKeyboardInitialized) {
+    document.addEventListener('keydown', (e) => {
+      // Ctrl+K or Cmd+K to open search
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        openSearch();
+      }
+      // Escape to close
+      if (e.key === 'Escape') {
+        closeSearch();
+      }
+    });
+    (window as unknown as { __searchKeyboardInitialized?: boolean }).__searchKeyboardInitialized = true;
+  }
+</script>

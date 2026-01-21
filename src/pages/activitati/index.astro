@@ -1,0 +1,62 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Activități și Media - Școala Teofil',
+  description: 'Activități extracurriculare, revista școlii, emisiuni și clubul de cercetași de la Școala Teofil.',
+};
+---
+
+<Layout metadata={metadata}>
+  <HeroText
+    title="Activități și Media"
+    subtitle="Descoperiți activitățile extracurriculare, proiectele media și viața școlară de la Școala Teofil."
+  />
+
+  <Features2
+    title="Explorați activitățile noastre"
+    subtitle=""
+    columns={2}
+    items={[
+      {
+        title: 'Revista școlii',
+        description:
+          'Revista Școala Teofil - articole, creații și știri din viața școlară scrise de elevi și profesori.',
+        icon: 'tabler:notebook',
+        callToAction: {
+          text: 'Citiți revista',
+          href: '/activitati/revista-scolii',
+        },
+      },
+      {
+        title: 'Emisiuni',
+        description: 'Emisiuni video și audio realizate de elevii și profesorii Școlii Teofil.',
+        icon: 'tabler:video',
+        callToAction: {
+          text: 'Vedeți emisiunile',
+          href: '/activitati/emisiuni',
+        },
+      },
+      {
+        title: 'Clubul de cercetași',
+        description: 'Clubul de cercetași Teofil - aventuri în natură, tabere și activități de dezvoltare personală.',
+        icon: 'tabler:tent',
+        callToAction: {
+          text: 'Aflați mai mult',
+          href: '/activitati/clubul-de-cercetasi',
+        },
+      },
+      {
+        title: 'Tutoriale',
+        description: 'Ghiduri și tutoriale utile pentru elevi, părinți și profesori.',
+        icon: 'tabler:book',
+        callToAction: {
+          text: 'Vedeți tutorialele',
+          href: '/activitati/tutoriale',
+        },
+      },
+    ]}
+  />
+</Layout>
