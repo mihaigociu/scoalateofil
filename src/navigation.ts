@@ -169,8 +169,8 @@ export const footerData = {
       links: [
         { text: 'Scurt istoric', href: getPermalink('/despre-noi/scurt-istoric') },
         { text: 'Echipa noastră', href: getPermalink('/despre-noi/echipa-noastra') },
-        { text: 'Rezultate', href: getPermalink('/despre-noi/rezultate') },
         // TODO: Uncomment when content is available
+        // { text: 'Rezultate', href: getPermalink('/despre-noi/rezultate') },
         // { text: 'Noutăți', href: getPermalink('/despre-noi/noutati') },
         { text: 'Contact', href: getPermalink('/contact') },
       ],
