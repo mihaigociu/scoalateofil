@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import ImageCards from '~/components/widgets/ImageCards.astro';
 
 const metadata = {
   title: 'Școala Primară - Școala Teofil',
@@ -15,16 +15,19 @@ const metadata = {
     subtitle="Educație de calitate pentru clasele 0-IV, bazată pe respect, curiozitate și dezvoltare armonioasă."
   />
 
-  <Features2
+  <ImageCards
     title="Descoperiți mai multe despre Școala Primară Teofil"
     subtitle=""
     columns={3}
-    items={[
+    cards={[
       {
         title: 'Metoda pedagogică',
         description:
           'Descoperiți abordarea noastră educațională care combină excelența academică cu dezvoltarea personală a elevilor.',
-        icon: 'tabler:book-2',
+        image: {
+          src: '~/assets/images/cards/scoala-primara/metoda-pedagogica.jpg',
+          alt: 'Metoda pedagogică',
+        },
         callToAction: {
           text: 'Citiți mai mult',
           href: '/scoala-primara/metoda-pedagogica',
@@ -34,25 +37,22 @@ const metadata = {
         title: 'Echipa noastră',
         description:
           'Cunoașteți echipa de învățători și profesori dedicați care lucrează cu pasiune pentru educația copiilor.',
-        icon: 'tabler:users',
+        image: {
+          src: '~/assets/images/cards/scoala-primara/echipa-noastra.jpg',
+          alt: 'Echipa noastră',
+        },
         callToAction: {
           text: 'Cunoașteți echipa',
           href: '/scoala-primara/echipa-noastra',
         },
       },
-      // {
-      //   title: 'Noutăți',
-      //   description: 'Ultimele știri, evenimente și activități din Școala Primară Teofil.',
-      //   icon: 'tabler:news',
-      //   callToAction: {
-      //     text: 'Vedeți noutățile',
-      //     href: '/scoala-primara/noutati',
-      //   },
-      // },
       {
         title: 'Galerie foto',
         description: 'Momente speciale din viața școlii - activități, evenimente și realizările elevilor noștri.',
-        icon: 'tabler:photo',
+        image: {
+          src: '~/assets/images/cards/scoala-primara/galerie-foto.jpg',
+          alt: 'Galerie foto',
+        },
         callToAction: {
           text: 'Vedeți galeria',
           href: '/scoala-primara/galerie-foto',
@@ -61,7 +61,10 @@ const metadata = {
       {
         title: 'Înscrieri',
         description: 'Informații despre procesul de înscriere, locuri disponibile, documente necesare și etape.',
-        icon: 'tabler:clipboard-check',
+        image: {
+          src: '~/assets/images/cards/scoala-primara/inscrieri.jpg',
+          alt: 'Înscrieri',
+        },
         callToAction: {
           text: 'Informații înscrieri',
           href: '/scoala-primara/inscrieri',
@@ -70,7 +73,10 @@ const metadata = {
       {
         title: 'Informații utile (Q&A)',
         description: 'Răspunsuri la întrebările frecvente despre școala primară, program, activități și servicii.',
-        icon: 'tabler:help',
+        image: {
+          src: '~/assets/images/cards/scoala-primara/informatii-utile.jpg',
+          alt: 'Informații utile',
+        },
         callToAction: {
           text: 'Vedeți întrebări frecvente',
           href: '/scoala-primara/informatii-utile',

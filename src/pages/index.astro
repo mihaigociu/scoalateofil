@@ -3,7 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import ImageCards from '~/components/widgets/ImageCards.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -180,17 +180,20 @@ const metadata = {
     </Fragment>
   </ExpandableCards>
 
-  <!-- Features2 Widget - Sub-pages **************** -->
+  <!-- Image Cards Widget - Sub-pages **************** -->
 
-  <Features2
+  <ImageCards
     title="Explorați secțiunile"
     subtitle=""
     columns={3}
-    items={[
+    cards={[
       {
         title: 'Scurt istoric',
         description: 'Descoperiți povestea și evoluția Școlii Teofil de-a lungul anilor.',
-        icon: 'tabler:history',
+        image: {
+          src: '~/assets/images/cards/scurt-istoric.jpg',
+          alt: 'Scurt istoric',
+        },
         callToAction: {
           text: 'Aflați mai mult',
           href: '/despre-noi/scurt-istoric',
@@ -199,37 +202,22 @@ const metadata = {
       {
         title: 'Echipa noastră',
         description: 'Cunoașteți echipa de profesori și educatori dedicați care fac parte din familia Teofil.',
-        icon: 'tabler:users',
+        image: {
+          src: '~/assets/images/cards/echipa-noastra.jpg',
+          alt: 'Echipa noastră',
+        },
         callToAction: {
           text: 'Vedeți echipa',
           href: '/despre-noi/echipa-noastra',
         },
       },
-      // TODO: Uncomment when content is available
-      // {
-      //   title: 'Rezultate',
-      //   description:
-      //     'Performanțele și realizările elevilor noștri de-a lungul timpului.',
-      //   icon: 'tabler:trophy',
-      //   callToAction: {
-      //     text: 'Vedeți rezultatele',
-      //     href: '/despre-noi/rezultate',
-      //   },
-      // },
-      // {
-      //   title: 'Noutăți',
-      //   description:
-      //     'Ultimele știri și evenimente din viața școlii.',
-      //   icon: 'tabler:news',
-      //   callToAction: {
-      //     text: 'Citiți noutățile',
-      //     href: '/despre-noi/noutati',
-      //   },
-      // },
       {
         title: 'Contact',
         description: 'Contactați-ne pentru mai multe informații sau pentru a programa o vizită.',
-        icon: 'tabler:mail',
+        image: {
+          src: '~/assets/images/cards/contact.jpg',
+          alt: 'Contact',
+        },
         callToAction: {
           text: 'Contactați-ne',
           href: '/contact',
