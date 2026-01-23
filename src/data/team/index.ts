@@ -18,6 +18,7 @@ export { andreeaLauraBeian } from './andreea-laura-beian';
 export { virginiaNeacsu } from './virginia-neacsu';
 export { flaviusEmilian } from './flavius-emilian';
 export { simonaMuller } from './simona-muller';
+export { ioanaOltean } from './ioana-oltean';
 
 // Team member data type
 export interface TeamMemberData {

@@ -10,7 +10,29 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <HeroText tagline="Grădiniță" title="Informații utile (Q&A)" subtitle="Răspunsuri la întrebările tale" />
+  <HeroText title="Informații utile (Q&A)" subtitle="Răspunsuri la întrebările tale" />
+
+  <!-- Program zilnic - card separat cu scroll -->
+  <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 max-w-6xl">
+    <div class="bg-white dark:bg-slate-900 rounded-lg shadow-lg p-6 border border-slate-200 dark:border-slate-700">
+      <h3 class="text-xl font-bold mb-4 text-primary">Care este programul unei zile?</h3>
+      <div class="max-h-64 overflow-y-auto pr-2 text-slate-600 dark:text-slate-400">
+        <ul class="space-y-2">
+          <li><strong>08:00 – 08:30</strong> Primirea copiilor și mic-dejun</li>
+          <li><strong>08:30 – 11:30</strong> Ciclul de lucru de 3 ore<br><span class="text-sm ml-4">Gustare de fructe/legume (copiii servesc gustarea individual sau în grup mic, în funcție de nevoile lor de hrănire)</span></li>
+          <li><strong>11:30 – 12:00</strong> Activități în aer liber</li>
+          <li class="text-primary-600 dark:text-primary-400"><strong>11:45 – 12:00</strong> Plecarea copiilor de la programul scurt</li>
+          <li><strong>12:00 – 12:45</strong> Masa de prânz</li>
+          <li class="text-primary-600 dark:text-primary-400"><strong>12:45 – 13:00</strong> Plecarea copiilor de la programul mediu</li>
+          <li><strong>12:45 – 15:00</strong> Odihna (somn/activități de joacă liberă/program special)</li>
+          <li><strong>15:00 – 15:30</strong> Gustarea de după-amiază</li>
+          <li><strong>15:30 – 16:30</strong> Activități în mediul de afară</li>
+          <li class="text-primary-600 dark:text-primary-400"><strong>16:30 – 17:00</strong> Plecarea copiilor de la programul lung</li>
+          <li><strong>17:00</strong> Se închide grădinița</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <FAQs
     title="Întrebări frecvente"
@@ -23,19 +45,9 @@ const metadata = {
           'Metoda Montessori este o abordare educațională centrată pe copil, dezvoltată de Dr. Maria Montessori. Pune accent pe independența copilului, libertatea în limite și respectul pentru dezvoltarea naturală a acestuia. Copiii învață prin explorare și manipulare a materialelor didactice speciale, în propriul ritm.',
       },
       {
-        title: 'Care este vârsta minimă de înscriere?',
-        description:
-          'Primim copii începând cu vârsta de 2 ani și 6 luni. Această vârstă permite copiilor să beneficieze optim de mediul și activitățile Montessori, având deja un nivel de independență de bază.',
-      },
-      {
-        title: 'Care este programul grădiniței?',
-        description:
-          'Grădinița funcționează de luni până vineri, cu posibilitatea de program normal sau prelungit. Programul exact și detaliile despre opțiunile disponibile pot fi discutate în cadrul întâlnirii de înscriere.',
-      },
-      {
         title: 'Câți copii sunt într-o grupă?',
         description:
-          'Grupele Montessori sunt de tip multi-vârstă, cu un număr limitat de copii pentru a permite interacțiunea personalizată a educatorului cu fiecare copil. Raportul educator-copii este conform normelor și principiilor Montessori.',
+          'Grupele Montessori sunt au maxim 20 de copii pentru a permite interacțiunea personalizată a educatorului cu fiecare copil.',
       },
       {
         title: 'Ce activități se desfășoară la grădiniță?',
@@ -50,12 +62,12 @@ const metadata = {
       {
         title: 'Ce se întâmplă în perioada de adaptare?',
         description:
-          'Perioada de adaptare este personalizată pentru fiecare copil. Inițial, copilul vine pentru perioade scurte, împreună cu un părinte, iar treptat durata creește. Educatorul va comunica constant cu părinții pentru a asigura o tranziție lină.',
+          'Pentru fiecare copil nou care se înscrie la grădiniță alocăm un timp de 2 săptămâni. În primele zile copilul vine cu mama sau cu tata, care stau în grupă împreună cu ceilalți copii. Cu fiecare zi ce trece părinții stau din ce în ce mai puțin, urmând ca după câteva zile copilul să urce singur în grupă. Rolul prezenței părintelui în grupă este de a transfera încredere și autoritate adulților care se îngrijesc de copil.',
       },
       {
         title: 'Oferă grădinița masă?',
         description:
-          'Da, oferim mese pregătite cu ingrediente de calitate. Meniul este adaptat vârstei copiilor și include opțiuni pentru diverse nevoi alimentare. Detalii complete sunt disponibile la înscriere.',
+          'Da, oferim mese prin colaborare cu o firmă de catering. Meniul este adaptat vârstei copiilor și include opțiuni pentru diverse nevoi alimentare. Detalii complete sunt disponibile la înscriere.',
       },
       {
         title: 'Cum pot programa o vizită?',

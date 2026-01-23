@@ -20,98 +20,50 @@ const metadata = {
   <ExpandableCards
     cards={[
       {
-        title: 'Condiții de înscriere',
+        title: 'Înscrierea în grădiniță',
         image: {
           src: '~/assets/images/inscriere-conditii.jpg',
-          alt: 'Condiții de înscriere',
+          alt: 'Înscrierea în grădiniță',
         },
-        summary: 'Grădinița Teofil primește copii cu vârste cuprinse între 2,6 ani și 6 ani.',
+        summary: 'Înscrierea copilului începe cu o întâlnire la care participă părinții împreună cu copilul, educatoarea și directorul grădiniței.',
         content: `
-          <h4 class="text-xl font-bold mb-3">Criterii</h4>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>Vârsta copilului: minimum 2 ani și 6 luni</li>
-            <li>Discuție cu părinții despre metodologia Montessori</li>
-            <li>Perioada de adaptare (dacă este necesar)</li>
-            <li>Disponibilitatea locurilor</li>
-          </ul>
-          
-          <h4 class="text-xl font-bold mb-3">Grupuri</h4>
           <p class="mb-4">
-            Copiii sunt organizați în grupuri multi-vârstă, specific metodologiei Montessori, ceea ce facilitează învățarea prin observare și colaborare.
+            Înscrierea copilului începe cu o <strong>întâlnire</strong> la care participă, pe de o parte, părinții împreună cu copilul, iar pe de altă parte educatoarea și directorul grădiniței. Această întâlnire are rolul de a ne cunoaște mai bine și a vedea dacă oferta grădiniței este cea mai potrivită pentru nevoile copilului.
+          </p>
+          
+          <p class="mb-4">
+            Dacă părinții împreună cu educatoarea și cu directorul grădiniței consideră că pot să colaboreze împreună, trec la pasul următor care îl constituie <strong>completarea dosarului de înscriere</strong>.
+          </p>
+          
+          <p class="mb-4">
+            După realizarea înscrierii se stabilește data de la care se poate începe <strong>acomodarea</strong>. Pentru copiii mici acomodarea presupune ca mama sau tatăl să însoțească copilul în primele zile și să stea în grupă sau în preajmă în caz de nevoie.
+          </p>
+          
+          <p class="mb-4">
+            Rostul acestei însoțiri este ca părinții să transfere încredere și autoritate adulților care se ocupă de educarea copilului.
           </p>
         `,
       },
       {
-        title: 'Documente necesare',
+        title: 'Taxe și calendar de înscriere',
         image: {
           src: '~/assets/images/documente.jpg',
-          alt: 'Documente necesare',
+          alt: 'Taxe și calendar de înscriere',
         },
-        summary: 'Pentru finalizarea înscrierii, sunt necesare câteva documente standard.',
+        summary: 'Înscrierea se poate realiza tot timpul în limita locurilor disponibile.',
         content: `
-          <h4 class="text-xl font-bold mb-3">Lista documentelor</h4>
+          <p class="mb-4">
+            Înscrierea se poate realiza <strong>tot timpul</strong> în limita locurilor disponibile.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Taxe pentru anul școlar 2025-2026</h4>
+          <p class="mb-2">Taxa lunară în funcție de program:</p>
           <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>Cerere de înscriere (formular școală)</li>
-            <li>Copie certificat de naștere copil</li>
-            <li>Copie CI părinți/tutori legali</li>
-            <li>Fișa medicală a copilului</li>
-            <li>Adeverință medicală (pentru grădiniță)</li>
-            <li>Foto copil (2 bucăți)</li>
+            <li><strong>Program scurt</strong> (8:00 - 12:00): ...</li>
+            <li><strong>Program mediu</strong> (8:00 - 13:00): ...</li>
+            <li><strong>Program intermediar</strong> (8:00 - 15:00): ...</li>
+            <li><strong>Program lung</strong> (8:00 - 17:00): ...</li>
           </ul>
-          
-          <p class="mb-4">
-            Documentele pot fi depuse personal la sediul grădiniței sau transmise electronic, urmând să fie aduse în original la prima întâlnire.
-          </p>
-        `,
-      },
-      {
-        title: 'Procesul de înscriere',
-        image: {
-          src: '~/assets/images/proces-inscriere.jpg',
-          alt: 'Proces de înscriere',
-        },
-        summary: 'Înscrierea se desfășoară în mai multe etape pentru a asigura o integrare optimă.',
-        content: `
-          <h4 class="text-xl font-bold mb-3">Etape</h4>
-          
-          <p class="mb-2"><strong>1. Contactare inițială</strong></p>
-          <p class="mb-4">Discuție telefonică sau prin email pentru informații generale.</p>
-          
-          <p class="mb-2"><strong>2. Vizita la grădiniță</strong></p>
-          <p class="mb-4">Programare pentru vizită, cunoașterea spațiilor și a echipei.</p>
-          
-          <p class="mb-2"><strong>3. Întâlnire cu părinții</strong></p>
-          <p class="mb-4">Discuție despre metodologia Montessori, așteptări și nevoile copilului.</p>
-          
-          <p class="mb-2"><strong>4. Completare documente</strong></p>
-          <p class="mb-4">Depunerea documentelor și semnarea contractului.</p>
-          
-          <p class="mb-2"><strong>5. Perioada de adaptare</strong></p>
-          <p class="mb-4">Integrare treptată pentru o tranziție ușoară.</p>
-        `,
-      },
-      {
-        title: 'Taxe și calendar',
-        image: {
-          src: '~/assets/images/taxe.jpg',
-          alt: 'Taxe și calendar',
-        },
-        summary: 'Informații despre taxele de școlarizare și calendarul anului școlar.',
-        content: `
-          <h4 class="text-xl font-bold mb-3">Structura taxelor</h4>
-          <p class="mb-4">
-            Pentru informații detaliate despre taxele de școlarizare, vă rugăm să ne contactați direct. Oferim transparență completă și posibilitatea de a discuta opțiuni de plată.
-          </p>
-          
-          <h4 class="text-xl font-bold mb-3">Calendar</h4>
-          <p class="mb-4">
-            Anul școlar urmează calendarul oficial, cu adaptări specifice nevoilor grădiniței. Înscrierile se pot face pe tot parcursul anului, în limita locurilor disponibile.
-          </p>
-          
-          <h4 class="text-xl font-bold mb-3">Program</h4>
-          <p class="mb-4">
-            Grădinița funcționează de luni până vineri, cu posibilitatea de program prelungit.
-          </p>
         `,
       },
     ]}

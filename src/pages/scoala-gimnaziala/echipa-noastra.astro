@@ -4,7 +4,16 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import TeamMember from '~/components/widgets/TeamMember.astro';
 
 // Import team member data
-import { bogdanHerteg, elizaPurcaru, tatianaOnilov, rominaSopoian, laviniaSabou } from '~/data/team';
+import {
+  bogdanHerteg,
+  elizaPurcaru,
+  tatianaOnilov,
+  rominaSopoian,
+  laviniaSabou,
+  iraidaMarginean,
+  doinaCostin,
+  oanaBaila,
+} from '~/data/team';
 
 // Import all team images
 import bogdanHertegImg from '~/assets/images/echipa/bogdan-herteg.jpg';
@@ -12,6 +21,9 @@ import elizaPurcaruImg from '~/assets/images/echipa/eliza-purcaru.jpg';
 import tatianaOnilovImg from '~/assets/images/echipa/tatiana-onilov.jpg';
 import rominaSopoianImg from '~/assets/images/echipa/romina-sopoian.jpg';
 import laviniaSabouImg from '~/assets/images/echipa/lavinia-sabou.jpg';
+import iraidaMargineanImg from '~/assets/images/echipa/iraida-marginean.jpg';
+import doinaCostinImg from '~/assets/images/echipa/doina-costin.jpg';
+import oanaBailaImg from '~/assets/images/echipa/oana-baila.jpg';
 
 const metadata = {
   title: 'Echipa noastră - Școala Gimnazială Teofil',
@@ -79,6 +91,36 @@ const metadata = {
         image={laviniaSabouImg}
       >
         <Fragment set:html={laviniaSabou.content} />
+      </TeamMember>
+
+      <!-- Team Member 6: Iraida Mărginean -->
+      <TeamMember
+        id={iraidaMarginean.id}
+        title={iraidaMarginean.title}
+        tagline={iraidaMarginean.tagline}
+        image={iraidaMargineanImg}
+      >
+        <Fragment set:html={iraidaMarginean.content} />
+      </TeamMember>
+
+      <!-- Team Member 7: Doina Costin -->
+      <TeamMember
+        id={doinaCostin.id}
+        title={doinaCostin.title}
+        tagline={doinaCostin.tagline}
+        image={doinaCostinImg}
+      >
+        <Fragment set:html={doinaCostin.content} />
+      </TeamMember>
+
+      <!-- Team Member 8: Oana Raluca Băilă -->
+      <TeamMember
+        id={oanaBaila.id}
+        title={oanaBaila.title}
+        tagline={oanaBaila.tagline}
+        image={oanaBailaImg}
+      >
+        <Fragment set:html={oanaBaila.content} />
       </TeamMember>
     </div>
   </section>

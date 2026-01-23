@@ -11,7 +11,6 @@ const metadata = {
 
 <Layout metadata={metadata}>
   <HeroText
-    tagline="Grădiniță"
     title="Metoda pedagogică Montessori"
     subtitle="Educație bazată pe respect pentru dezvoltarea naturală a copilului"
   />
@@ -19,25 +18,75 @@ const metadata = {
   <ExpandableCards
     cards={[
       {
-        title: 'Ce este metoda Montessori?',
+        title: 'De ce metoda Montessori?',
         image: {
           src: '~/assets/images/montessori-1.jpg',
           alt: 'Metoda Montessori',
         },
         summary:
-          'Metoda Montessori este o abordare educațională dezvoltată de Dr. Maria Montessori, centrată pe dezvoltarea naturală a copilului într-un mediu pregătit cu grijă.',
+          'Grădinița TEOFIL a fost creată din pasiune și din dorința de a dărui copiilor și părinților un spațiu de dezvoltare și exersare a virtuților.',
         content: `
           <p class="mb-4">
-            Această metodă pune accent pe independența copilului, libertatea în limite și respect pentru dezvoltarea psihologică, fizică și socială naturală a copilului.
+            Grădinița TEOFIL – program Montessori a fost creată din pasiune și din dorința de a dărui copiilor și părinților un spațiu de dezvoltare și exersare a virtuților/caracterelor, de educație continuă, având ca fundament <strong>încrederea reciprocă, echilibrul, pacea, credința</strong>.
           </p>
           
-          <h4 class="text-xl font-bold mb-3">Principii fundamentale</h4>
-          <ul class="list-disc list-inside mb-4 space-y-2">
-            <li>Respectul pentru copil și ritmul său de dezvoltare</li>
-            <li>Mediul pregătit - materiale adaptate vârstei și intereselor</li>
-            <li>Educatorul ca observator și ghid</li>
-            <li>Învățarea prin explorare și experiență directă</li>
-            <li>Perioadele sensibile de dezvoltare</li>
+          <blockquote class="border-l-4 border-primary-500 pl-4 italic mb-4">
+            „... e nevoie să creăm un mediu pentru copil în care acesta să poată să își desfășoare experimentele, un mediu în care el să găsească posibilitatea de a-și continua activitățile fără să fie tot timpul alungat de adulți. Un fel de lume potrivită camerei copilului, o lume creată pentru copil. Acesta este scopul spre care tind școlile Montessori. Există o serie întreagă de diferențe între școala obișnuită, unde ideea este să învățăm copilul, și școlile noastre, unde există un mediu de viață pentru copil."
+            <footer class="text-sm mt-2 not-italic">— Maria Montessori, Lecture Book – Kodaikanal, 1943</footer>
+          </blockquote>
+          
+          <h4 class="text-xl font-bold mb-3">Viziunea noastră</h4>
+          <p class="mb-4">
+            Aceasta este și viziunea noastră. Comunitatea noastră este un <strong>mediu de viață</strong> pentru noi și copiii noștri. Este o comunitate având ca lucrare continuă strădania de a-i ajuta pe copii să-și dezvolte propria personalitate și de a-i ajuta pe părinți pentru a-și forma, dezvolta și sprijini în mod optim proprii copii. În acest fel ne străduim să împlinim nevoile tuturor într-o măsură cât mai mare.
+          </p>
+          
+          <p class="mb-4">
+            Credem că prin prezență și efort continuu personal, fiecare poate deveni el însuși, schimbarea înspre mai bine pe care o dorește în lume. Credem că a crește în această stare de echilibru și pace este posibil doar prin împreuna-lucrare dintre Dumnezeu și om, dintre om și om.
+          </p>
+          
+          <h4 class="text-xl font-bold mb-3">Independența în interdependență</h4>
+          <p class="mb-4">
+            Suntem interdependenți; fiecare poate alege să facă parte dintr-o comunitate și poate, de asemenea, să își aducă contribuția în bunul ei mers. Acesta este unul dintre aspectele importante spre care dorim să ne îndreptăm – <strong>independența în interdependență</strong> – să ne putem baza unii pe ceilalți; această necesitate reprezintă un fapt real al vieții.
+          </p>
+          
+          <p class="mb-4">
+            Ființele umane au nevoie să fie împreună. Pentru a realiza acest lucru în cel mai bun mod cu putință, fiecare persoană are să aleagă cât mai conștient să aibă grijă de ea însăși și de cei din jurul său, iar în acest mod va avea grijă de lume.
+          </p>
+        `,
+      },
+      {
+        title: 'Repere didactice',
+        image: {
+          src: '~/assets/images/montessori-1.jpg',
+          alt: 'Repere didactice Montessori',
+        },
+        summary:
+          'Caracteristicile esențiale ale mediului de învățare Montessori și comportamentele copiilor în sala de clasă.',
+        content: `
+          <ul class="list-disc list-inside mb-4 space-y-3">
+            <li>Copiii de vârste diferite lucrează în cea mai mare parte a timpului independent: individual, în perechi sau în grupuri mici. Uneori sunt implicați în grupuri coordonate de un adult.</li>
+            
+            <li>Copiii se concentrează, uneori la nivel foarte profund, chiar dacă alții lucrează/vorbesc în jurul lor.</li>
+            
+            <li>Copiii își aleg singuri ceea ce vor să lucreze, având uneori nevoie de ghidare din partea adulților în alegerile pe care le fac.</li>
+            
+            <li>Copiii pot alege să discute unii cu alții, în limitele respectului față de cei implicați în activități.</li>
+            
+            <li>Copiii cooperează, se ajută unii pe alții în variate situații și moduri.</li>
+            
+            <li>Copiii își rezolvă uneori singuri micile conflicte sau pot cere mijlocirea adulților din mediu.</li>
+            
+            <li>Copiii au grijă de mediul înconjurător, mențin ordinea (ex: pun la loc materialul după ce au terminat, fac curățenie dacă au murdărit, mânuiesc materialele cu cât mai multă grijă posibil).</li>
+            
+            <li>Pedagogul interacționează cu copiii în cea mai mare parte a timpului în mod individual, necaptând întreaga atenție a clasei decât în cadrul unor activități cu tot grupul, care durează un interval scurt din întregul timp al activităților desfășurate în mediul pregătit.</li>
+            
+            <li>Lecțiile sunt individuale, predate de către pedagog unui singur copil sau unui mic grup de copii.</li>
+            
+            <li>Copiii se mișcă liber prin clasă în limitele regulilor stabilite pentru toată grupa.</li>
+            
+            <li>Copiii pot manifesta siguranță și stăpânire de sine, autonomie, într-un grad ridicat.</li>
+            
+            <li>De asemenea, putem observa copii care se plimbă prin clasă, aparent fără un scop precis. Adesea, acești copii își acordă timp pentru a-i observa atent pe colegii lor și a absorbi astfel informații.</li>
           </ul>
         `,
       },

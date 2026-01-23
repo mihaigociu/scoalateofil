@@ -11,6 +11,7 @@ import {
   virginiaNeacsu,
   flaviusEmilian,
   simonaMuller,
+  ioanaOltean,
 } from '~/data/team';
 
 // Import all team images
@@ -20,6 +21,7 @@ import andreeaLauraBeianImg from '~/assets/images/echipa/andreea-laura-beian.jpg
 import virginiaNeacsuImg from '~/assets/images/echipa/virginia-neacsu.jpg';
 import flaviusEmilianImg from '~/assets/images/echipa/flavius-emilian.jpg';
 import simonaMullerImg from '~/assets/images/echipa/simona-muller.jpg';
+import ioanaOlteanImg from '~/assets/images/echipa/ioana-oltean.jpg';
 
 const metadata = {
   title: 'Echipa noastră - Grădinița Teofil',
@@ -45,7 +47,7 @@ const metadata = {
         <Fragment set:html={claudiuPrecup.content} />
       </TeamMember>
 
-      <!-- Team Member 2: Valentina Sandu -->
+      <!-- Team Member 2: dr. Valentina Sandu -->
       <TeamMember
         id={valentinaSandu.id}
         title={valentinaSandu.title}
@@ -55,17 +57,7 @@ const metadata = {
         <Fragment set:html={valentinaSandu.content} />
       </TeamMember>
 
-      <!-- Team Member 3: Andreea Laura Beian -->
-      <TeamMember
-        id={andreeaLauraBeian.id}
-        title={andreeaLauraBeian.title}
-        tagline={andreeaLauraBeian.tagline}
-        image={andreeaLauraBeianImg}
-      >
-        <Fragment set:html={andreeaLauraBeian.content} />
-      </TeamMember>
-
-      <!-- Team Member 4: Virginia Neacșu -->
+      <!-- Team Member 3: Virginia Neacșu -->
       <TeamMember
         id={virginiaNeacsu.id}
         title={virginiaNeacsu.title}
@@ -75,7 +67,27 @@ const metadata = {
         <Fragment set:html={virginiaNeacsu.content} />
       </TeamMember>
 
-      <!-- Team Member 5: Flavius Emilian -->
+      <!-- Team Member 4: Andreea Laura Beian -->
+      <TeamMember
+        id={andreeaLauraBeian.id}
+        title={andreeaLauraBeian.title}
+        tagline={andreeaLauraBeian.tagline}
+        image={andreeaLauraBeianImg}
+      >
+        <Fragment set:html={andreeaLauraBeian.content} />
+      </TeamMember>
+
+      <!-- Team Member 5: Ioana Oltean -->
+      <TeamMember
+        id={ioanaOltean.id}
+        title={ioanaOltean.title}
+        tagline={ioanaOltean.tagline}
+        image={ioanaOlteanImg}
+      >
+        <Fragment set:html={ioanaOltean.content} />
+      </TeamMember>
+
+      <!-- Team Member 6: Flavius Emilian -->
       <TeamMember
         id={flaviusEmilian.id}
         title={flaviusEmilian.title}
@@ -85,7 +97,7 @@ const metadata = {
         <Fragment set:html={flaviusEmilian.content} />
       </TeamMember>
 
-      <!-- Team Member 6: Simona Muller -->
+      <!-- Team Member 7: Simona Muller -->
       <TeamMember
         id={simonaMuller.id}
         title={simonaMuller.title}
