@@ -1,7 +1,7 @@
 export const tatianaOnilov = {
   id: 'tatiana-onilov',
   title: 'Tatiana Onilov',
-  tagline: 'Învățător',
+  tagline: 'Învățător si profesor de istorie',
   content: `
     <h4 class="text-lg font-bold mb-3">Studii</h4>
     <ul class="list-disc list-inside mb-4 space-y-1">

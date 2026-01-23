@@ -1,7 +1,7 @@
 export const doinaCostin = {
   id: 'doina-costin',
   title: 'Doina Costin',
-  tagline: 'Consultant juridic',
+  tagline: 'Profesor de muzică',
   content: `
     <h4 class="text-lg font-bold mb-3">Studii</h4>
     <ul class="list-disc list-inside mb-4 space-y-1">
