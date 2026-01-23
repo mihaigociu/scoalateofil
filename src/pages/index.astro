@@ -26,16 +26,25 @@ const metadata = {
   <Hero image={{ src: '~/assets/images/Scoala-Teofil-logo-final-RGB.jpg', alt: 'Logo Școala Teofil' }}>
     <Fragment slot="title"> Despre noi </Fragment>
     <Fragment slot="subtitle">
-      <p class="mb-4">
-        Școala TEOFIL este o școală particulată integrată în sistemul public de învățământ din România și a fost
+      <p class="mb-6 text-lg leading-relaxed">
+        Școala TEOFIL este o <strong>școală particulară integrată în sistemul public de învățământ din România</strong>,
         autorizată în anul 2021.
       </p>
-      <p class="mb-2">Scopul pentru care este creată Școala TEOFIL este multiplu:</p>
-      <ol class="list-decimal list-inside space-y-1 ml-2">
-        <li>În primul rând construim un standard de calitate pedagogic</li>
-        <li>În al doilea rând selectăm persoane care corespund acestui standard pedagogic</li>
-        <li>În al treilea rând creăm un mediu potrivit în care să fie formați copiii și ajutați părinții</li>
-      </ol>
+      <p class="mb-4 text-lg font-semibold">Scopul pentru care este creată Școala TEOFIL este multiplu:</p>
+      <div class="space-y-4 text-base">
+        <div class="flex gap-3">
+          <span class="font-bold text-primary flex-shrink-0">1.</span>
+          <p>Construim un <strong>standard de calitate pedagogic</strong></p>
+        </div>
+        <div class="flex gap-3">
+          <span class="font-bold text-primary flex-shrink-0">2.</span>
+          <p>Selectăm <strong>persoane care corespund acestui standard</strong> pedagogic</p>
+        </div>
+        <div class="flex gap-3">
+          <span class="font-bold text-primary flex-shrink-0">3.</span>
+          <p>Creăm un <strong>mediu potrivit</strong> în care să fie formați copiii și ajutați părinții</p>
+        </div>
+      </div>
     </Fragment>
   </Hero>
 
