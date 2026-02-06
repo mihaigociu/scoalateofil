@@ -2,7 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
 import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Înscrieri - Grădinița Teofil',
@@ -25,23 +24,25 @@ const metadata = {
           src: '~/assets/images/inscriere-conditii.jpg',
           alt: 'Înscrierea în grădiniță',
         },
-        summary:
-          'Înscrierea copilului începe cu o întâlnire la care participă părinții împreună cu copilul, educatoarea și directorul grădiniței.',
+        summary: 'Pentru informații despre înscriere și disponibilitatea locurilor, vă rugăm să ne contactați.',
         content: `
           <p class="mb-4">
-            Înscrierea copilului începe cu o <strong>întâlnire</strong> la care participă, pe de o parte, părinții împreună cu copilul, iar pe de altă parte educatoarea și directorul grădiniței. Această întâlnire are rolul de a ne cunoaște mai bine și a vedea dacă oferta grădiniței este cea mai potrivită pentru nevoile copilului.
+            Grădinița Teofil oferă educație pentru copiii de vârstă preșcolară, folosind metoda Montessori.
           </p>
           
           <p class="mb-4">
-            Dacă părinții împreună cu educatoarea și cu directorul grădiniței consideră că pot să colaboreze împreună, trec la pasul următor care îl constituie <strong>completarea dosarului de înscriere</strong>.
+            Pentru informații detaliate despre procesul de înscriere, disponibilitatea locurilor și toate detaliile necesare, vă rugăm să <strong>contactați grădinița</strong> direct.
           </p>
           
-          <p class="mb-4">
-            După realizarea înscrierii se stabilește data de la care se poate începe <strong>acomodarea</strong>. Pentru copiii mici acomodarea presupune ca mama sau tatăl să însoțească copilul în primele zile și să stea în grupă sau în preajmă în caz de nevoie.
-          </p>
+          <h4 class="text-xl font-bold mb-3">Cum ne puteți contacta</h4>
+          <ul class="list-disc list-inside mb-4 space-y-2">
+            <li>Telefon: 0723 537 819</li>
+            <li>Email: scoalateofil@gmail.com</li>
+            <li>Programare vizită la sediul grădiniței</li>
+          </ul>
           
           <p class="mb-4">
-            Rostul acestei însoțiri este ca părinții să transfere încredere și autoritate adulților care se ocupă de educarea copilului.
+            Echipa noastră vă va oferi toate informațiile necesare și vă va ghida prin procesul de înscriere.
           </p>
         `,
       },
@@ -60,11 +61,24 @@ const metadata = {
           <h4 class="text-xl font-bold mb-3">Taxe pentru anul școlar 2025-2026</h4>
           <p class="mb-2">Taxa lunară în funcție de program:</p>
           <ul class="list-disc list-inside mb-4 space-y-2">
-            <li><strong>Program scurt</strong> (8:00 - 12:00): ...</li>
-            <li><strong>Program mediu</strong> (8:00 - 13:00): ...</li>
-            <li><strong>Program intermediar</strong> (8:00 - 15:00): ...</li>
-            <li><strong>Program lung</strong> (8:00 - 17:00): ...</li>
+            <li><strong>Program scurt</strong> (8:00 - 12:00): 1.700 lei</li>
+            <li><strong>Program mediu</strong> (8:00 - 13:00): 1.850 lei</li>
+            <li><strong>Program intermediar</strong> (8:00 - 15:00): 2.080 lei</li>
+            <li><strong>Program lung</strong> (8:00 - 17:00): 2.300 lei</li>
           </ul>
+          
+          <p class="mb-4">
+            <strong>Notă:</strong> Masa se plătește separat doar pentru zilele în care copilul vine la grădiniță.
+          </p>
+          
+          <p class="mt-6">
+            <a href="/taxe-scolarizare.docx" download class="inline-flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Descarcă documentul cu taxele de școlarizare
+            </a>
+          </p>
         `,
       },
     ]}
@@ -73,16 +87,4 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </ExpandableCards>
-
-  <CallToAction
-    title="Doriți să înscrieți copilul la Grădinița Teofil?"
-    subtitle="Contactați-ne pentru mai multe informații sau pentru a programa o vizită!"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Contactați-ne',
-        href: '/contact',
-      },
-    ]}
-  />
 </Layout>

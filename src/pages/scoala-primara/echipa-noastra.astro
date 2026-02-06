@@ -4,19 +4,7 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import TeamMember from '~/components/widgets/TeamMember.astro';
 
 // Import team member data
-import {
-  cristinaBarsan,
-  bogdanHerteg,
-  elizaPurcaru,
-  tatianaOnilov,
-  alexandraIoica,
-  laviniaSabou,
-  rominaSopoian,
-  alexandrinaAldea,
-  iraidaMarginean,
-  doinaCostin,
-  oanaBaila,
-} from '~/data/team';
+import { cristinaBarsan, bogdanHerteg, elizaPurcaru, tatianaOnilov, alexandraIoica, rominaSopoian } from '~/data/team';
 
 // Import all team images
 import cristinaBarsanImg from '~/assets/images/echipa/cristina-barsan.jpg';
@@ -24,12 +12,7 @@ import bogdanHertegImg from '~/assets/images/echipa/bogdan-herteg.jpg';
 import elizaPurcaruImg from '~/assets/images/echipa/eliza-purcaru.jpg';
 import tatianaOnilovImg from '~/assets/images/echipa/tatiana-onilov.jpg';
 import alexandraIoicaImg from '~/assets/images/echipa/alexandra-ioica.jpg';
-import laviniaSabouImg from '~/assets/images/echipa/lavinia-sabou.jpg';
 import rominaSopoianImg from '~/assets/images/echipa/romina-sopoian.jpg';
-import alexandrinaAldeaImg from '~/assets/images/echipa/alexandrina-aldea.jpg';
-import iraidaMargineanImg from '~/assets/images/echipa/iraida-marginean.jpg';
-import doinaCostinImg from '~/assets/images/echipa/doina-costin.jpg';
-import oanaBailaImg from '~/assets/images/echipa/oana-baila.jpg';
 
 const metadata = {
   title: 'Echipa noastră - Școala Primară Teofil',
@@ -95,17 +78,7 @@ const metadata = {
         <Fragment set:html={alexandraIoica.content} />
       </TeamMember>
 
-      <!-- Team Member 6: Lavinia Sabou -->
-      <TeamMember
-        id={laviniaSabou.id}
-        title={laviniaSabou.title}
-        tagline={laviniaSabou.tagline}
-        image={laviniaSabouImg}
-      >
-        <Fragment set:html={laviniaSabou.content} />
-      </TeamMember>
-
-      <!-- Team Member 7: Romina Sopoian -->
+      <!-- Team Member 6: Romina Sopoian -->
       <TeamMember
         id={rominaSopoian.id}
         title={rominaSopoian.title}
@@ -113,36 +86,6 @@ const metadata = {
         image={rominaSopoianImg}
       >
         <Fragment set:html={rominaSopoian.content} />
-      </TeamMember>
-
-      <!-- Team Member 8: Alexandrina Aldea -->
-      <TeamMember
-        id={alexandrinaAldea.id}
-        title={alexandrinaAldea.title}
-        tagline={alexandrinaAldea.tagline}
-        image={alexandrinaAldeaImg}
-      >
-        <Fragment set:html={alexandrinaAldea.content} />
-      </TeamMember>
-
-      <!-- Team Member 9: Iraida Mărginean -->
-      <TeamMember
-        id={iraidaMarginean.id}
-        title={iraidaMarginean.title}
-        tagline={iraidaMarginean.tagline}
-        image={iraidaMargineanImg}
-      >
-        <Fragment set:html={iraidaMarginean.content} />
-      </TeamMember>
-
-      <!-- Team Member 10: Doina Costin -->
-      <TeamMember id={doinaCostin.id} title={doinaCostin.title} tagline={doinaCostin.tagline} image={doinaCostinImg}>
-        <Fragment set:html={doinaCostin.content} />
-      </TeamMember>
-
-      <!-- Team Member 11: Oana Raluca Băilă -->
-      <TeamMember id={oanaBaila.id} title={oanaBaila.title} tagline={oanaBaila.tagline} image={oanaBailaImg}>
-        <Fragment set:html={oanaBaila.content} />
       </TeamMember>
     </div>
   </section>

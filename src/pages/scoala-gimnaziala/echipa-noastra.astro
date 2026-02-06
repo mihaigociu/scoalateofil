@@ -4,21 +4,9 @@ import HeroText from '~/components/widgets/HeroText.astro';
 import TeamMember from '~/components/widgets/TeamMember.astro';
 
 // Import team member data
-import {
-  bogdanHerteg,
-  elizaPurcaru,
-  tatianaOnilov,
-  rominaSopoian,
-  laviniaSabou,
-  iraidaMarginean,
-  doinaCostin,
-  oanaBaila,
-} from '~/data/team';
+import { rominaSopoian, laviniaSabou, iraidaMarginean, doinaCostin, oanaBaila } from '~/data/team';
 
 // Import all team images
-import bogdanHertegImg from '~/assets/images/echipa/bogdan-herteg.jpg';
-import elizaPurcaruImg from '~/assets/images/echipa/eliza-purcaru.jpg';
-import tatianaOnilovImg from '~/assets/images/echipa/tatiana-onilov.jpg';
 import rominaSopoianImg from '~/assets/images/echipa/romina-sopoian.jpg';
 import laviniaSabouImg from '~/assets/images/echipa/lavinia-sabou.jpg';
 import iraidaMargineanImg from '~/assets/images/echipa/iraida-marginean.jpg';
@@ -43,37 +31,7 @@ const metadata = {
   <!-- Team Grid Section -->
   <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Team Member 1: Bogdan Herțeg -->
-      <TeamMember
-        id={bogdanHerteg.id}
-        title={bogdanHerteg.title}
-        tagline={bogdanHerteg.tagline}
-        image={bogdanHertegImg}
-      >
-        <Fragment set:html={bogdanHerteg.content} />
-      </TeamMember>
-
-      <!-- Team Member 2: Eliza Purcaru -->
-      <TeamMember
-        id={elizaPurcaru.id}
-        title={elizaPurcaru.title}
-        tagline={elizaPurcaru.tagline}
-        image={elizaPurcaruImg}
-      >
-        <Fragment set:html={elizaPurcaru.content} />
-      </TeamMember>
-
-      <!-- Team Member 3: Tatiana Onilov -->
-      <TeamMember
-        id={tatianaOnilov.id}
-        title={tatianaOnilov.title}
-        tagline={tatianaOnilov.tagline}
-        image={tatianaOnilovImg}
-      >
-        <Fragment set:html={tatianaOnilov.content} />
-      </TeamMember>
-
-      <!-- Team Member 4: Romina Sopoian -->
+      <!-- Team Member 1: Romina Sopoian -->
       <TeamMember
         id={rominaSopoian.id}
         title={rominaSopoian.title}
@@ -83,7 +41,7 @@ const metadata = {
         <Fragment set:html={rominaSopoian.content} />
       </TeamMember>
 
-      <!-- Team Member 5: Lavinia Sabou -->
+      <!-- Team Member 2: Lavinia Sabou -->
       <TeamMember
         id={laviniaSabou.id}
         title={laviniaSabou.title}
@@ -93,7 +51,7 @@ const metadata = {
         <Fragment set:html={laviniaSabou.content} />
       </TeamMember>
 
-      <!-- Team Member 6: Iraida Mărginean -->
+      <!-- Team Member 3: Iraida Mărginean -->
       <TeamMember
         id={iraidaMarginean.id}
         title={iraidaMarginean.title}
@@ -103,12 +61,12 @@ const metadata = {
         <Fragment set:html={iraidaMarginean.content} />
       </TeamMember>
 
-      <!-- Team Member 7: Doina Costin -->
+      <!-- Team Member 4: Doina Costin -->
       <TeamMember id={doinaCostin.id} title={doinaCostin.title} tagline={doinaCostin.tagline} image={doinaCostinImg}>
         <Fragment set:html={doinaCostin.content} />
       </TeamMember>
 
-      <!-- Team Member 8: Oana Raluca Băilă -->
+      <!-- Team Member 5: Oana Raluca Băilă -->
       <TeamMember id={oanaBaila.id} title={oanaBaila.title} tagline={oanaBaila.tagline} image={oanaBailaImg}>
         <Fragment set:html={oanaBaila.content} />
       </TeamMember>

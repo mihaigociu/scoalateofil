@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Content from '~/components/widgets/Content.astro';
+import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
 
 const metadata = {
   title: 'Rezultate - Școala Teofil',
@@ -12,33 +12,64 @@ const metadata = {
 <Layout metadata={metadata}>
   <HeroText title="Rezultate" subtitle="Mândri de realizările elevilor noștri" />
 
-  <Content
-    title="Realizările noastre"
-    image={{
-      src: '~/assets/images/rezultate.jpg',
-      alt: 'Rezultate',
-    }}
+  <ExpandableCards
+    cards={[
+      {
+        title: 'Rezultate academice',
+        image: {
+          src: '~/assets/images/rezultate.jpg',
+          alt: 'Rezultate academice',
+        },
+        summary: 'Elevii Școlii Teofil se remarcă constant prin performanțe deosebite în domeniul academic.',
+        content: `
+          <p class="mb-4">
+            Aici vom adăuga rezultatele academice ale elevilor noștri.
+          </p>
+        `,
+      },
+      {
+        title: 'Competiții și concursuri',
+        image: {
+          src: '~/assets/images/competitii.jpg',
+          alt: 'Competiții și concursuri',
+        },
+        summary: 'Participarea activă a elevilor la competiții locale, naționale și internaționale.',
+        content: `
+          <p class="mb-4">
+            Aici vom adăuga rezultatele obținute de elevii noștri la diverse competiții și concursuri.
+          </p>
+        `,
+      },
+      {
+        title: 'Proiecte educaționale',
+        image: {
+          src: '~/assets/images/proiecte.jpg',
+          alt: 'Proiecte educaționale',
+        },
+        summary: 'Proiecte și inițiative prin care elevii își dezvoltă competențe practice și creativitatea.',
+        content: `
+          <p class="mb-4">
+            Aici vom adăuga detalii despre proiectele educaționale la care participă elevii noștri.
+          </p>
+        `,
+      },
+      {
+        title: 'Activități extracurriculare',
+        image: {
+          src: '~/assets/images/extracurriculare.jpg',
+          alt: 'Activități extracurriculare',
+        },
+        summary: 'Realizări în domeniul artelor, sportului și altor activități extracurriculare.',
+        content: `
+          <p class="mb-4">
+            Aici vom adăuga realizările elevilor în activități extracurriculare.
+          </p>
+        `,
+      },
+    ]}
   >
-    <Fragment slot="content">
-      <p class="mb-4">
-        Elevii Școlii Teofil se remarcă constant prin performanțe deosebite în diverse domenii: științe, arte, sport și
-        activități extracurriculare.
-      </p>
-      <p class="mb-4">Ne mândrim cu rezultatele obținute și cu dedicarea fiecărui elev în drumul său spre excelență.</p>
-
-      <h3 class="text-xl font-bold mb-3 mt-6">Competiții și concursuri</h3>
-      <p class="mb-4">
-        Elevii noștri participă activ la competiții locale, naționale și internaționale, obținând rezultate remarcabile.
-      </p>
-
-      <h3 class="text-xl font-bold mb-3 mt-6">Proiecte și inițiative</h3>
-      <p class="mb-4">
-        Prin proiecte educaționale inovatoare, elevii dezvoltă competențe practice și își manifestă creativitatea.
-      </p>
-    </Fragment>
-
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </ExpandableCards>
 </Layout>
