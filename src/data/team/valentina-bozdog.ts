@@ -24,13 +24,13 @@ export const valentinaBozdog = {
       </li>
       <li>Din 2022 este secretar al Școlii TEOFIL</li>
       <li>
-        A participat la diverse activități ale ASCOR Cluj și în trecut s-a ocupat de relația cu Inspectoratul Școlar
-        Cluj în desfășurarea activităților din „Săptămâna Altfel" și „Concursul Epistolar" împreună cu Poșta Română
+        S-a ocupat de relația cu Inspectoratul Școlar Cluj în desfășurarea activităților din „Săptămâna Altfel" și
+        „Concursul Epistolar" împreună cu Poșta Română
       </li>
     </ul>
     <p class="mb-2">
-      <strong>Arii de interes:</strong> organizare de activități și pelerinaje, practicarea schiului, fotografia, călătoriile
-      pe munte, crearea de produse hand-made, tâmplăria și grădinăritul.
+      <strong>Arii de interes:</strong> organizare de activități, practicarea schiului, fotografia, călătoriile pe munte,
+      crearea de produse hand-made, tâmplăria și grădinăritul.
     </p>
   `,
 };

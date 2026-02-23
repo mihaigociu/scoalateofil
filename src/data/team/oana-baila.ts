@@ -14,19 +14,17 @@ export const oanaBaila = {
 
     <h4 class="text-lg font-bold mb-3">Experiența profesională</h4>
     <ul class="list-disc list-inside mb-4 space-y-1">
-      <li>În ultimii 10 ani, a lucrat în cadrul sectorului de tineret al Mitropoliei Clujului</li>
       <li>
         A făcut voluntariat desfășurând activități extra curriculare pentru copii și tineri (cu vârste între 7-35
         ani)
       </li>
       <li>
-        Are experiența de a lucra cu grupuri mari de copii și tineri. A coordonat de-a lungul anilor Întâlnirile
-        Tinerilor Ortodocși (ITO) la nivel local, dar și național
+        Are experiența de a lucra cu grupuri mari de copii și tineri, coordonând de-a lungul anilor diverse
+        întâlniri și activități la nivel local și național
       </li>
       <li>
-        A fost vicepreședinte al ASCOR CLUJ aproximativ 10 ani și a dobândit numeroase experiențe legate de
-        filantropie (relația cu persoanele vârstnice, cu persoane bolnave de cancer, cu copii cu deficiențe de
-        vedere ș.a.), voluntariat și lucrul cu oamenii
+        A dobândit numeroase experiențe legate de filantropie (relația cu persoanele vârstnice, cu persoane bolnave
+        de cancer, cu copii cu deficiențe de vedere ș.a.), voluntariat și lucrul cu oamenii
       </li>
     </ul>
 

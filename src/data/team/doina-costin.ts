@@ -31,9 +31,8 @@ export const doinaCostin = {
       <li>Traducător în cadrul ONG-ului Juriștii pentru Drepturile Omului</li>
     </ul>
 
-    <h4 class="text-lg font-bold mb-3">Alte aspecte relevante</h4>
     <p class="mb-2">
-      Participarea la viața comunității ortodoxe a Bisericii ASCOR din campusul Hasdeu, comunicare, muzică psaltică.
+      <strong>Arii de interes:</strong> comunicare, muzică psaltică.
     </p>
   `,
 };

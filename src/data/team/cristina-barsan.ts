@@ -27,8 +27,7 @@ export const cristinaBarsan = {
       din 2021).
     </p>
     <p class="mb-4">
-      Experiența profesională este completată de experiența educațională cu cei trei copii proprii și de
-      participarea la viața comunității ortodoxe a Bisericii din Hasdeu.
+      Experiența profesională este completată de experiența educațională cu cei trei copii proprii.
     </p>
     <p class="mb-2"><strong>Arii de interes:</strong> pedagogie, teologie.</p>
   `,

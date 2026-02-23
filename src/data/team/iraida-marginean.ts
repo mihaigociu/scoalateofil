@@ -26,8 +26,7 @@ export const iraidaMarginean = {
 
     <h4 class="text-lg font-bold mb-3">Alte aspecte relevante</h4>
     <p class="mb-2">
-      Mamă a doi copii, participarea la viața comunității ortodoxe a Bisericii din Hasdeu, voluntariate la
-      Mănăstirea "Crucea Iancului" Mărișel.
+      Mamă a doi copii.
     </p>
   `,
 };

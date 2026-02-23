@@ -25,11 +25,6 @@ export const elizaPurcaru = {
     <h4 class="text-lg font-bold mb-3">Alte aspecte relevante</h4>
     <ul class="list-disc list-inside mb-4 space-y-1">
       <li>
-        Participarea la viața comunității ortodoxe a Bisericii Studenților din campusul universitar „Hasdeu",
-        Cluj-Napoca
-      </li>
-      <li>Membră a corului „Sfântul Lavrentie al Cernigovului" al Bisericii Studenților (2017 – prezent)</li>
-      <li>
         Experiență în pregătirea elevilor de clasa a VIII-a pentru Evaluarea Națională la limba și literatura
         română, în cadrul centrului educațional „Miraveli Education", Cluj-Napoca (2019 – prezent)
       </li>

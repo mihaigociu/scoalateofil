@@ -67,9 +67,8 @@ export const tatianaOnilov = {
       istoriei. A realizat interviuri și reportaje pentru revista „ARTHOS".
     </p>
     <p class="mb-4">
-      Este implicată în derularea proiectelor social-cultural-duhovnicești destinate tinerilor, copiilor, dar și
-      tuturor membrilor comunității. De-a lungul anilor, a acumulat o serie de abilități de comunicare, de
-      coordonare a activităților și proiectelor de echipă, de interacțiune cu diferite categorii de vârstă.
+      De-a lungul anilor, a acumulat o serie de abilități de comunicare, de coordonare a activităților și
+      proiectelor de echipă, de interacțiune cu diferite categorii de vârstă.
     </p>
     <p class="mb-2">
       <strong>Arii de interes:</strong> pedagogia, cercetarea, scrisul, istoria, geografia, arta, munca cu diferite categorii

@@ -3,7 +3,6 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import ExpandableCards from '~/components/widgets/ExpandableCards.astro';
-import ImageCards from '~/components/widgets/ImageCards.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -24,27 +23,11 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero image={{ src: '~/assets/images/Scoala-Teofil-logo-final-RGB.jpg', alt: 'Logo Școala Teofil' }}>
-    <Fragment slot="title"> Despre noi </Fragment>
+    <Fragment slot="title"> Școala Teofil </Fragment>
     <Fragment slot="subtitle">
-      <p class="mb-6 text-lg leading-relaxed">
-        Școala TEOFIL este o <strong>școală particulară integrată în sistemul public de învățământ din România</strong>,
-        autorizată în anul 2021.
+      <p class="text-lg leading-relaxed">
+        Educație de calitate bazată pe respect, iubire și dezvoltare armonioasă a fiecărui copil.
       </p>
-      <p class="mb-4 text-lg font-semibold">Scopul pentru care este creată Școala TEOFIL este multiplu:</p>
-      <div class="space-y-4 text-base">
-        <div class="flex gap-3">
-          <span class="font-bold text-primary flex-shrink-0">1.</span>
-          <p>Construim un <strong>standard de calitate pedagogic</strong></p>
-        </div>
-        <div class="flex gap-3">
-          <span class="font-bold text-primary flex-shrink-0">2.</span>
-          <p>Selectăm <strong>persoane care corespund acestui standard</strong> pedagogic</p>
-        </div>
-        <div class="flex gap-3">
-          <span class="font-bold text-primary flex-shrink-0">3.</span>
-          <p>Creăm un <strong>mediu potrivit</strong> în care să fie formați copiii și ajutați părinții</p>
-        </div>
-      </div>
     </Fragment>
   </Hero>
 
@@ -106,7 +89,7 @@ const metadata = {
             <li>Principiul calității, în baza căruia toate activitățile se realizează conform standardelor de calitate</li>
             <li>Principiul relevanței, în baza căruia răspundem nevoilor de dezvoltare personală ale elevilor</li>
             <li>Principiul eficienței, în baza căruia se urmărește obținerea de rezultate educaționale maxime</li>
-            <li>Principiul garantării identității culturale a elevilor</li>
+            <li>Principiul garantării identității culturale ale elevilor</li>
             <li>Principiul asumării, dezvoltării, promovării și păstrării identității naționale și a valorilor poporului român</li>
             <li>Principiul transparenței, prin asigurarea vizibilității deciziilor și rezultatelor școlare și comunicarea periodică a acestora</li>
             <li>Principiul incluziunii sociale</li>
@@ -169,7 +152,7 @@ const metadata = {
           src: '~/assets/images/implicare-parinti.jpg',
           alt: 'Implicarea părinților',
         },
-        summary: 'Părinții au dreptul și obligația de a-și educa proprii copii așa cum consideră că este mai potrivit.',
+        summary: 'Părinții au dreptul și obligația de a-și educa copiii așa cum consideră că este mai potrivit.',
         content: `
           <p class="mb-4">
             Deoarece, în general, părinții nu sunt specialiști și nu au timpul necesar pentru educarea propriilor copii, aceștia apelează la profesorii și școala care oferă o educație cât mai aproape de ceea ce își doresc. În felul acesta se creează un parteneriat între părinți și școală, părinți și profesori.
@@ -188,50 +171,4 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </ExpandableCards>
-
-  <!-- Image Cards Widget - Sub-pages **************** -->
-
-  <ImageCards
-    title="Explorați secțiunile"
-    subtitle=""
-    columns={3}
-    cards={[
-      {
-        title: 'Scurt istoric',
-        description: 'Descoperiți povestea și evoluția Școlii Teofil de-a lungul anilor.',
-        image: {
-          src: '~/assets/images/cards/scurt-istoric.jpg',
-          alt: 'Scurt istoric',
-        },
-        callToAction: {
-          text: 'Aflați mai mult',
-          href: '/despre-noi/scurt-istoric',
-        },
-      },
-      {
-        title: 'Echipa noastră',
-        description: 'Cunoașteți echipa de profesori și educatori dedicați care fac parte din familia Teofil.',
-        image: {
-          src: '~/assets/images/cards/echipa-noastra.jpg',
-          alt: 'Echipa noastră',
-        },
-        callToAction: {
-          text: 'Vedeți echipa',
-          href: '/despre-noi/echipa-noastra',
-        },
-      },
-      {
-        title: 'Contact',
-        description: 'Contactați-ne pentru mai multe informații sau pentru a programa o vizită.',
-        image: {
-          src: '~/assets/images/cards/contact.jpg',
-          alt: 'Contact',
-        },
-        callToAction: {
-          text: 'Contactați-ne',
-          href: '/contact',
-        },
-      },
-    ]}
-  />
 </Layout>

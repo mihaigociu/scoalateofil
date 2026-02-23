@@ -4,7 +4,7 @@ export const headerData = {
   links: [
     {
       text: 'DESPRE NOI',
-      href: getPermalink('/'),
+      href: getPermalink('/despre-noi'),
       links: [
         {
           text: 'Scurt istoric',
@@ -148,7 +148,7 @@ export const headerData = {
         //   href: getPermalink('/activitati/emisiuni'),
         // },
         {
-          text: 'Clubul de cercetași',
+          text: 'Clubul de excursii și drumeții',
           href: getPermalink('/activitati/clubul-de-cercetasi'),
         },
         // TODO: Uncomment when content is available
@@ -169,8 +169,8 @@ export const footerData = {
       links: [
         { text: 'Scurt istoric', href: getPermalink('/despre-noi/scurt-istoric') },
         { text: 'Echipa noastră', href: getPermalink('/despre-noi/echipa-noastra') },
+        { text: 'Rezultate', href: getPermalink('/despre-noi/rezultate') },
         // TODO: Uncomment when content is available
-        // { text: 'Rezultate', href: getPermalink('/despre-noi/rezultate') },
         // { text: 'Noutăți', href: getPermalink('/despre-noi/noutati') },
         { text: 'Contact', href: getPermalink('/contact') },
       ],
@@ -220,7 +220,7 @@ export const footerData = {
         { text: 'Revista școlii', href: getPermalink('/activitati/revista-scolii') },
         // TODO: Uncomment when content is available
         // { text: 'Emisiuni', href: getPermalink('/activitati/emisiuni') },
-        { text: 'Clubul de cercetași', href: getPermalink('/activitati/clubul-de-cercetasi') },
+        { text: 'Clubul de excursii și drumeții', href: getPermalink('/activitati/clubul-de-cercetasi') },
         // { text: 'Tutoriale', href: getPermalink('/activitati/tutoriale') },
       ],
     },

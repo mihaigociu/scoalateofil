@@ -26,11 +26,6 @@ export const alexandrinaMitrea = {
       <li>Coordonator al programului de după masă la Școala Teofil</li>
     </ul>
 
-    <h4 class="text-lg font-bold mb-3">Alte aspecte relevante</h4>
-    <ul class="list-disc list-inside mb-4 space-y-1">
-      <li>Este membru A.S.C.O.R Cluj. Voluntar la diferite activități organizate în cadrul asociației</li>
-      <li>Este membru în corul "Ceata Sfântul Ioan Valahul"</li>
-    </ul>
     <p class="mb-2">
       <strong>Arii de interes:</strong> pedagogia, artele și tradițiile poporului român, muzica de cor.
     </p>

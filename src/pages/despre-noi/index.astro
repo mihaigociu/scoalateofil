@@ -1,7 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import Features2 from '~/components/widgets/Features2.astro';
+import ImageCards from '~/components/widgets/ImageCards.astro';
 
 const metadata = {
   title: 'Despre noi - Școala Teofil',
@@ -10,90 +10,60 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
-  <HeroText
-    title="Bine ați venit la Școala Teofil!"
-    subtitle="Explorați tot ce avem de oferit - de la istoria noastră, la realizările elevilor, echipa dedicată și activitățile noastre."
-  />
+  <HeroText title="Despre noi" subtitle="Descoperiți povestea, echipa și valorile Școlii Teofil." />
 
-  <!-- Features2 Widget ************** -->
-  <Features2
-    title="Descoperiți mai multe despre Școala Teofil"
+  <ImageCards
+    title=""
     subtitle=""
     columns={3}
-    items={[
+    cards={[
       {
         title: 'Scurt istoric',
         description: 'Descoperiți povestea noastră, valorile și evoluția Școlii Teofil de-a lungul anilor.',
-        icon: 'tabler:book',
+        image: {
+          src: '~/assets/images/cards/scurt-istoric.jpg',
+          alt: 'Scurt istoric',
+        },
         callToAction: {
           text: 'Citiți mai mult',
           href: '/despre-noi/scurt-istoric',
         },
       },
-      // {
-      //   title: 'Rezultate',
-      //   description: 'Realizările și succesele elevilor noștri în diverse competiții și activități educaționale.',
-      //   icon: 'tabler:trophy',
-      //   callToAction: {
-      //     text: 'Vedeți rezultatele',
-      //     href: '/despre-noi/rezultate',
-      //   },
-      // },
       {
         title: 'Echipa noastră',
         description:
           'Cunoașteți echipa dedicată de profesori și pedagogi care lucrează cu pasiune pentru educația copiilor.',
-        icon: 'tabler:users',
+        image: {
+          src: '~/assets/images/cards/echipa-noastra.jpg',
+          alt: 'Echipa noastră',
+        },
         callToAction: {
           text: 'Cunoașteți echipa',
           href: '/despre-noi/echipa-noastra',
         },
       },
-      // {
-      //   title: 'Noutăți',
-      //   description: 'Ultimele știri, evenimente și activități din viața Școlii Teofil.',
-      //   icon: 'tabler:news',
-      //   callToAction: {
-      //     text: 'Vedeți noutățile',
-      //     href: '/despre-noi/noutati',
-      //   },
-      // },
-      // {
-      //   title: 'Tutoriale',
-      //   description: 'Resurse educaționale și materiale utile pentru părinți și elevi.',
-      //   icon: 'tabler:bulb',
-      //   callToAction: {
-      //     text: 'Explorați tutorialele',
-      //     href: '/despre-noi/tutoriale',
-      //   },
-      // },
       {
-        title: 'Revista școlii',
-        description: 'Publicația noastră cu articole scrise de elevi, profesori și părinți.',
-        icon: 'tabler:book-2',
+        title: 'Rezultate',
+        description: 'Realizările și succesele elevilor noștri în diverse competiții și activități educaționale.',
+        image: {
+          src: '~/assets/images/cards/rezultate.jpg',
+          alt: 'Rezultate',
+        },
         callToAction: {
-          text: 'Citiți revista',
-          href: '/despre-noi/revista-scolii',
+          text: 'Vedeți rezultatele',
+          href: '/despre-noi/rezultate',
         },
       },
-      // {
-      //   title: 'Emisiuni',
-      //   description: 'Emisiuni video și audio cu activități, interviuri și momente speciale din școală.',
-      //   icon: 'tabler:video',
-      //   callToAction: {
-      //     text: 'Vizionați emisiunile',
-      //     href: '/despre-noi/emisiuni',
-      //   },
-      // },
       {
-        title: 'Clubul de cercetași',
-        description:
-          'Activitățile clubului de cercetași - aventuri în natură, învățare prin joc și dezvoltare personală.',
-        icon: 'tabler:tent',
+        title: 'Contact',
+        description: 'Contactați-ne pentru mai multe informații sau pentru a programa o vizită.',
+        image: {
+          src: '~/assets/images/cards/contact.jpg',
+          alt: 'Contact',
+        },
         callToAction: {
-          text: 'Descoperiți clubul',
-          href: '/despre-noi/clubul-de-cercetasi',
+          text: 'Contactați-ne',
+          href: '/contact',
         },
       },
     ]}

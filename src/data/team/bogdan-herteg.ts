@@ -31,8 +31,8 @@ export const bogdanHerteg = {
       articole de specialitate în revista „Perspective".
     </p>
     <p class="mb-4">
-      Experiența de viață cuprinde creșterea a doi copii, participarea la viața comunității ortodoxe a Bisericii din
-      Hasdeu, interacțiunea cu oameni de valoare prin intermediul interviurilor luate pentru revista „Arthos".
+      Experiența de viață cuprinde creșterea a doi copii și interacțiunea cu oameni de valoare prin intermediul
+      interviurilor luate pentru revista „Arthos".
     </p>
     <p class="mb-2">
       <strong>Arii de interes:</strong> pedagogia, literatura, teologia, practicarea ca amator a unor sporturi de echipă
