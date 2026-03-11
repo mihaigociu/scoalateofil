@@ -63,7 +63,7 @@ export const tatianaOnilov = {
     <p class="mb-3">
       A publicat cartea „Pavel Kiseleff, Principatele Române și Regulamentele Organice (1829-1834)", Argonaut
       Publishing – Cluj-Napoca, Symphologic Publishing – Gatineau, 2020. Este co-editor pentru mai multe volume de
-      documente. A publicat mai articole în reviste ISI, BDI, dar și studii în volume de specialitate din domeniul
+      documente. A publicat mai multe articole în reviste ISI, BDI, dar și studii în volume de specialitate din domeniul
       istoriei. A realizat interviuri și reportaje pentru revista „ARTHOS".
     </p>
     <p class="mb-4">

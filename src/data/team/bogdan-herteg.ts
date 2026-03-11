@@ -17,7 +17,7 @@ export const bogdanHerteg = {
     <h4 class="text-lg font-bold mb-3">Experiență profesională</h4>
     <ul class="list-disc list-inside mb-4 space-y-1">
       <li>Profesor de limba și literatura română: 9 ani</li>
-      <li>Profesor de limba și literatura română la Montessori Schule Cluj-Napoca: 5 ani - prezent</li>
+      <li>Profesor de limba și literatura română la Montessori Schule Cluj-Napoca: 5 ani  </li>
       <li>A fost coordonator al Cercului de jurnalism din cadrul Palatul Copiilor Cluj (1 an)</li>
       <li>A fost redactor al revistei „Arthos" (10 ani)</li>
       <li>A fost redactor la Foaia Filocalia a revistei „Renașterea"</li>

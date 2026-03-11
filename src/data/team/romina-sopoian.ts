@@ -15,7 +15,7 @@ export const rominaSopoian = {
       </li>
       <li>A finalizat programul de master de Studii Irlandeze de la Facultatea de Litere</li>
       <li>
-        Participă la traininguri de formare unde învățăm despre abordarea practică și interactivă în timpul orelor
+        A participat la traininguri de formare unde a învățat despre abordarea practică și interactivă în timpul orelor
       </li>
     </ul>
 

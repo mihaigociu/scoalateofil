@@ -17,10 +17,10 @@ export const doinaCostin = {
       <li>Jurist-referent la Institutul de Dezvoltare a Proprietății Intelectuale (INDEPRIN)</li>
       <li>Consultant juridic, redactor site în cadrul Ligii pentru Apărarea Drepturilor Consumatorilor</li>
       <li>
-        Predarea cursului Dreptul Mass-Media Școala de Studii Avansate în Jurnalism Chișinău (Republica Moldova)
+        Predarea cursului Dreptul în Mass-Media la Școala de Studii Avansate în Jurnalism Chișinău (Republica Moldova)
       </li>
       <li>
-        Participarea în calitate de expert în dreptul mass-media la elaborarea proiectului de cod al audiovizualului
+        Participarea în calitate de expert în dreptul în mass-media la elaborarea proiectului de cod al audiovizualului
         Asociația Presei Electronice din Republica Moldova
       </li>
       <li>Consilier juridic la Consiliul de Presă din R. Moldova, Chișinău</li>

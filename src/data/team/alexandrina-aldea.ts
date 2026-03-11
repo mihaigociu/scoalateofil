@@ -47,7 +47,7 @@ export const alexandrinaAldea = {
         cu aceștia la concursuri de profil (ICYS)
       </li>
       <li>
-        A desfășurat activitate de mentorat pentru grupele de studenți de la linia germană Facultăților de Chimie și
+        A desfășurat activitate de mentorat pentru grupele de studenți de la linia germană a Facultăților de Chimie și
         Biologie
       </li>
       <li>
@@ -55,7 +55,7 @@ export const alexandrinaAldea = {
         Chimia în experimente, probleme și publicații, Chimie computațională
       </li>
       <li>A participat la multe seminarii din țară și din străinătate (Germania, Ungaria, Bulgaria)</li>
-      <li>În anul 2020 începe colaborarea în cadrul Centrului „Nichifor Crainic" iar apoi Școlii „Teofil"</li>
+      <li>În anul 2020 începe colaborarea în cadrul Centrului „Nichifor Crainic" iar apoi al Școlii „Teofil"</li>
     </ul>
 
     <h4 class="text-lg font-bold mb-3">Alte aspecte relevante</h4>
