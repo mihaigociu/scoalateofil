@@ -1,7 +1,7 @@
 export const laviniaSabou = {
   id: 'lavinia-sabou',
   title: 'Lavinia Sabou',
-  tagline: 'Învățător și profesor de limba franceză',
+  tagline: 'Învățător și profesor de limba română/franceză',
   content: `
     <h4 class="text-lg font-bold mb-3">Studii</h4>
     <ul class="list-disc list-outside ml-5 mb-6 space-y-2">
